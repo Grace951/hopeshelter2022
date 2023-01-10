@@ -1,0 +1,161 @@
+[
+	{
+		"techs": "React / Redux / Webpack / Styled-components / Websocket / SSR ( Server Side Rendering) / OAuth / JWT ",
+		"brief":"從無到有建立的雲端數位看板系統，負責所有前端部分。用 React Hooks 完成所見即所得數位看板編輯器，類似 Wix 或 Adobe illustrator，但更包含許多的動態 Widgets, e.g., Weather, Clock, FB, IG, Youtube, RSS, Twitter... ",
+		"web_link": {
+			"src": "https://www.novods.com", "img": "/images/web/novods/logo.png",
+			"title": "NovoDS Digital Signage Solution",
+			"className": "novo"
+		},
+		"video": "/video/WysiwygEditor_s.mp4",
+		"web_logo":[
+			{
+				"link": "https://facebook.github.io/react/",
+				"img":  "/images/skills/reactjs.svg"
+			},
+			{
+				"link": "https://github.com/reactjs/redux",
+				"img":  "/images/skills/redux.png"
+			},{
+				"link": "https://webpack.js.org/",
+				"img":  "/images/skills/webpack.svg"
+			},{
+				"link": "/images/web/au/html5css3badges.png",
+				"img":  "/images/skills/es6.png"				
+			},{
+				"link": "",
+				"img":  "/images/web/au/html5css3badges.png"
+			},{
+				"link": "https://nodejs.org/en/",
+				"img":  "/images/skills/node.png"
+			},{
+				"link": "https://www.npmjs.com/",
+				"img":  "/images/skills/npm.png"				
+			},{
+				"link": "https://styled-components.com/",
+				"img":  "/images/skills/styledComponent.png"
+			}			
+		],
+		"web_snap": [
+			{"img": "/images/web/auv2/au_list1.png"},
+			{"img": "/images/web/auv2/au_list2.png"},
+			{"img": "/images/web/auv2/au_list3.png"},
+			{"img": "/images/web/auv2/au_list4.png"},
+			{"img": "/images/web/auv2/au_list5.png"}
+		]
+	},
+	{
+		"techs": "React / Redux / Webpack / SASS / Bootstrap / SSR ( Server Side Rendering) / Docker / nginx ",
+		"brief":"這個網站蒐集了本人的所有設計作品，乃將自己 2017 年求職時的網站更新到最新版本的 react/redux/webpack。除了挑戰 Pinterest-style 瀑布流 Layout ，並已完成導入 Docker + docker-compose + nginx，未來將導入更完整的 CI/CD。",
+		"source_code": "https://github.com/Grace951/grace951.github.io",
+		"web_link": {
+			"src": "http://hopeshelter.ddns.net", "img": "/images/logo.png",
+			"title": "我的設計作品集合網站",
+			"className": "novo"
+		},
+		"web_logo":[
+			{
+				"link": "https://facebook.github.io/react/",
+				"img":  "/images/skills/reactjs.svg"
+			},
+			{
+				"link": "https://github.com/reactjs/redux",
+				"img":  "/images/skills/redux.png"
+			},{
+				"link": "https://webpack.js.org/",
+				"img":  "/images/skills/webpack.svg"
+			},{
+				"link": "https://www.docker.com/",
+				"img":  "/images/skills/horizontal-logo-monochromatic-white.png"
+			},{
+				"link": "/images/web/au/html5css3badges.png",
+				"img":  "/images/skills/es6.png"				
+			},{
+				"link": "http://sass-lang.com/",
+				"img":  "/images/web/au/logo-sass.svg",
+				"style": {"width":"auto", "height":"50px"}
+			},{
+				"link": "https://nodejs.org/en/",
+				"img":  "/images/skills/node.png"
+			},{
+				"link": "https://www.nginx.com/",
+				"img":  "/images/skills/Nginx-Logo.png"
+			},{
+				"link": "",
+				"img":  "/images/web/au/html5css3badges.png"
+			},{
+				"link": "http://getbootstrap.com/",
+				"img":  "/images/web/au/Boostrap_logo.png"
+			}			
+		],
+		"web_snap": [
+			{"img": "/images/web/auv2/au_list1.png"},
+			{"img": "/images/web/auv2/au_list2.png"},
+			{"img": "/images/web/auv2/au_list3.png"},
+			{"img": "/images/web/auv2/au_list4.png"},
+			{"img": "/images/web/auv2/au_list5.png"}
+		]
+	},
+	{
+		"techs":"Angular JS / RWD / Bootstrap / Compass / SASS / HTML5 / CSS3 / AJAX",
+		"brief":"此網站為我六年前用Angular JS(Angular1)，幫阿姨建置的 RWD 官網。首頁等待阿姨提供首頁內容。全站由個人負責製作，包含所有美術、切圖、前端JS...。",
+		"web_link": {
+			"src": "http://www.hitechdigitalcctv.com.au/#/home", "img": "/images/web/au/logo.png",
+			"title": "Hi-Tech Digital CCTV"
+		},
+		"source_code": "https://github.com/Grace951/angular1-demo",		
+		"web_logo":[
+			{
+				"link": "http://angularjs.org/",
+				"img":  "/images/web/au/AngularJS-large.png"
+			},{
+				"link": "http://getbootstrap.com/",
+				"img":  "/images/web/au/Boostrap_logo.png"
+			},{
+				"link": "http://compass-style.org/",
+				"img":  "/images/web/au/compass.png"
+			},{
+				"link": "http://sass-lang.com/",
+				"img":  "/images/web/au/logo-sass.svg",
+				"style": {"width":"auto", "height":"50px"}
+			},{
+				"link": "",
+				"img":  "/images/web/au/html5css3badges.png"
+			}
+		],
+		"web_snap": [
+			{"img": "/images/web/au/au_list.png"},
+			{"img": "/images/web/au/au_list2.png"}
+		]
+	},
+	{
+		"techs":"Compass / RWD / SASS / HTML5 / CSS3 / jQuery",
+		"brief":"此網站為六年前我用 jQuery 與 CSS 練習動畫的作品，收集了我認為經典的名畫，並詳細介紹畫派與畫家的風格與特色。RWD，在行動裝置與平板上亦有良好的視覺呈現。全站由個人負責製作，包含所有美術、切圖、前端JS...。",
+		"web_link": {
+			"src": "http://paints.byethost4.com", "img": "/images/web/paints/logo-c.png",
+			"title": "經典名畫"
+		},
+		"source_code": "https://github.com/Grace951/paints",
+		"web_logo":[
+			{
+				"link": "http://compass-style.org/",
+				"img":  "/images/web/au/compass.png"
+			},{
+				"link": "http://sass-lang.com/",
+				"img":  "/images/web/au/logo-sass.svg",
+				"style": {"width":"auto", "height":"50px"}
+			},{
+				"link": "",
+				"img":  "/images/web/au/html5css3badges.png"
+			},{
+				"link": "https://jquery.com/",
+				"img":  "/images/web/au/jquerylogo.png"
+			}
+		],
+		"web_snap": [
+			{"img": "/images/web/paints/paints_homepage.png"},
+			{"img": "/images/web/paints/paints_homepage1.png"},
+			{"img": "/images/web/paints/paints_homepage2.png"}
+		]
+	}
+]
