@@ -64,16 +64,18 @@ const WaterfallItem = styled.div`
     ${(props) => parseInt(parseFloat(props.imgRatio) * 26) + 14};
 
   @media (max-width: 1440px) {
-    grid-row: auto / span  ${(props) => parseInt(parseFloat(props.imgRatio) * 26) + 16};
+    grid-row: auto / span  ${(props) => parseInt(parseFloat(props.imgRatio) * 27) + 12};
+
   }
   @media (max-width: 1200px) {
-    grid-row: auto / span  ${(props) => parseInt(parseFloat(props.imgRatio) * 20) + 18};
+    grid-row: auto / span  ${(props) => parseInt(parseFloat(props.imgRatio) * 25) + 12};
+
   }
   @media (max-width: 800px) {
-    grid-row: auto / span ${(props) => parseInt(parseFloat(props.imgRatio) * 20) + 18};
+    grid-row: auto / span ${(props) => parseInt(parseFloat(props.imgRatio) * 22) + 16};
   }
   @media (max-width: 500px) {
-    grid-row: auto / span ${(props) => parseInt(parseFloat(props.imgRatio) * 30) + 10};
+    grid-row: auto / span ${(props) => parseInt(parseFloat(props.imgRatio) * 28) + 14};
   }
 
   color: #ddd;
