@@ -40,7 +40,7 @@ const Waterfall = styled.div`
 
 const Container = styled.div`
   margin: 0 auto;
-  padding: 0 ${(props) => props.theme.layout.spacing(2)};
+  padding: ${(props) => props.theme.layout.spacing(.5)} ${(props) => props.theme.layout.spacing(2)} ${(props) => props.theme.layout.spacing(1.5)};
   ${desktop(`{
     width: 1200px;
   }`)}
@@ -100,7 +100,7 @@ const Text = styled.div`
 
 const Title = styled.div`
   width: 100%;
-  padding: ${(props) => props.theme.layout.spacing(4)};
+  padding: ${(props) => props.theme.layout.spacing(3.4)};
   color: #000;
   font-size: ${(props) => props.theme.font.size.xlarge};
   text-align: center;
