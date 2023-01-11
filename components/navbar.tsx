@@ -12,8 +12,12 @@ const ubuntu = Ubuntu({
 
 const Navbar = styled.header`
   width: 100%;
-  border-bottom: 1px solid #dadada;
   height: ${(props) => props.theme.layout.header.height};
+  border-bottom: 1px solid #dadada;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  /* box-shadow: 3px 3px 8px rgb(0 0 0 / 30%); */
 `;
 
 const Container = styled.div`
@@ -47,7 +51,7 @@ const HeaderLinks = styled.ul`
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
-  #portfolioLink {
+  #amateurLink {
     width: auto;
     padding-top: ${(props) => props.theme.layout.spacing(2)};
     position: relative;
@@ -109,14 +113,14 @@ const NavComp = () => (
       <HeaderLinks>
         <HeaderLink href="/">Home</HeaderLink>
         <HeaderLink href="/aboutme">About Me</HeaderLink>
-        <HeaderLink id="portfolioLink" href="">
-          Portfolio
+        <HeaderLink id="amateurLink" href="">
+          Amateur
           <HeaderSubLinks>
-            <HeaderSubLink href="/portfolio/f2e">Front-end App</HeaderSubLink>
-            <HeaderSubLink href="/portfolio/graphic">
+            <HeaderSubLink href="/amateur/f2e">Front-end App</HeaderSubLink>
+            <HeaderSubLink href="/amateur/graphic">
               Graphic Design
             </HeaderSubLink>
-            <HeaderSubLink href="/portfolio/editoral">Editorial</HeaderSubLink>
+            <HeaderSubLink href="/amateur/editoral">Editorial</HeaderSubLink>
           </HeaderSubLinks>
         </HeaderLink>
       </HeaderLinks>
