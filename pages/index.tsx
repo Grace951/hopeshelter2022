@@ -1,26 +1,81 @@
 import type { ReactElement } from 'react';
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
-import Image from 'next/image';
+import debounce from 'lodash/debounce';
 import styled from 'styled-components';
 import Layout from '../components/layout';
 import type { NextPageWithLayout } from './_app';
 import data from '../data/recentWorks.json';
+import { laptop, desktop, tablet, mobile, breakpoint, BreakpointKey } from '../themes/index';
+
 
 const titleHeight = 64;
 const Waterfall = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-gap: 0.8em 1em;
+  grid-gap: 10px 1em;
   grid-auto-flow: row dense;
-  grid-auto-rows: 20px;
+  grid-auto-rows: 0.04fr;
+  
+  ${desktop(`{
+    grid-auto-rows: 0.04fr;
+    grid-template-columns: repeat(4, 1fr);
+  }`)}
+
+  ${laptop(`{
+    grid-auto-rows: 0.04fr;
+    grid-template-columns: repeat(3, 1fr);
+  }`)}
+
+  ${tablet(`{
+    grid-auto-rows: 0.046fr;
+    grid-template-columns: repeat(2, 1fr);
+  }`)}
+
+  ${mobile(`{
+    grid-auto-rows: 0.02fr;
+    grid-template-columns: repeat(1, 1fr);
+  }`)}
+`;
+
+const Container = styled.div`
+  margin: 0 auto;
+  padding: 0 ${(props) => props.theme.layout.spacing(2)};
+  ${desktop(`{
+    width: 1200px;
+  }`)}
+
+  ${laptop(`{
+    width: 800px;
+  }`)}
+
+  ${tablet(`{
+    width: 500px;
+  }`)}
+
+  ${mobile(`{
+    width: 320px;
+  }`)}
 `;
 
 const WaterfallItem = styled.div`
   width: 100%;
   grid-row: auto / span
-    ${(props) =>
-      Math.floor((props.imgHeight + titleHeight - props.imgHeight * 0.3) / 20)};
+    ${(props) => parseInt(parseFloat(props.imgRatio) * 26) + 14};
+
+  @media (max-width: 1440px) {
+    grid-row: auto / span  ${(props) => parseInt(parseFloat(props.imgRatio) * 26) + 16};
+  }
+  @media (max-width: 1200px) {
+    grid-row: auto / span  ${(props) => parseInt(parseFloat(props.imgRatio) * 20) + 18};
+  }
+  @media (max-width: 800px) {
+    grid-row: auto / span ${(props) => parseInt(parseFloat(props.imgRatio) * 20) + 18};
+  }
+  @media (max-width: 500px) {
+    grid-row: auto / span ${(props) => parseInt(parseFloat(props.imgRatio) * 30) + 10};
+  }
+
   color: #ddd;
   box-shadow: 1px 1px 8px rgb(0 0 0 / 20%);
   border-radius: 5px;
@@ -50,30 +105,63 @@ const Title = styled.div`
 `;
 
 const Page: NextPageWithLayout = () => {
-  const [heights, setHeights] = useState<number[]>(data.map((item) => 0));
+  const [imgRatios, setImgRatios] = useState<number[]>(data.map(() => 0));
+  const [dimesion, setDimesion] = useState<BreakpointKey>("desktop");
+
+  const getDimension = () => {
+    if (window.innerWidth >= breakpoint.bigDesktop) {
+      return "bigDesktop";
+    } else if (window.innerWidth >= breakpoint.desktop) {
+      return "desktop";
+    } else if (window.innerWidth >= breakpoint.laptop) {
+      return "laptop";
+    } else if (window.innerWidth >= breakpoint.tablet) {
+      return "tablet";
+    } else if (window.innerWidth >= breakpoint.mobile) {
+      return "mobile";
+    }
+  }
 
   useEffect(() => {
-    const newHeights = [];
-    for (let i = 0; i < heights.length; i++) {
-      const img = document.getElementById(`home_img_${i}`);
-      newHeights.push(img.height);
+    const debouncedHandleResize = debounce(function handleResize() {
+      const currentDimension = getDimension()
+      if (currentDimension !== dimesion) {
+        setDimesion(currentDimension)
+      }
+    }, 500);
+    window.addEventListener('resize', debouncedHandleResize)
+
+    return () => {
+      window.removeEventListener('resize', debouncedHandleResize)
     }
-    console.log(newHeights);
-    setHeights(newHeights);
+  }, [dimesion]);
+
+  useEffect(() => {
+    const newImgRatios = [];
+    for (let i = 0; i < imgRatios.length; i++) {
+      const img = document.getElementById(`home_img_${i}`) as HTMLImageElement;
+      newImgRatios.push(img.height / img.width);
+    }
+    console.log(newImgRatios)
+    setImgRatios(newImgRatios);
   }, []);
 
+
   return (
-    <div>
+    <Container>
       <Title>休閒時的塗鴉</Title>
       <Waterfall>
-        {data.map((item, i) => (
-          <WaterfallItem key={i} imgHeight={heights[i]}>
-            {<img width="100%" id={`home_img_${i}`} src={item.fullsrc} />}
-            <Text>{item.note}</Text>
-          </WaterfallItem>
-        ))}
+        {data.map((item, i) => {
+          const imgRatio = imgRatios[i];
+          return (
+            <WaterfallItem key={i} imgRatio={imgRatio} >
+              {<img width="100%" id={`home_img_${i}`} src={item.fullsrc} />}
+              <Text>{item.note}</Text>
+            </WaterfallItem>
+          )
+        })}
       </Waterfall>
-    </div>
+    </Container >
   );
 };
 

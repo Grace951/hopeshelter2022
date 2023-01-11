@@ -1,6 +1,7 @@
 import { Open_Sans } from '@next/font/google';
 import styled from 'styled-components';
 
+import { mobileMin } from '../themes/index';
 import Navbar from './navbar';
 import Footer from './footer';
 
@@ -37,6 +38,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  ${mobileMin()}
 `;
 
 export default function Layout({ children }) {

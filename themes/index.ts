@@ -1,12 +1,15 @@
 import { DefaultTheme, ThemeLayout, Breakpoint, Font } from 'styled-components';
 
-const breakpoint: Breakpoint = {
+export const breakpoint: Breakpoint = {
   bigDesktop: 1800,
   desktop: 1440,
   laptop: 1200,
   tablet: 800,
   mobile: 500,
 };
+
+export type BreakpointKey = keyof Breakpoint;
+
 const font: Font = {
   size: {
     base: '16px',
