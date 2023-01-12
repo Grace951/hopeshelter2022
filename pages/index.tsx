@@ -7,14 +7,7 @@ import styled from 'styled-components';
 import Layout from '../components/layout';
 import type { NextPageWithLayout } from './_app';
 import data from '../data/recentWorks.json';
-import {
-  laptop,
-  desktop,
-  tablet,
-  mobile,
-  breakpoint,
-  BreakpointKey,
-} from '../themes/index';
+import { breakpoint, BreakpointKey } from '../themes/index';
 
 const titleHeight = 64;
 const Waterfall = styled.div`
@@ -24,43 +17,43 @@ const Waterfall = styled.div`
   grid-auto-flow: row dense;
   grid-auto-rows: 0.04fr;
 
-  ${desktop(`{
+  @media all and (max-width: ${breakpoint.desktop}px) {
     grid-auto-rows: 0.04fr;
     grid-template-columns: repeat(4, 1fr);
-  }`)}
+  }
 
-  ${laptop(`{
+  @media all and (max-width: ${breakpoint.laptop}px) {
     grid-auto-rows: 0.04fr;
     grid-template-columns: repeat(3, 1fr);
-  }`)}
+  }
 
-  ${tablet(`{
+  @media all and (max-width: ${breakpoint.tablet}px) {
     grid-auto-rows: 0.046fr;
     grid-template-columns: repeat(2, 1fr);
-  }`)}
+  }
 
-  ${mobile(`{
+  @media all and (max-width: ${breakpoint.mobile}px) {
     grid-auto-rows: 0.02fr;
     grid-template-columns: repeat(1, 1fr);
-  }`)}
+  }
 `;
 
 const Container = styled.div`
   margin: 0 auto;
   padding: ${(props) => props.theme.layout.spacing(0.5, 2, 1.5, 2)};
 
-  ${desktop(`{
+  @media all and (max-width: ${breakpoint.desktop}px) {
     width: ${breakpoint.laptop}px;
-  }`)}
-  ${laptop(`{
+  }
+  @media all and (max-width: ${breakpoint.laptop}px) {
     width: ${breakpoint.tablet}px;
-  }`)}
-  ${tablet(`{
+  }
+  @media all and (max-width: ${breakpoint.tablet}px) {
     width: ${breakpoint.mobile}px;
-  }`)}
-  ${mobile(`{
+  }
+  @media all and (max-width: ${breakpoint.mobile}px) {
     width: 320px;
-  }`)}
+  }
 `;
 
 const WaterfallItem = styled(Link)`
@@ -166,7 +159,8 @@ const Page: NextPageWithLayout = () => {
             <WaterfallItem
               key={i}
               imgratio={imgRatio}
-              href={`/amateur/${item.index}`}
+              href={`/portfolio/${item.index}`}
+              rel="noreferrer"
             >
               {
                 <img

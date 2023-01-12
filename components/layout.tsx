@@ -1,12 +1,12 @@
-import { Open_Sans } from '@next/font/google';
+import { Ubuntu } from '@next/font/google';
 import styled from 'styled-components';
 
 import { mobileMin } from '../themes/index';
 import Navbar from './navbar';
 import Footer from './footer';
 
-const opensans = Open_Sans({
-  weight: ['300', '400', '500', '600', '700', '800'],
+const opensans = Ubuntu({
+  weight: ['300', '400', '500'],
   subsets: ['latin'],
   fallback: [
     '微軟正黑體',

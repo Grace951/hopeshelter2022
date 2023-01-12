@@ -129,7 +129,11 @@ const Page: NextPageWithLayout = () => {
                   return (
                     !!img?.src &&
                     (img.index ? (
-                      <RelativeLink key={i} href={`/amateur/${img.index}`}>
+                      <RelativeLink
+                        key={i}
+                        href={`/portfolio/${img.index}`}
+                        rel="noreferrer"
+                      >
                         {ImgComp}
                       </RelativeLink>
                     ) : (
