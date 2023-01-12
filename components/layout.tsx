@@ -26,7 +26,7 @@ const opensans = Open_Sans({
 
 const Main = styled.main`
   width: 100%;
-  padding-top: ${(props) => props.theme.layout.spacing(1)};
+  padding: ${(props) => props.theme.layout.spacing(2, 0)};
   max-width: ${(props) => props.theme.layout.content.maxWidth};
   flex: 1;
   margin: 0 auto;

@@ -1,13 +1,20 @@
 import type { ReactElement } from 'react';
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import Head from 'next/head';
 import debounce from 'lodash/debounce';
 import styled from 'styled-components';
 import Layout from '../components/layout';
 import type { NextPageWithLayout } from './_app';
 import data from '../data/recentWorks.json';
-import { laptop, desktop, tablet, mobile, breakpoint, BreakpointKey } from '../themes/index';
-
+import {
+  laptop,
+  desktop,
+  tablet,
+  mobile,
+  breakpoint,
+  BreakpointKey,
+} from '../themes/index';
 
 const titleHeight = 64;
 const Waterfall = styled.div`
@@ -16,7 +23,7 @@ const Waterfall = styled.div`
   grid-gap: 10px 1em;
   grid-auto-flow: row dense;
   grid-auto-rows: 0.04fr;
-  
+
   ${desktop(`{
     grid-auto-rows: 0.04fr;
     grid-template-columns: repeat(4, 1fr);
@@ -40,42 +47,42 @@ const Waterfall = styled.div`
 
 const Container = styled.div`
   margin: 0 auto;
-  padding: ${(props) => props.theme.layout.spacing(.5)} ${(props) => props.theme.layout.spacing(2)} ${(props) => props.theme.layout.spacing(1.5)};
+  padding: ${(props) => props.theme.layout.spacing(0.5, 2, 1.5, 2)};
+
   ${desktop(`{
-    width: 1200px;
+    width: ${breakpoint.laptop}px;
   }`)}
-
   ${laptop(`{
-    width: 800px;
+    width: ${breakpoint.tablet}px;
   }`)}
-
   ${tablet(`{
-    width: 500px;
+    width: ${breakpoint.mobile}px;
   }`)}
-
   ${mobile(`{
     width: 320px;
   }`)}
 `;
 
-const WaterfallItem = styled.div`
+const WaterfallItem = styled(Link)`
   width: 100%;
   grid-row: auto / span
-    ${(props) => parseInt(parseFloat(props.imgRatio) * 26) + 14};
+    ${(props) => parseInt(parseFloat(props.imgratio) * 26) + 14};
 
-  @media (max-width: 1440px) {
-    grid-row: auto / span  ${(props) => parseInt(parseFloat(props.imgRatio) * 27) + 12};
-
+  @media all and (max-width: ${breakpoint.desktop}px) {
+    grid-row: auto / span
+      ${(props) => parseInt(parseFloat(props.imgratio) * 27) + 12};
   }
-  @media (max-width: 1200px) {
-    grid-row: auto / span  ${(props) => parseInt(parseFloat(props.imgRatio) * 25) + 12};
-
+  @media all and (max-width: ${breakpoint.laptop}px) {
+    grid-row: auto / span
+      ${(props) => parseInt(parseFloat(props.imgratio) * 25) + 12};
   }
-  @media (max-width: 800px) {
-    grid-row: auto / span ${(props) => parseInt(parseFloat(props.imgRatio) * 22) + 16};
+  @media all and (max-width: ${breakpoint.tablet}px) {
+    grid-row: auto / span
+      ${(props) => parseInt(parseFloat(props.imgratio) * 22) + 16};
   }
-  @media (max-width: 500px) {
-    grid-row: auto / span ${(props) => parseInt(parseFloat(props.imgRatio) * 28) + 14};
+  @media all and (max-width: ${breakpoint.mobile}px) {
+    grid-row: auto / span
+      ${(props) => parseInt(parseFloat(props.imgratio) * 28) + 14};
   }
 
   color: #ddd;
@@ -95,7 +102,7 @@ const Text = styled.div`
   padding: ${(props) => props.theme.layout.spacing(1.4)};
   color: #434343;
   line-height: 1.5;
-  font-size: 14px;
+  font-size: ${(props) => props.theme.font.size.small};
 `;
 
 const Title = styled.div`
@@ -108,34 +115,36 @@ const Title = styled.div`
 
 const Page: NextPageWithLayout = () => {
   const [imgRatios, setImgRatios] = useState<number[]>(data.map(() => 0));
-  const [dimesion, setDimesion] = useState<BreakpointKey>("desktop");
+  const [dimesion, setDimesion] = useState<BreakpointKey>('desktop');
 
+  // console.log(dimesion);
   const getDimension = () => {
     if (window.innerWidth >= breakpoint.bigDesktop) {
-      return "bigDesktop";
+      return 'bigDesktop';
     } else if (window.innerWidth >= breakpoint.desktop) {
-      return "desktop";
+      return 'desktop';
     } else if (window.innerWidth >= breakpoint.laptop) {
-      return "laptop";
+      return 'laptop';
     } else if (window.innerWidth >= breakpoint.tablet) {
-      return "tablet";
+      return 'tablet';
     } else if (window.innerWidth >= breakpoint.mobile) {
-      return "mobile";
+      return 'mobile';
     }
-  }
+  };
 
   useEffect(() => {
     const debouncedHandleResize = debounce(function handleResize() {
-      const currentDimension = getDimension()
+      const currentDimension = getDimension();
       if (currentDimension !== dimesion) {
-        setDimesion(currentDimension)
+        setDimesion(currentDimension);
       }
     }, 500);
-    window.addEventListener('resize', debouncedHandleResize)
+    debouncedHandleResize();
+    window.addEventListener('resize', debouncedHandleResize);
 
     return () => {
-      window.removeEventListener('resize', debouncedHandleResize)
-    }
+      window.removeEventListener('resize', debouncedHandleResize);
+    };
   }, [dimesion]);
 
   useEffect(() => {
@@ -144,10 +153,8 @@ const Page: NextPageWithLayout = () => {
       const img = document.getElementById(`home_img_${i}`) as HTMLImageElement;
       newImgRatios.push(img.height / img.width);
     }
-    console.log(newImgRatios)
     setImgRatios(newImgRatios);
   }, []);
-
 
   return (
     <Container>
@@ -156,14 +163,18 @@ const Page: NextPageWithLayout = () => {
         {data.map((item, i) => {
           const imgRatio = imgRatios[i];
           return (
-            <WaterfallItem key={i} imgRatio={imgRatio} >
+            <WaterfallItem
+              key={i}
+              imgratio={imgRatio}
+              href={`/amateur/${item.index}`}
+            >
               {<img width="100%" id={`home_img_${i}`} src={item.fullsrc} />}
               <Text>{item.note}</Text>
             </WaterfallItem>
-          )
+          );
         })}
       </Waterfall>
-    </Container >
+    </Container>
   );
 };
 

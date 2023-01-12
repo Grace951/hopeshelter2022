@@ -27,8 +27,7 @@ const Container = styled.div`
 `;
 
 const HeaderLinkLi = styled.li`
-  padding: ${(props) => props.theme.layout.spacing(3)}
-    ${(props) => props.theme.layout.spacing(2)};
+  padding: ${(props) => props.theme.layout.spacing(3, 2)};
   font-weight: 300;
   font-style: italic;
   font-size: ${(props) => props.theme.font.size.large};
@@ -63,8 +62,7 @@ const HeaderLinks = styled.ul`
 
 const HeaderSubLinks = styled.div`
   display: none;
-  padding: ${(props) => props.theme.layout.spacing(0.4)}
-    ${(props) => props.theme.layout.spacing(2)};
+  padding: ${(props) => props.theme.layout.spacing(0.4, 2)};
   white-space: nowrap;
   font-size: ${(props) => props.theme.font.size.base};
   position: absolute;
@@ -76,8 +74,7 @@ const HeaderSubLinks = styled.div`
 `;
 
 const HeaderSubLinkDiv = styled.div`
-  padding: ${(props) => props.theme.layout.spacing(1.2)}
-    ${(props) => props.theme.layout.spacing(1.6)};
+  padding: ${(props) => props.theme.layout.spacing(1.2, 1.6)};
   &:hover {
     color: ${(props) => props.theme.colors.grassGreen};
   }

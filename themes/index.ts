@@ -5,17 +5,17 @@ export const breakpoint: Breakpoint = {
   desktop: 1440,
   laptop: 1200,
   tablet: 800,
-  mobile: 500,
+  mobile: 540,
 };
 
 export type BreakpointKey = keyof Breakpoint;
 
 const font: Font = {
   size: {
-    base: '16px',
-    small: '12px',
-    large: '24px',
-    xlarge: '48px',
+    base: 'calc(0.8rem + 0.2vw)',
+    small: 'calc(0.8rem + 0.1vw)',
+    large: 'calc(1rem + 0.4vw)',
+    xlarge: 'calc(1.8rem + 0.5vw)',
   },
   weight: {
     light: 300,
@@ -25,7 +25,10 @@ const font: Font = {
 };
 
 const layout: ThemeLayout = {
-  spacing: (x: number) => `${10 * x}px`,
+  spacing: (x1: number, x2?: number, x3?: number, x4?: number) =>
+    `${10 * x1}px ${10 * (x2 === undefined ? x1 : x2)}px ${
+      10 * (x3 === undefined ? x1 : x3)
+    }px ${10 * (x4 === undefined ? (x2 === undefined ? x1 : x2) : x4)}px`,
   footer: {
     height: '40px',
   },
