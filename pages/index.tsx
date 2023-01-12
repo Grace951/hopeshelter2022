@@ -168,7 +168,14 @@ const Page: NextPageWithLayout = () => {
               imgratio={imgRatio}
               href={`/amateur/${item.index}`}
             >
-              {<img width="100%" id={`home_img_${i}`} src={item.fullsrc} />}
+              {
+                <img
+                  width="100%"
+                  id={`home_img_${i}`}
+                  src={item.fullsrc}
+                  alt={item.note}
+                />
+              }
               <Text>{item.note}</Text>
             </WaterfallItem>
           );

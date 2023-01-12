@@ -1,5 +1,6 @@
 import type { ReactElement } from 'react';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 import Link from 'next/link';
 import styled, { css } from 'styled-components';
 import Layout from '../../components/layout';
@@ -92,36 +93,59 @@ const Page: NextPageWithLayout = () => {
   const id = parseInt(wid);
   const details = data[id];
   return (
-    <Container>
-      <Info>
-        <Title>{details.title}</Title>
-        <Desc>{details.desc}</Desc>
-        <Back onClick={back}>Back</Back>
-        {details?.relative?.img?.length > 0 && (
-          <Relative>
-            <RelativeTitle>相關作品</RelativeTitle>
-            <RelativeImgs>
-              {details.relative.img.map(
-                (img, i: number) =>
-                  !!img?.src &&
-                  (img.index ? (
-                    <RelativeLink key={i} href={`/amateur/${img.index}`}>
-                      <img src={img.src} />
-                    </RelativeLink>
-                  ) : (
-                    <RelativeImg>
-                      <img src={img.src} />
-                    </RelativeImg>
-                  ))
-              )}
-            </RelativeImgs>
-          </Relative>
-        )}
-      </Info>
-      <Picture>
-        <img src={details.img} />
-      </Picture>
-    </Container>
+    <>
+      <Head>
+        <title>Hope Shelter - {details.title}</title>
+        <meta name="description" content={details.desc} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <Container>
+        <Info>
+          <Title>{details.title}</Title>
+          <Desc>{details.desc}</Desc>
+          <Back onClick={back}>Back</Back>
+          {details?.relative?.img?.length > 0 && (
+            <Relative>
+              <RelativeTitle>相關作品</RelativeTitle>
+              <RelativeImgs>
+                {details.relative.img.map((img, i: number) => {
+                  const relativeDetails = data[img.index];
+                  const ImgComp = (
+                    <img
+                      src={img.src}
+                      alt={
+                        (relativeDetails?.title || '') +
+                        '\n' +
+                        (relativeDetails?.desc || '')
+                      }
+                      title={
+                        (relativeDetails?.title || '') +
+                        '\n' +
+                        (relativeDetails?.desc || '')
+                      }
+                    />
+                  );
+                  return (
+                    !!img?.src &&
+                    (img.index ? (
+                      <RelativeLink key={i} href={`/amateur/${img.index}`}>
+                        {ImgComp}
+                      </RelativeLink>
+                    ) : (
+                      <RelativeImg>{ImgComp}</RelativeImg>
+                    ))
+                  );
+                })}
+              </RelativeImgs>
+            </Relative>
+          )}
+        </Info>
+        <Picture>
+          <img src={details.img} alt={details.title + '\n' + details.desc} />
+        </Picture>
+      </Container>
+    </>
   );
 };
 
