@@ -63,7 +63,7 @@ const HeaderLinkLi = styled.li`
     color: #333333;
   }
   a:hover {
-    color: ${(props) => props.theme.colors.grassGreen};
+    color: ${(props) => props.theme.colors.logoGreen};
   }
   a:active {
     color: #333333;
@@ -103,10 +103,12 @@ const HeaderSubLinks = styled.div`
   display: none;
   border-radius: 5px;
   white-space: nowrap;
+  box-shadow: 0px 0px 5px rgb(0 0 0 / 50%);
   font-size: ${(props) => props.theme.font.size.base};
+  font-style: normal;
   position: absolute;
   left: 100%;
-  top: 0;
+  top: 20px;
   background-color: #383838;
   color: #aaa;
   ${mobile(`{
@@ -118,7 +120,7 @@ const HeaderSubLinkDiv = styled.div`
   padding: ${(props) => props.theme.layout.spacing(1.4, 3)};
   border-bottom: 1px solid #000;
   &:hover {
-    color: ${(props) => props.theme.colors.grassGreen};
+    color: ${(props) => props.theme.colors.logoGreen};
   }
   cursor: pointer;
   &:last-child {

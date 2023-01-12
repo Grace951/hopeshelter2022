@@ -41,7 +41,9 @@ export const light: DefaultTheme = {
   colors: {
     primary: '#111',
     secondary: '#0070f3',
-    grassGreen: '#7fbf34',
+    logoGreen: '#7fbf34',
+    logoBrown: '#9f5a04',
+    darkGray: '#646464',
     primaryLink: {
       main: '#000',
       hover: '#111',
