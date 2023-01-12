@@ -2,14 +2,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import { Ubuntu } from '@next/font/google';
-import {
-  laptop,
-  desktop,
-  tablet,
-  mobile,
-  breakpoint,
-  BreakpointKey,
-} from '../themes/index';
+import { tablet, mobile } from '../themes/index';
 
 const ubuntu = Ubuntu({
   weight: ['300', '400', '500'],
@@ -24,12 +17,14 @@ const Navbar = styled.header`
   position: sticky;
   top: 0;
   background-color: #fff;
-  @media all and (max-width: ${breakpoint.tablet}px) {
+
+  ${tablet(`{
     height: 4rem;
-  }
-  @media all and (max-width: ${breakpoint.mobile}px) {
+  }`)}
+
+  ${mobile(`{
     height: 2.2rem;
-  }
+  }`)}
 `;
 
 const Container = styled.div`
@@ -47,13 +42,13 @@ const Logo = styled(Link)`
   img {
     max-height: 100%;
   }
-  @media all and (max-width: ${breakpoint.tablet}px) {
+  ${tablet(`{
     width: 10rem;
-  }
-  @media all and (max-width: ${breakpoint.mobile}px) {
+  }`)}
+  ${mobile(`{
     width: 2.4rem;
     background: url('/images/ico.png') no-repeat;
-  }
+  }`)}
 `;
 
 const HeaderLinkLi = styled.li`
@@ -73,13 +68,13 @@ const HeaderLinkLi = styled.li`
   a:active {
     color: #333333;
   }
-  @media all and (max-width: ${breakpoint.tablet}px) {
+  ${tablet(`{
     height: 100%;
     padding: ${(props) => props.theme.layout.spacing(0, 1)};
     display: flex;
     align-items: center;
-  }
-  @media all and (max-width: ${breakpoint.mobile}px) {
+  }`)}
+  ${mobile(`{
     height: 100%;
     padding-top: 0;
     padding-bottom: 0;
@@ -87,7 +82,7 @@ const HeaderLinkLi = styled.li`
     font-style: normal;
     display: flex;
     align-items: center;
-  }
+  }`)}
 `;
 
 const HeaderLinks = styled.ul`
@@ -114,9 +109,9 @@ const HeaderSubLinks = styled.div`
   top: 0;
   background-color: #383838;
   color: #aaa;
-  @media all and (max-width: ${breakpoint.mobile}px) {
+  ${mobile(`{
     font-weight: normal;
-  }
+  }`)}
 `;
 
 const HeaderSubLinkDiv = styled.div`
@@ -129,9 +124,9 @@ const HeaderSubLinkDiv = styled.div`
   &:last-child {
     border-bottom: none;
   }
-  @media all and (max-width: ${breakpoint.mobile}px) {
+  ${mobile(`{
     padding: ${(props) => props.theme.layout.spacing(1.2, 2)};
-  }
+  }`)}
 `;
 
 const HeaderLink = ({ href, id = '', children }) => (
