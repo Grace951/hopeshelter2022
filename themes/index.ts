@@ -29,12 +29,6 @@ const layout: ThemeLayout = {
     `${10 * x1}px ${10 * (x2 === undefined ? x1 : x2)}px ${
       10 * (x3 === undefined ? x1 : x3)
     }px ${10 * (x4 === undefined ? (x2 === undefined ? x1 : x2) : x4)}px`,
-  footer: {
-    height: '40px',
-  },
-  header: {
-    height: '148px',
-  },
   content: {
     maxWidth: '1440px',
   },

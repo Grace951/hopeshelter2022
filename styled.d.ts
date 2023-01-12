@@ -3,12 +3,6 @@ import 'styled-components';
 declare module 'styled-components' {
   export interface ThemeLayout {
     spacing: (x: number, x?: number, x?: number, x?: number) => string;
-    footer: {
-      height: string;
-    };
-    header: {
-      height: string;
-    };
     content: {
       maxWidth: string;
     };

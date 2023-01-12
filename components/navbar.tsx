@@ -1,29 +1,59 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import { Ubuntu } from '@next/font/google';
+import {
+  laptop,
+  desktop,
+  tablet,
+  mobile,
+  breakpoint,
+  BreakpointKey,
+} from '../themes/index';
 
 const ubuntu = Ubuntu({
-  weight: ['300'],
+  weight: ['300', '400', '500'],
   style: ['normal', 'italic'],
   subsets: ['latin'],
 });
 
 const Navbar = styled.header`
   width: 100%;
-  height: ${(props) => props.theme.layout.header.height};
+  height: 5.5rem;
   border-bottom: 1px solid #dadada;
   position: sticky;
   top: 0;
   background-color: #fff;
-  /* box-shadow: 3px 3px 8px rgb(0 0 0 / 30%); */
+  @media all and (max-width: ${breakpoint.tablet}px) {
+    height: 4rem;
+  }
+  @media all and (max-width: ${breakpoint.mobile}px) {
+    height: 2.2rem;
+  }
 `;
 
 const Container = styled.div`
   max-width: ${(props) => props.theme.layout.content.maxWidth};
+  height: 100%;
   margin: 0 auto;
   display: flex;
+`;
+
+const Logo = styled(Link)`
+  width: 180px;
+  height: 100%;
+  background: url('/images/logo.png') no-repeat right center;
+  background-size: contain;
+  img {
+    max-height: 100%;
+  }
+  @media all and (max-width: ${breakpoint.tablet}px) {
+    width: 10rem;
+  }
+  @media all and (max-width: ${breakpoint.mobile}px) {
+    width: 2.4rem;
+    background: url('/images/ico.png') no-repeat;
+  }
 `;
 
 const HeaderLinkLi = styled.li`
@@ -40,9 +70,23 @@ const HeaderLinkLi = styled.li`
   a:hover {
     color: ${(props) => props.theme.colors.grassGreen};
   }
-
   a:active {
     color: #333333;
+  }
+  @media all and (max-width: ${breakpoint.tablet}px) {
+    height: 100%;
+    padding: ${(props) => props.theme.layout.spacing(0, 1)};
+    display: flex;
+    align-items: center;
+  }
+  @media all and (max-width: ${breakpoint.mobile}px) {
+    height: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: ${(props) => props.theme.font.size.base};
+    font-style: normal;
+    display: flex;
+    align-items: center;
   }
 `;
 
@@ -62,23 +106,32 @@ const HeaderLinks = styled.ul`
 
 const HeaderSubLinks = styled.div`
   display: none;
-  padding: ${(props) => props.theme.layout.spacing(0.4, 2)};
+  border-radius: 5px;
   white-space: nowrap;
   font-size: ${(props) => props.theme.font.size.base};
   position: absolute;
   left: 100%;
   top: 0;
   background-color: #383838;
-  font-style: normal;
   color: #aaa;
+  @media all and (max-width: ${breakpoint.mobile}px) {
+    font-weight: normal;
+  }
 `;
 
 const HeaderSubLinkDiv = styled.div`
-  padding: ${(props) => props.theme.layout.spacing(1.2, 1.6)};
+  padding: ${(props) => props.theme.layout.spacing(1.4, 3)};
+  border-bottom: 1px solid #000;
   &:hover {
     color: ${(props) => props.theme.colors.grassGreen};
   }
   cursor: pointer;
+  &:last-child {
+    border-bottom: none;
+  }
+  @media all and (max-width: ${breakpoint.mobile}px) {
+    padding: ${(props) => props.theme.layout.spacing(1.2, 2)};
+  }
 `;
 
 const HeaderLink = ({ href, id = '', children }) => (
@@ -99,14 +152,7 @@ const HeaderSubLink = ({ href, children }) => {
 const NavComp = () => (
   <Navbar>
     <Container className={ubuntu.className}>
-      <Link href="/">
-        <Image
-          width="239"
-          height="129"
-          src="/images/logo.png"
-          alt="hope shelter design web"
-        />
-      </Link>
+      <Logo href="/"></Logo>
       <HeaderLinks>
         <HeaderLink href="/">Home</HeaderLink>
         <HeaderLink href="/aboutme">About Me</HeaderLink>
