@@ -1,0 +1,222 @@
+{
+  "briefs": [
+    "With 5 years frontend development experience<",
+    "Proficient in Typescript, ES6, React with hooks",
+    "Proactive, responsible and passionate self-learning team player"
+  ],
+  "socails": [
+    {
+      "text": "github",
+      "img": "/images/skills/github.png",
+      "imgWidth": 40,
+      "imgHeight": 40,
+      "href": "https://github.com/Grace951"
+    },
+    {
+      "text": "Linkedin",
+      "img": "/images/skills/linkedin.png",
+      "imgWidth": 40,
+      "imgHeight": 40,
+      "href": "https://www.linkedin.com/in/grace-yeh-b802b012a/"
+    }
+  ],
+  "experiences": {
+    "title": "Experiences",
+    "timelines": [
+      {
+        "title": "Senior Frontend Developer",
+        "desc": "Appier Inc.",
+        "note": "2021 - 2022"
+      },
+      {
+        "title": "Senior Frontend Developer",
+        "desc": "Delta Electronics, Inc.",
+        "note": "2017 - 2021"
+      },
+      {
+        "title": "Frontend Developer",
+        "desc": "Tunyang Information Corp.",
+        "note": "2015 - 2016"
+      },
+      {
+        "title": "Software Engineer",
+        "note": "2011 - 2014"
+      },
+      {
+        "title": "Firmware Engineer",
+        "note": "2006 - 2009"
+      }
+    ]
+  },
+  "frontendApp": {
+    "title": "Frontend App",
+    "items": [
+      {
+        "title": "React App - Hi-Tech Digital CCTV V2",
+        "visit": "https://react-redux-demo-chingching.herokuapp.com/",
+        "source": ""
+      },
+      {
+        "title": "React App - Personal Home Page",
+        "visit": "https://github.com/Grace951/hopeshelter2022",
+        "source": "https://github.com/Grace951/hopeshelter2022"
+      },
+      {
+        "title": "Angular App - Hi-Tech Digital CCTV",
+        "visit": "http://www.hitechdigitalcctv.com.au/#/home",
+        "source": "https://github.com/Grace951/angular1-demo"
+      }
+    ]
+  },
+  "exercises": {
+    "title": "Exercises",
+    "items": [
+      {
+        "title": "Sortable Searchable React Paging Table",
+        "demo": "https://grace951.github.io/react-table/",
+        "source": "https://github.com/Grace951/react-table"
+      },
+      {
+        "title": "React App - Personal Home Page",
+        "demo": "https://grace951.github.io/react-image-carousel/",
+        "source": "https://github.com/Grace951/react-image-carousel"
+      },
+      {
+        "title": "Little Game - Mine Sweeper",
+        "demo": "https://github.com/Grace951/react-minesweeper",
+        "source": "https://grace951.github.io/react-minesweeper/"
+      }
+    ]
+  },
+  "skillTypes": [
+    {
+      "title": "Modern Javascript",
+      "skills": [
+        {
+          "img": "/images/skills/typescript.png",
+          "width": 40,
+          "height": 40,
+          "text": "TypeScript"
+        },
+        {
+          "img": "/images/skills/es6.png",
+          "width": 40,
+          "height": 40,
+          "text": "ES6"
+        },
+        {
+          "img": "/images/skills/reactjs.svg",
+          "width": 40,
+          "height": 40,
+          "text": "React with Hooks"
+        },
+        {
+          "img": "/images/skills/redux.png",
+          "width": 40,
+          "height": 40,
+          "text": "Redux"
+        },
+        {
+          "img": "/images/skills/webpack.svg",
+          "width": 40,
+          "height": 40,
+          "text": "Webpack"
+        },
+        {
+          "img": "/images/skills/styledComponent.png",
+          "width": 40,
+          "height": 40,
+          "text": "styled-components"
+        },
+        {
+          "img": "/images/skills/node.png",
+          "width": 142,
+          "height": 40,
+          "text": "NodeJs"
+        }
+      ]
+    },
+    {
+      "title": "Front-end Development",
+      "skills": [
+        {
+          "img": "/images/skills/rwd.png",
+          "width": 50,
+          "height": 50,
+          "text": "RWD"
+        },
+        {
+          "img": "/images/skills/html5.png",
+          "width": 36,
+          "height": 50,
+          "text": "HTML5"
+        },
+        {
+          "img": "/images/skills/css3.png",
+          "width": 36,
+          "height": 50,
+          "text": "CSS3"
+        },
+        {
+          "img": "/images/skills/sass.png",
+          "width": 53,
+          "height": 40,
+          "text": "SASS"
+        },
+        {
+          "img": "/images/skills/webpack.svg",
+          "width": 40,
+          "height": 40,
+          "text": "Webpack"
+        },
+        {
+          "img": "/images/skills/bootstrap.png",
+          "width": 40,
+          "height": 40,
+          "text": "BootStrap"
+        },
+        {
+          "img": "/images/skills/jquerylogo.png",
+          "width": 50,
+          "height": 50,
+          "text": "jQuery"
+        }
+      ]
+    },
+    {
+      "title": "General Skills",
+      "skills": [
+        {
+          "img": "/images/skills/git.png",
+          "width": 90,
+          "height": 40,
+          "text": "Git"
+        },
+        {
+          "img": "/images/skills/docker.png",
+          "width": 156,
+          "height": 40,
+          "text": "Docker"
+        },
+        {
+          "img": "/images/skills/npm.png",
+          "width": 87,
+          "height": 50,
+          "text": "NPM"
+        },
+        {
+          "img": "/images/skills/photoshop.png",
+          "width": 40,
+          "height": 39,
+          "text": "PhotoShop"
+        },
+        {
+          "img": "/images/skills/illustrator.png",
+          "width": 40,
+          "height": 39,
+          "text": "Illustrator"
+        }
+      ]
+    }
+  ]
+}

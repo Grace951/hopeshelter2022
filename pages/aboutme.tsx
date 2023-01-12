@@ -4,8 +4,9 @@ import Image from 'next/image';
 import styled from 'styled-components';
 import Layout from '../components/layout';
 import { breakpoint } from '../themes/index';
-import data from '../data/about.json';
+import data from '../data/abouts.json';
 import type { NextPageWithLayout } from './_app';
+import { isTemplateMiddle } from 'typescript';
 
 const Container = styled.div`
   line-height: 1.6;
@@ -199,369 +200,104 @@ const Page: NextPageWithLayout = () => {
       <Block>
         <Title> I am Grace Yeh </Title>
         <BriefsWrap>
-          <Brief>With 5 years frontend development experience</Brief>
-          <Brief>Proficient in Typescript, ES6, React with hooks</Brief>
-          <Brief>
-            Proactive, responsible and passionate self-learning team player
-          </Brief>
+          {data.briefs.map((brief, idx) => (
+            <Brief key={idx}>{brief}</Brief>
+          ))}
         </BriefsWrap>
         <SocailsWrap>
-          <Socail>
-            <Image
-              src="/images/skills/github.png"
-              width="40"
-              height="40"
-              alt="github"
-            />
-            <a
-              href="https://github.com/Grace951"
-              target="_blank"
-              rel="noreferrer"
-            >
-              https://github.com/Grace951
-            </a>
-          </Socail>
-          <Socail>
-            <Image
-              src="/images/skills/linkedin.png"
-              width="40"
-              height="40"
-              alt="Linkedin"
-            />
-            <a
-              href="https://www.linkedin.com/in/grace-yeh-b802b012a/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              https://www.linkedin.com/in/grace-yeh-b802b012a/
-            </a>
-          </Socail>
+          {data.socails.map((brief, idx) => (
+            <Socail key={idx}>
+              <Image
+                src={brief.img}
+                width={brief.imgWidth}
+                height={brief.imgHeight}
+                alt={brief.text}
+              />
+              <a href={brief.href} target="_blank" rel="noreferrer">
+                {brief.href}
+              </a>
+            </Socail>
+          ))}
         </SocailsWrap>
       </Block>
       <TopBlock>
         <SubBlock>
-          <Title> Experiences</Title>
+          <Title> {data.experiences?.title}</Title>
           <BoxWraps>
-            <InnerBox>
-              <InnerText> Senior Frontend Developer </InnerText>
-              <InnerDesc>Appier Inc.</InnerDesc>
-              <InnerNote> 2021 - 2022 </InnerNote>
-            </InnerBox>
-            <InnerBox>
-              <InnerText>Senior Frontend Developer</InnerText>
-              <InnerDesc>Delta Electronics, Inc.</InnerDesc>
-              <InnerNote> 2017 - 2021 </InnerNote>
-            </InnerBox>
-            <InnerBox>
-              <InnerText>Frontend Developer </InnerText>
-              <InnerDesc>Tunyang Information Corp.</InnerDesc>
-              <InnerNote> 2015 - 2016 </InnerNote>
-            </InnerBox>
-            <InnerBox>
-              <InnerText> Software Engineer </InnerText>
-              <InnerNote>2011 - 2014</InnerNote>
-            </InnerBox>
-            <InnerBox>
-              <InnerText> Firmware Engineer </InnerText>
-              <InnerNote> 2006 - 2009</InnerNote>
-            </InnerBox>
+            {data.experiences?.timelines?.map((experience, idx) => (
+              <InnerBox key={idx}>
+                {experience.title && <InnerText>{experience.title}</InnerText>}
+                {experience.desc && <InnerDesc>{experience.desc}</InnerDesc>}
+                {experience.note && <InnerNote>{experience.note}</InnerNote>}
+              </InnerBox>
+            ))}
           </BoxWraps>
         </SubBlock>
         <SubBlock>
-          <Title>Frontend App</Title>
+          <Title>{data.frontendApp?.title}</Title>
           <BoxWraps>
-            <InnerBox>
-              <InnerText> React App - Hi-Tech Digital CCTV V2</InnerText>
-              <Button
-                href="https://react-redux-demo-chingching.herokuapp.com/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Visit
-              </Button>
-            </InnerBox>
-            <InnerBox>
-              <InnerText>React App - Personal Home Page </InnerText>
-              <Buttons>
-                <Button
-                  href="https://github.com/Grace951/hopeshelter2022"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Source
-                </Button>
-                <Button
-                  href="https://github.com/Grace951/hopeshelter2022"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Visit
-                </Button>
-              </Buttons>
-            </InnerBox>
-            <InnerBox>
-              <InnerText> Angular App - Hi-Tech Digital CCTV </InnerText>
-              <Buttons>
-                <Button
-                  href="https://github.com/Grace951/angular1-demo"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Source
-                </Button>
-                <Button
-                  href="http://www.hitechdigitalcctv.com.au/#/home"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Visit
-                </Button>
-              </Buttons>
-            </InnerBox>
+            {data.frontendApp?.items?.map((item, idx) => (
+              <InnerBox key={idx}>
+                <InnerText>{item.title}</InnerText>
+                <Buttons>
+                  {item.source && (
+                    <Button href={item.source} target="_blank" rel="noreferrer">
+                      Source
+                    </Button>
+                  )}
+                  {item.visit && (
+                    <Button href={item.visit} target="_blank" rel="noreferrer">
+                      Visit
+                    </Button>
+                  )}
+                </Buttons>
+              </InnerBox>
+            ))}
           </BoxWraps>
         </SubBlock>
         <SubBlock>
-          <Title>Exercises</Title>
+          <Title>{data.exercises?.title}</Title>
           <BoxWraps>
-            <InnerBox>
-              <InnerText> Sortable Searchable React Paging Table </InnerText>
-              <Buttons>
-                <Button
-                  href="https://github.com/Grace951/react-table"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Source
-                </Button>
-                <Button
-                  href="https://grace951.github.io/react-table/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Demo
-                </Button>
-              </Buttons>
-            </InnerBox>
-            <InnerBox>
-              <InnerText> React Image Carousel </InnerText>
-              <Buttons>
-                <Button
-                  href="https://github.com/Grace951/react-image-carousel"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Source
-                </Button>
-                <Button
-                  href="https://grace951.github.io/react-image-carousel/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Demo
-                </Button>
-              </Buttons>
-            </InnerBox>
-            <InnerBox>
-              <InnerText> Little Game - Mine Sweeper </InnerText>
-              <Buttons>
-                <Button
-                  href="https://grace951.github.io/react-minesweeper/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Source
-                </Button>
-                <Button
-                  href="https://github.com/Grace951/react-minesweeper"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Demo
-                </Button>
-              </Buttons>
-            </InnerBox>
+            {data.exercises?.items?.map((item, idx) => (
+              <InnerBox key={idx}>
+                <InnerText>{item.title}</InnerText>
+                <Buttons>
+                  {item.source && (
+                    <Button href={item.source} target="_blank" rel="noreferrer">
+                      Source
+                    </Button>
+                  )}
+                  {item.demo && (
+                    <Button href={item.demo} target="_blank" rel="noreferrer">
+                      Demo
+                    </Button>
+                  )}
+                </Buttons>
+              </InnerBox>
+            ))}
           </BoxWraps>
         </SubBlock>
       </TopBlock>
       <Block>
         <Title> Skills </Title>
-        <Box>
-          <SkillsTitle> Modern Javascript</SkillsTitle>
-          <SkillsWrap>
-            <Skill>
-              <Image
-                width="40"
-                height="40"
-                src="/images/skills/typescript.png"
-                alt="TypeScript"
-                title="TypeScript"
-              />
-            </Skill>
-            <Skill>
-              <Image
-                width="40"
-                height="40"
-                src="/images/skills/es6.png"
-                alt="ES6"
-                title="ES6"
-              />
-            </Skill>
-            <Skill>
-              <Image
-                width="40"
-                height="40"
-                src="/images/skills/reactjs.svg"
-                alt="React"
-                title="React"
-              />
-            </Skill>
-            <Skill>
-              <Image
-                width="40"
-                height="40"
-                src="/images/skills/redux.png"
-                alt="Redux"
-                title="Redux"
-              />
-            </Skill>
-            <Skill>
-              <Image
-                width="40"
-                height="40"
-                src="/images/skills/webpack.svg"
-                alt="Webpack"
-                title="Webpack"
-              />
-            </Skill>
-            <Skill>
-              <Image
-                width="40"
-                height="40"
-                src="/images/skills/styledComponent.png"
-                alt="styled-components"
-                title="styled-components"
-              />
-            </Skill>
-            <Skill>
-              <Image
-                width="142"
-                height="40"
-                src="/images/skills/node.png"
-                alt="NodeJs"
-                title="NodeJs"
-              />
-            </Skill>
-          </SkillsWrap>
-        </Box>
-        <Box>
-          <SkillsTitle>Front-end Development</SkillsTitle>
-          <SkillsWrap>
-            <Skill>
-              <Image
-                width="50"
-                height="50"
-                src="/images/skills/rwd.png"
-                alt="RWD"
-                title="RWD"
-              />
-            </Skill>
-            <Skill>
-              <Image
-                width="36"
-                height="50"
-                src="/images/skills/html5.png"
-                alt="HTML5"
-                title="HTML5"
-              />
-            </Skill>
-            <Skill>
-              <Image
-                width="36"
-                height="50"
-                src="/images/skills/css3.png"
-                alt="CSS3"
-                title="CSS3"
-              />
-            </Skill>
-            <Skill>
-              <Image
-                width="53"
-                height="40"
-                src="/images/skills/sass.png"
-                alt="SASS"
-                title="SASS"
-              />
-            </Skill>
-            <Skill>
-              <Image
-                width="40"
-                height="40"
-                src="/images/skills/bootstrap.png"
-                alt="BootStrap"
-                title="BootStrap"
-              />
-            </Skill>
-            <Skill>
-              <Image
-                width="50"
-                height="50"
-                alt="jQuery"
-                title="jQuery"
-                src="/images/skills/jquerylogo.png"
-              />
-            </Skill>
-          </SkillsWrap>
-        </Box>
-        <Box>
-          <SkillsTitle>General Skills</SkillsTitle>
-          <SkillsWrap>
-            <Skill>
-              <Image
-                width="90"
-                height="40"
-                src="/images/skills/git.png"
-                alt="Git"
-                title="Git"
-              />
-            </Skill>
-            <Skill>
-              <Image
-                width="156"
-                height="40"
-                src="/images/skills/docker.png"
-                alt="Docker"
-                title="Docker"
-              />
-            </Skill>
-            <Skill>
-              <Image
-                width="87"
-                height="40"
-                src="/images/skills/npm.png"
-                alt="NPM"
-                title="NPM"
-              />{' '}
-            </Skill>
-            <Skill>
-              <Image
-                width="40"
-                height="39"
-                src="/images/skills/photoshop.png"
-                alt="PhotoShop"
-                title="PhotoShop"
-              />
-            </Skill>
-            <Skill>
-              <Image
-                width="40"
-                height="39"
-                src="/images/skills/illustrator.png"
-                alt="Illustrator"
-                title="Illustrator"
-              />
-            </Skill>
-          </SkillsWrap>
-        </Box>
+        {data.skillTypes.map((item, idx) => (
+          <Box key={idx}>
+            <SkillsTitle> {item.title}</SkillsTitle>
+            <SkillsWrap>
+              {item?.skills?.map((skill, i) => (
+                <Skill key={i}>
+                  <Image
+                    width={skill.width}
+                    height={skill.height}
+                    src={skill.img}
+                    alt={skill.text}
+                    title={skill.text}
+                  />
+                </Skill>
+              ))}
+            </SkillsWrap>
+          </Box>
+        ))}
       </Block>
     </Container>
   );
