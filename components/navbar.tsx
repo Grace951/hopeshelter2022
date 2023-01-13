@@ -1,14 +1,23 @@
+import { useCallback } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import { Ubuntu } from '@next/font/google';
 import { breakpoint } from '../themes/index';
+import Menu from './menu';
 
 const ubuntu = Ubuntu({
   weight: ['300', '400', '500'],
   style: ['normal', 'italic'],
   subsets: ['latin'],
 });
+
+const MenuWrap = styled.div`
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 20px;
+`;
 
 const Navbar = styled.header`
   width: 100%;
@@ -91,45 +100,10 @@ const HeaderLinks = styled.ul`
   align-items: flex-end;
   #portfolioLink {
     width: auto;
-    padding-top: ${(props) => props.theme.layout.spacing(2)};
     position: relative;
     &:hover div {
       display: block;
     }
-  }
-`;
-
-const HeaderSubLinks = styled.div`
-  display: none;
-  border-radius: 5px;
-  white-space: nowrap;
-  box-shadow: 0px 0px 5px rgb(0 0 0 / 50%);
-  font-size: ${(props) => props.theme.font.size.base};
-  font-style: normal;
-  position: absolute;
-  left: 100%;
-  top: 20px;
-  background-color: #383838;
-  color: #aaa;
-  @media all and (max-width: ${breakpoint.mobile}px) {
-    font-weight: normal;
-    top: 30px;
-    left: 0;
-  }
-`;
-
-const HeaderSubLinkDiv = styled.div`
-  padding: ${(props) => props.theme.layout.spacing(1.4, 3)};
-  border-bottom: 1px solid #000;
-  &:hover {
-    color: ${(props) => props.theme.colors.logoGreen};
-  }
-  cursor: pointer;
-  &:last-child {
-    border-bottom: none;
-  }
-  @media all and (max-width: ${breakpoint.mobile}px) {
-    padding: ${(props) => props.theme.layout.spacing(1.2, 2)};
   }
 `;
 
@@ -138,36 +112,49 @@ const HeaderLink = ({ href, id = '', children }) => (
     {href ? <Link href={href}>{children}</Link> : children}
   </HeaderLinkLi>
 );
-const HeaderSubLink = ({ href, children }) => {
+
+const NavComp = () => {
   const router = useRouter();
-  const go = (e) => {
-    e.preventDefault();
-    router.push(href);
-  };
+  const go = useCallback(
+    (e, data) => {
+      e.preventDefault();
+      router.push(data.link);
+    },
+    [router]
+  );
 
-  return <HeaderSubLinkDiv onClick={go}>{children}</HeaderSubLinkDiv>;
+  const items = [
+    {
+      text: 'Frontend App',
+      link: '/portfolio/f2e',
+    },
+    {
+      text: 'Graphic Design',
+      link: '/portfolio/graphic',
+    },
+    {
+      text: 'Editorial',
+      link: '/portfolio/editoral',
+    },
+  ];
+
+  return (
+    <Navbar>
+      <Container className={ubuntu.className}>
+        <Logo href="/"></Logo>
+        <HeaderLinks>
+          <HeaderLink href="/">Home</HeaderLink>
+          <HeaderLink href="/aboutme">About Me</HeaderLink>
+          <HeaderLink id="portfolioLink" href="">
+            Portfolio
+            <MenuWrap>
+              <Menu items={items} ItemCallback={go}></Menu>
+            </MenuWrap>
+          </HeaderLink>
+        </HeaderLinks>
+      </Container>
+    </Navbar>
+  );
 };
-
-const NavComp = () => (
-  <Navbar>
-    <Container className={ubuntu.className}>
-      <Logo href="/"></Logo>
-      <HeaderLinks>
-        <HeaderLink href="/">Home</HeaderLink>
-        <HeaderLink href="/aboutme">About Me</HeaderLink>
-        <HeaderLink id="portfolioLink" href="">
-          Portfolio
-          <HeaderSubLinks>
-            <HeaderSubLink href="/portfolio/f2e">Frontend App</HeaderSubLink>
-            <HeaderSubLink href="/portfolio/graphic">
-              Graphic Design
-            </HeaderSubLink>
-            <HeaderSubLink href="/portfolio/editoral">Editorial</HeaderSubLink>
-          </HeaderSubLinks>
-        </HeaderLink>
-      </HeaderLinks>
-    </Container>
-  </Navbar>
-);
 
 export default NavComp;

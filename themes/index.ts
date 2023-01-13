@@ -40,10 +40,11 @@ export const light: DefaultTheme = {
   font,
   colors: {
     primary: '#111',
-    secondary: '#0070f3',
+    secondary: '#7fbf34',
     logoGreen: '#7fbf34',
     logoBrown: '#9f5a04',
     darkGray: '#646464',
+    light: '#fff',
     primaryLink: {
       main: '#000',
       hover: '#111',
@@ -55,7 +56,8 @@ export const light: DefaultTheme = {
   },
   bgColors: {
     primary: '#fff',
-    secondary: '#2e2e2e',
+    dark: '#2e2e2e',
+    light: '#efefef',
   },
 };
 
@@ -65,19 +67,24 @@ export const dark: DefaultTheme = {
   font,
   colors: {
     primary: '#111',
-    secondary: '#0070f3',
+    secondary: '#7fbf34',
+    logoGreen: '#7fbf34',
+    logoBrown: '#9f5a04',
+    darkGray: '#646464',
+    light: '#fff',
     primaryLink: {
       main: '#000',
       hover: '#111',
     },
     secondaryLink: {
-      main: '#fff',
+      main: '#8c8c8c',
       hover: '#6c9',
     },
   },
   bgColors: {
     primary: '#fff',
-    secondary: '#2e2e2e',
+    dark: '#2e2e2e',
+    light: '#efefef',
   },
 };
 

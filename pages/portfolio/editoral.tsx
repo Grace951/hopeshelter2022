@@ -138,7 +138,7 @@ Page.getLayout = function getLayout(page: ReactElement) {
     <>
       <Head>
         <title>Hope Shelter - Amateur Editoral</title>
-        <meta name="description" content="Grace Yeh's personal web site" />
+        <meta name="description" content="Amateur editoral works" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
