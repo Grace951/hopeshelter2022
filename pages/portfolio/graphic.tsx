@@ -59,7 +59,7 @@ const Img = styled.div`
   width: 100%;
   flex: 1;
   background: url(${(props) => props.url}) no-repeat center;
-  background-size: cover;
+  background-size: contain;
 `;
 
 const ImgTitle = styled.div`
@@ -80,18 +80,18 @@ const Page: NextPageWithLayout = () => {
 
   const items = Object.keys(GRAPHY_DESIGN_TYPE).map((item) => ({
     text: item,
-    type: item,
+    key: item,
   }));
 
   const filter = (e, data) => {
     e.preventDefault();
-    setType(data.type);
+    setType(data.key);
   };
 
   return (
     <Container>
       <Left>
-        <Menu items={items} ItemCallback={filter} />
+        <Menu items={items} ItemCallback={filter} activeKey={type} />
       </Left>
       <Right>
         <Title>休閒時的平面設計作品</Title>

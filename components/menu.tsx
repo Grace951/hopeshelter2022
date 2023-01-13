@@ -11,13 +11,13 @@ const Container = styled.div`
   font-size: ${(props) => props.theme.font.size.base};
   font-style: normal;
   background-color: #383838;
-  color: #aaa;
 `;
 
 const Item = styled.div`
   padding: ${(props) => props.theme.layout.spacing(1.4, 3)};
   text-transform: capitalize;
   border-bottom: 1px solid #000;
+  color: ${(props) => (props.active ? props.theme.colors.logoGreen : '#aaa')};
   &:hover {
     color: ${(props) => props.theme.colors.logoGreen};
   }
@@ -30,23 +30,26 @@ const Item = styled.div`
   }
 `;
 
-const Menu = ({ items, ItemComp = null, ItemCallback }) => (
-  <Container>
-    {items?.map((item, idx) => {
-      const callback = (e) => {
-        ItemCallback(e, item);
-      };
-      return ItemComp ? (
-        <ItemComp key={idx} data={item}>
-          {item.text}
-        </ItemComp>
-      ) : (
-        <Item key={idx} onClick={callback}>
-          {item.text}
-        </Item>
-      );
-    })}
-  </Container>
-);
+const Menu = ({ items, ItemComp = null, ItemCallback, activeKey = '' }) => {
+  console.log('activeKey', activeKey);
+  return (
+    <Container>
+      {items?.map((item, idx) => {
+        const callback = (e) => {
+          ItemCallback(e, item);
+        };
+        return ItemComp ? (
+          <ItemComp key={idx} data={item}>
+            {item.text}
+          </ItemComp>
+        ) : (
+          <Item key={idx} onClick={callback} active={activeKey === item.key}>
+            {item.text}
+          </Item>
+        );
+      })}
+    </Container>
+  );
+};
 
 export default Menu;
