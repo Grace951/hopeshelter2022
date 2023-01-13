@@ -12,7 +12,7 @@ import { preLoadImg } from '../tools';
 
 let prevImgRatios = [];
 const getImgRatios = () => {
-  const urls = data.map((item) => item.fullsrc);
+  const urls = data.map((item) => item.images?.[0] || item.fullsrc);
   const promises = urls.map((url) => {
     return preLoadImg(url);
   });
@@ -178,7 +178,7 @@ const Page: NextPageWithLayout = () => {
                 <img
                   width="100%"
                   id={`home_img_${i}`}
-                  src={item.fullsrc}
+                  src={item.images?.[0] || item.fullsrc}
                   alt={item.note}
                 />
               }
