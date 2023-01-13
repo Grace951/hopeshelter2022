@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import MenuComp from "./menu"
+import MenuComp from './menu';
 
 const Menu = styled(MenuComp)`
-    position: absolute;
-    left: 0;
-    top: 36px;
+  position: absolute;
+  left: 0;
+  top: 36px;
 `;
 
 const Container = styled.div`
@@ -18,6 +18,7 @@ const Container = styled.div`
   text-transform: capitalize;
   cursor: pointer;
   position: relative;
+  user-select: none;
   &:after {
     content: '';
     width: 0;
@@ -28,35 +29,29 @@ const Container = styled.div`
     position: absolute;
     right: 10px;
     top: 14px;
-    transform: scaleY(${(props) => props.showMenu === "true" ? -1 : 1});
+    transform: scaleY(${(props) => (props.showMenu === 'true' ? -1 : 1)});
   }
 `;
 
+const Select = ({ items, className, callback, activeKey }) => {
+  const [showMenu, setShowMenu] = useState(false);
+  const onClick = (e) => {
+    e.preventDefault();
+    setShowMenu(!showMenu);
+  };
 
-const Select = ({
-    items,
-    className,
-    callback,
-    activeKey
-}) => {
-    const [showMenu, setShowMenu] = useState(false);
-    const onClick = (e) => {
-        e.preventDefault();
-        setShowMenu(!showMenu);
-    };
-
-    return (
-        <Container className={className} onClick={onClick} showMenu={String(showMenu)}>
-            {activeKey}
-            {
-                showMenu && <Menu
-                    items={items}
-                    ItemCallback={callback}
-                    activeKey={activeKey}
-                />
-            }
-        </Container>
-    );
+  return (
+    <Container
+      className={className}
+      onClick={onClick}
+      showMenu={String(showMenu)}
+    >
+      {activeKey}
+      {showMenu && (
+        <Menu items={items} ItemCallback={callback} activeKey={activeKey} />
+      )}
+    </Container>
+  );
 };
 
 export default Select;

@@ -116,7 +116,10 @@ const Menu = styled(MenuComp)`
   position: absolute;
   left: 100%;
   top: 20px;
-
+  @media all and (max-width: ${breakpoint.mobile}px) {
+    top: 30px;
+    left: 0;
+  }
   ${HeaderLi}:hover & {
     display: block;
   }

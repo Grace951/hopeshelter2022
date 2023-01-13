@@ -6,10 +6,15 @@ import styled, { css } from 'styled-components';
 import Layout from '../../components/layout';
 import type { NextPageWithLayout } from '../_app';
 import data from '../../data/works.json';
+import { breakpoint } from '../../themes/index';
 
 const Container = styled.div`
+  padding: ${(props) => props.theme.layout.spacing(0, 2)};
   display: flex;
   line-height: 1.8;
+  @media all and (max-width: ${breakpoint.tablet}px) {
+    display: block;
+  }
 `;
 
 const Info = styled.div`
@@ -17,6 +22,9 @@ const Info = styled.div`
   width: 40%;
   display: flex;
   flex-direction: column;
+  @media all and (max-width: ${breakpoint.tablet}px) {
+    width: 100%;
+  }
 `;
 
 const Title = styled.div`
@@ -45,6 +53,9 @@ const Back = styled.div`
 
 const Relative = styled.div`
   padding: ${(props) => props.theme.layout.spacing(3, 0)};
+  @media all and (max-width: ${breakpoint.tablet}px) {
+    display: none;
+  }
 `;
 
 const RelativeImgs = styled.div`
@@ -81,6 +92,9 @@ const Picture = styled.div`
   flex: 1;
   img {
     width: 100%;
+  }
+  @media all and (max-width: ${breakpoint.tablet}px) {
+    padding: ${(props) => props.theme.layout.spacing(0)};
   }
 `;
 
