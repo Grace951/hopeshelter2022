@@ -6,7 +6,6 @@ import Layout from '../components/layout';
 import { breakpoint } from '../themes/index';
 import data from '../data/abouts.json';
 import type { NextPageWithLayout } from './_app';
-import { isTemplateMiddle } from 'typescript';
 
 const Container = styled.div`
   line-height: 1.6;

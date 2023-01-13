@@ -1,5 +1,5 @@
 import type { ReactElement } from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 import debounce from 'lodash/debounce';
@@ -8,7 +8,18 @@ import Layout from '../components/layout';
 import type { NextPageWithLayout } from './_app';
 import data from '../data/recentWorks.json';
 import { breakpoint, BreakpointKey } from '../themes/index';
+import { preLoadImg } from '../tools';
 
+let prevImgRatios = [];
+const getImgRatios = () => {
+  const urls = data.map((item) => item.fullsrc);
+  const promises = urls.map((url) => {
+    return preLoadImg(url);
+  });
+  return Promise.all(promises).then((imgs) =>
+    imgs.map((img) => img.height / img.width)
+  );
+};
 const titleHeight = 64;
 const Waterfall = styled.div`
   display: grid;
@@ -107,7 +118,7 @@ const Title = styled.div`
 `;
 
 const Page: NextPageWithLayout = () => {
-  const [imgRatios, setImgRatios] = useState<number[]>(data.map(() => 0));
+  const [imgRatios, setImgRatios] = useState<number[]>(prevImgRatios);
   const [dimesion, setDimesion] = useState<BreakpointKey>('desktop');
 
   // console.log(dimesion);
@@ -141,12 +152,13 @@ const Page: NextPageWithLayout = () => {
   }, [dimesion]);
 
   useEffect(() => {
-    const newImgRatios = [];
-    for (let i = 0; i < imgRatios.length; i++) {
-      const img = document.getElementById(`home_img_${i}`) as HTMLImageElement;
-      newImgRatios.push(img.height / img.width);
+    if (prevImgRatios.length === data.length) {
+      return;
     }
-    setImgRatios(newImgRatios);
+    getImgRatios().then((newImgRatios: number[]) => {
+      prevImgRatios = [...newImgRatios];
+      setImgRatios(prevImgRatios);
+    });
   }, []);
 
   return (
