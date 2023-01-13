@@ -26,8 +26,9 @@ const opensans = Ubuntu({
 
 const Main = styled.main`
   width: 100%;
-  padding: ${(props) => props.theme.layout.spacing(2, 0)};
   max-width: ${(props) => props.theme.layout.content.maxWidth};
+  padding: ${(props) => props.theme.layout.spacing(2, 0)};
+  font-size: ${(props) => props.theme.font.size.base};
   flex: 1;
   margin: 0 auto;
 `;

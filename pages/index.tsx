@@ -2,6 +2,7 @@ import type { ReactElement } from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
 import Layout from '../components/layout';
+import PageTitle from '../components/pageTitle';
 import PinterestGrid from '../components/pinterestGrid';
 import type { NextPageWithLayout } from './_app';
 import data from '../data/recentWorks.json';
@@ -12,14 +13,6 @@ const Container = styled.div`
   padding: ${(props) => props.theme.layout.spacing(0.5, 2, 1.5, 2)};
 `;
 
-const Title = styled.div`
-  width: 100%;
-  padding: ${(props) => props.theme.layout.spacing(3.4)};
-  color: #000;
-  font-size: ${(props) => props.theme.font.size.xlarge};
-  text-align: center;
-`;
-
 const Page: NextPageWithLayout = () => {
   const images = data.map((item) => ({
     url: item.images?.[0] || item.fullsrc,
@@ -28,7 +21,7 @@ const Page: NextPageWithLayout = () => {
   }));
   return (
     <Container>
-      <Title>休閒時的塗鴉</Title>
+      <PageTitle>休閒時的塗鴉</PageTitle>
       <PinterestGrid data={images} />
     </Container>
   );

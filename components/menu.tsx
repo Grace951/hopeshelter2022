@@ -1,7 +1,4 @@
-import Link from 'next/link';
-import { useRouter } from 'next/router';
 import styled from 'styled-components';
-import { Ubuntu } from '@next/font/google';
 import { breakpoint } from '../themes/index';
 
 const Container = styled.div`
@@ -10,7 +7,7 @@ const Container = styled.div`
   box-shadow: 0px 0px 5px rgb(0 0 0 / 50%);
   font-size: ${(props) => props.theme.font.size.base};
   font-style: normal;
-  background-color: #383838;
+  background-color: ${(props) => props.theme.colors.mostGray};
 `;
 
 const Item = styled.div`
@@ -25,15 +22,20 @@ const Item = styled.div`
   &:last-child {
     border-bottom: none;
   }
-  @media all and (max-width: ${breakpoint.mobile}px) {
-    padding: ${(props) => props.theme.layout.spacing(1.2, 2)};
+  @media all and (max-width: ${breakpoint.tablet}px) {
+    padding: ${(props) => props.theme.layout.spacing(1.2, 2, 1, 2)};
   }
 `;
 
-const Menu = ({ items, ItemComp = null, ItemCallback, activeKey = '' }) => {
-  console.log('activeKey', activeKey);
+const Menu = ({
+  items,
+  className,
+  ItemComp = null,
+  ItemCallback,
+  activeKey = '',
+}) => {
   return (
-    <Container>
+    <Container className={className}>
       {items?.map((item, idx) => {
         const callback = (e) => {
           ItemCallback(e, item);

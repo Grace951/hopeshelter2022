@@ -4,30 +4,50 @@ import Head from 'next/head';
 import Link from 'next/link';
 import styled from 'styled-components';
 import Layout from '../../components/layout';
-import Menu from '../../components/menu';
+import MenuComp from '../../components/menu';
+import SelectComp from '../../components/select';
+import PageTitle from '../../components/pageTitle';
+import { breakpoint } from '../../themes/index';
 import data from '../../data/graphicDesign.json';
 import { GrapgicDesignType } from '../../typings';
 import { GRAPHY_DESIGN_TYPE } from '../../constants';
 import type { NextPageWithLayout } from '../_app';
 
-const Container = styled.div`
+const Menu = styled(MenuComp)`
+  display: block;
+  @media all and (max-width: ${breakpoint.mobile}px) {
+    display: none;
+  }
+`;
+
+const Select = styled(SelectComp)`
+  display: none;
+  @media all and (max-width: ${breakpoint.mobile}px) {
+    display: block;
+  }
+`;
+
+const Box = styled.div`
   width: 100%;
   margin: 0 auto;
   padding: ${(props) => props.theme.layout.spacing(0.5, 2, 1.5, 2)};
   display: flex;
-`;
-
-const Title = styled.div`
-  width: 100%;
-  padding: ${(props) => props.theme.layout.spacing(3.4)};
-  font-size: ${(props) => props.theme.font.size.xlarge};
-  text-align: center;
+  @media all and (max-width: ${breakpoint.tablet}px) {
+    padding: ${(props) => props.theme.layout.spacing(0.5, 1, 1.5, 1)};
+  }
+  @media all and (max-width: ${breakpoint.mobile}px) {
+    max-width: 320px;
+    display: block;
+  }
 `;
 
 const Left = styled.div`
-  width: 300px;
-  padding: ${(props) => props.theme.layout.spacing(12, 1, 1)};
+  width: 200px;
+  padding: ${(props) => props.theme.layout.spacing(1)};
   color: #000;
+  @media all and (max-width: ${breakpoint.tablet}px) {
+    width: 140px;
+  }
 `;
 
 const Right = styled.div`
@@ -38,12 +58,13 @@ const Right = styled.div`
 const Grid = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
 `;
 
 const Item = styled(Link)`
-  width: 32%;
-  height: 280px;
-  margin: ${(props) => props.theme.layout.spacing(0, 0.3, 1)};
+  width: 240px;
+  height: 380px;
+  margin: ${(props) => props.theme.layout.spacing(0, 0.4, 1)};
   display: flex;
   flex-direction: column;
   color: ${(props) => props.theme.colors.primary};
@@ -63,13 +84,20 @@ const Img = styled.div`
 `;
 
 const ImgTitle = styled.div`
+  font-size: ${(props) => props.theme.font.size.base};
   padding: ${(props) => props.theme.layout.spacing(1.4, 1)};
+  border-bottom: 1px solid #eee;
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 `;
 
 const Page: NextPageWithLayout = () => {
   const [type, setType] = useState<GrapgicDesignType>(
     GRAPHY_DESIGN_TYPE.poster
   );
+
   const images = data
     .filter((item) => item.category === type)
     .map((item) => ({
@@ -89,24 +117,27 @@ const Page: NextPageWithLayout = () => {
   };
 
   return (
-    <Container>
-      <Left>
-        <Menu items={items} ItemCallback={filter} activeKey={type} />
-      </Left>
-      <Right>
-        <Title>休閒時的平面設計作品</Title>
-        <Grid>
-          {images.map((item, idx) => {
-            return (
-              <Item key={idx} href={`/portfolio/${item.index}`}>
-                <ImgTitle>{item?.title || ''}</ImgTitle>
-                <Img url={item.url} />
-              </Item>
-            );
-          })}
-        </Grid>
-      </Right>
-    </Container>
+    <>
+      <PageTitle>休閒時的平面設計作品</PageTitle>
+      <Box>
+        <Left>
+          <Select items={items} callback={filter} activeKey={type} />
+          <Menu items={items} ItemCallback={filter} activeKey={type} />
+        </Left>
+        <Right>
+          <Grid>
+            {images.map((item, idx) => {
+              return (
+                <Item key={idx} href={`/portfolio/${item.index}`}>
+                  <ImgTitle>{item?.title || ''}</ImgTitle>
+                  <Img url={item.url} />
+                </Item>
+              );
+            })}
+          </Grid>
+        </Right>
+      </Box>
+    </>
   );
 };
 

@@ -5,7 +5,7 @@ const Footer = styled.footer`
   font-size: ${(props) => props.theme.font.size.base};
   padding: ${(props) => props.theme.layout.spacing(2)};
   color: #707070;
-  background: ${(props) => props.theme.bgColors.secondary};
+  background: ${(props) => props.theme.bgColors.dark};
 `;
 
 const FooterComp = () => (

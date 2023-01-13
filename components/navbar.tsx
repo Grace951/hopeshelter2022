@@ -1,23 +1,16 @@
 import { useCallback } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Ubuntu } from '@next/font/google';
 import { breakpoint } from '../themes/index';
-import Menu from './menu';
+import MenuComp from './menu';
 
 const ubuntu = Ubuntu({
   weight: ['300', '400', '500'],
   style: ['normal', 'italic'],
   subsets: ['latin'],
 });
-
-const MenuWrap = styled.div`
-  display: none;
-  position: absolute;
-  left: 100%;
-  top: 20px;
-`;
 
 const Navbar = styled.header`
   width: 100%;
@@ -60,22 +53,36 @@ const Logo = styled(Link)`
   }
 `;
 
-const HeaderLinkLi = styled.li`
+const HeaderLiStyles = css`
   padding: ${(props) => props.theme.layout.spacing(3, 2)};
   font-weight: 300;
   font-style: italic;
   font-size: ${(props) => props.theme.font.size.large};
-  a:link {
-    color: #333333;
+  cursor: pointer;
+  color: ${(props) =>
+    props.active === 'true'
+      ? props.theme.colors.logoGreen
+      : props.theme.colors.primary};
+  &:link {
+    color: ${(props) =>
+      props.active === 'true'
+        ? props.theme.colors.logoGreen
+        : props.theme.colors.primary};
   }
-  a:visited {
-    color: #333333;
+  &:visited {
+    color: ${(props) =>
+      props.active === 'true'
+        ? props.theme.colors.logoGreen
+        : props.theme.colors.primary};
   }
-  a:hover {
+  &:hover {
     color: ${(props) => props.theme.colors.logoGreen};
   }
-  a:active {
-    color: #333333;
+  &:active {
+    color: ${(props) =>
+      props.active === 'true'
+        ? props.theme.colors.logoGreen
+        : props.theme.colors.primary};
   }
   @media all and (max-width: ${breakpoint.tablet}px) {
     height: 100%;
@@ -94,24 +101,32 @@ const HeaderLinkLi = styled.li`
   }
 `;
 
+const HeaderLinkLi = styled(Link)`
+  ${HeaderLiStyles}
+`;
+
+const HeaderLi = styled.div`
+  ${HeaderLiStyles}
+  width: auto;
+  position: relative;
+`;
+
+const Menu = styled(MenuComp)`
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 20px;
+
+  ${HeaderLi}:hover & {
+    display: block;
+  }
+`;
+
 const HeaderLinks = styled.ul`
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
-  #portfolioLink {
-    width: auto;
-    position: relative;
-    &:hover div {
-      display: block;
-    }
-  }
 `;
-
-const HeaderLink = ({ href, id = '', children }) => (
-  <HeaderLinkLi id={id}>
-    {href ? <Link href={href}>{children}</Link> : children}
-  </HeaderLinkLi>
-);
 
 const NavComp = () => {
   const router = useRouter();
@@ -122,19 +137,22 @@ const NavComp = () => {
     },
     [router]
   );
-
+  const route = router.route;
   const items = [
     {
       text: 'Frontend App',
       link: '/portfolio/f2e',
+      key: '/portfolio/f2e',
     },
     {
       text: 'Graphic Design',
       link: '/portfolio/graphic',
+      key: '/portfolio/graphic',
     },
     {
       text: 'Editorial',
       link: '/portfolio/editoral',
+      key: '/portfolio/editoral',
     },
   ];
 
@@ -143,14 +161,22 @@ const NavComp = () => {
       <Container className={ubuntu.className}>
         <Logo href="/"></Logo>
         <HeaderLinks>
-          <HeaderLink href="/">Home</HeaderLink>
-          <HeaderLink href="/aboutme">About Me</HeaderLink>
-          <HeaderLink id="portfolioLink" href="">
+          <HeaderLinkLi href="/" active={route === '/' ? 'true' : ''}>
+            Home
+          </HeaderLinkLi>
+          <HeaderLinkLi
+            href="/aboutme"
+            active={route === '/aboutme' ? 'true' : ''}
+          >
+            About Me
+          </HeaderLinkLi>
+          <HeaderLi
+            id="portfolioLink"
+            active={route.indexOf('/portfolio/') !== -1 ? 'true' : ''}
+          >
             Portfolio
-            <MenuWrap>
-              <Menu items={items} ItemCallback={go}></Menu>
-            </MenuWrap>
-          </HeaderLink>
+            <Menu items={items} ItemCallback={go} activeKey={route}></Menu>
+          </HeaderLi>
         </HeaderLinks>
       </Container>
     </Navbar>

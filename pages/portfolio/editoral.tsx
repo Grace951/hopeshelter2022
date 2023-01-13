@@ -2,6 +2,7 @@ import type { ReactElement } from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
 import Layout from '../../components/layout';
+import PageTitle from '../../components/pageTitle';
 import { tablet } from '../../themes/index';
 import type { NextPageWithLayout } from '../_app';
 
@@ -9,16 +10,7 @@ const Container = styled.div`
   line-height: 1.8;
 `;
 
-const Title = styled.div`
-  width: 100%;
-  padding: ${(props) => props.theme.layout.spacing(3.4)};
-  color: #000;
-  font-size: ${(props) => props.theme.font.size.xlarge};
-  text-align: center;
-`;
-
 const Books = styled.div`
-  padding: ${(props) => props.theme.layout.spacing(2)};
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -78,7 +70,7 @@ const Picture = styled.a`
 const Page: NextPageWithLayout = () => {
   return (
     <Container>
-      <Title>休閒時的排版作品</Title>
+      <PageTitle>休閒時的排版作品</PageTitle>
       <Books>
         <Book>
           <BookTitle>業餘作品集</BookTitle>

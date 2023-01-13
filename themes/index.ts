@@ -44,6 +44,7 @@ export const light: DefaultTheme = {
     logoGreen: '#7fbf34',
     logoBrown: '#9f5a04',
     darkGray: '#646464',
+    mostGray: '#383838',
     light: '#fff',
     primaryLink: {
       main: '#000',
