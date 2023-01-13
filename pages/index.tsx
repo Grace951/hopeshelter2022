@@ -24,6 +24,7 @@ const Page: NextPageWithLayout = () => {
   const images = data.map((item) => ({
     url: item.images?.[0] || item.fullsrc,
     text: item.note,
+    index: item.index,
   }));
   return (
     <Container>
