@@ -12,13 +12,13 @@ const Container = styled.div`
 `;
 
 const Block = styled.div`
-  padding: ${(props) => props.theme.layout.spacing(2, 4)};
-  margin: ${(props) => props.theme.layout.spacing(4)};
+  padding: ${({ theme }) => theme.layout.spacing(2, 4)};
+  margin: ${({ theme }) => theme.layout.spacing(4)};
   border: 1px solid #ddd;
   border-radius: 5px;
   @media all and (max-width: ${breakpoint.laptop}px) {
-    padding: ${(props) => props.theme.layout.spacing(2)};
-    margin: ${(props) => props.theme.layout.spacing(2)};
+    padding: ${({ theme }) => theme.layout.spacing(2)};
+    margin: ${({ theme }) => theme.layout.spacing(2)};
   }
 `;
 
@@ -27,16 +27,16 @@ const Buttons = styled.div`
 `;
 
 const TopBlock = styled.div`
-  padding: ${(props) => props.theme.layout.spacing(2, 4)};
-  margin: ${(props) => props.theme.layout.spacing(4)};
+  padding: ${({ theme }) => theme.layout.spacing(2, 4)};
+  margin: ${({ theme }) => theme.layout.spacing(4)};
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   border: 1px solid #ddd;
   border-radius: 5px;
   @media all and (max-width: ${breakpoint.laptop}px) {
-    padding: ${(props) => props.theme.layout.spacing(2)};
-    margin: ${(props) => props.theme.layout.spacing(2)};
+    padding: ${({ theme }) => theme.layout.spacing(2)};
+    margin: ${({ theme }) => theme.layout.spacing(2)};
   }
 `;
 
@@ -50,32 +50,32 @@ const SubBlock = styled.div`
 `;
 
 const Box = styled.div`
-  padding: ${(props) => props.theme.layout.spacing(1, 0)};
+  padding: ${({ theme }) => theme.layout.spacing(1, 0)};
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   @media all and (max-width: ${breakpoint.tablet}px) {
-    padding: ${(props) => props.theme.layout.spacing(1)};
+    padding: ${({ theme }) => theme.layout.spacing(1)};
   }
 `;
 
 const BoxWraps = styled.div`
-  padding: ${(props) => props.theme.layout.spacing(1.8, 2.4)};
+  padding: ${({ theme }) => theme.layout.spacing(1.8, 2.4)};
   background-color: #f4f4f4;
   border-radius: 5px;
   flex: 1;
   @media all and (max-width: ${breakpoint.laptop}px) {
-    padding: ${(props) => props.theme.layout.spacing(1.8, 1.4)};
+    padding: ${({ theme }) => theme.layout.spacing(1.8, 1.4)};
   }
 `;
 
 const Title = styled.div`
-  font-size: ${(props) => props.theme.font.size.xlarge};
+  font-size: ${({ theme }) => theme.font.size.xlarge};
 `;
 
 const Brief = styled.div`
-  padding: ${(props) => props.theme.layout.spacing(0.4, 0, 0.4, 1.8)};
-  font-size: ${(props) => props.theme.font.size.base};
+  padding: ${({ theme }) => theme.layout.spacing(0.4, 0, 0.4, 1.8)};
+  font-size: ${({ theme }) => theme.font.size.base};
   display: flex;
   align-items: center;
   position: relative;
@@ -95,7 +95,7 @@ const Brief = styled.div`
 `;
 
 const SocailsWrap = styled.div`
-  padding: ${(props) => props.theme.layout.spacing(0, 2.4, 2)};
+  padding: ${({ theme }) => theme.layout.spacing(0, 2.4, 2)};
   background-color: #f4f4f4;
   border-radius: 5px;
   display: flex;
@@ -103,37 +103,37 @@ const SocailsWrap = styled.div`
 `;
 
 const Socail = styled.div`
-  margin: ${(props) => props.theme.layout.spacing(0, 3, 1, 0)};
+  margin: ${({ theme }) => theme.layout.spacing(0, 3, 1, 0)};
   display: flex;
   align-items: center;
   img {
-    margin: ${(props) => props.theme.layout.spacing(0, 1, 0, 0)};
+    margin: ${({ theme }) => theme.layout.spacing(0, 1, 0, 0)};
   }
   a {
     word-break: break-all;
-    font-size: ${(props) => props.theme.font.size.base};
+    font-size: ${({ theme }) => theme.font.size.base};
   }
 `;
 
 const BriefsWrap = styled.div`
-  padding: ${(props) => props.theme.layout.spacing(1.8, 2.4)};
+  padding: ${({ theme }) => theme.layout.spacing(1.8, 2.4)};
   background-color: #f4f4f4;
   border-radius: 5px;
 `;
 
 const InnerBox = styled.div`
-  padding: ${(props) => props.theme.layout.spacing(1)};
-  font-size: ${(props) => props.theme.font.size.base};
+  padding: ${({ theme }) => theme.layout.spacing(1)};
+  font-size: ${({ theme }) => theme.font.size.base};
 `;
 
 const InnerNote = styled.div`
-  font-size: ${(props) => props.theme.font.size.small};
+  font-size: ${({ theme }) => theme.font.size.small};
   font-weight: 300;
   color: #888;
 `;
 
 const InnerText = styled.div`
-  font-size: ${(props) => props.theme.font.size.base};
+  font-size: ${({ theme }) => theme.font.size.base};
   color: black;
   position: relative;
   &:before {
@@ -149,29 +149,29 @@ const InnerText = styled.div`
 `;
 
 const InnerDesc = styled.div`
-  font-size: ${(props) => props.theme.font.size.small};
+  font-size: ${({ theme }) => theme.font.size.small};
 `;
 
 const SkillsTitle = styled.div`
   width: 100%;
-  font-size: ${(props) => props.theme.font.size.large};
+  font-size: ${({ theme }) => theme.font.size.large};
 `;
 
 const Skill = styled.div`
   min-width: 60px;
-  padding: ${(props) => props.theme.layout.spacing(0.5, 1)};
+  padding: ${({ theme }) => theme.layout.spacing(0.5, 1)};
   color: #888;
   font-weight: 300;
   display: flex;
   align-items: center;
   @media all and (max-width: ${breakpoint.tablet}px) {
-    padding: ${(props) => props.theme.layout.spacing(0.5)};
+    padding: ${({ theme }) => theme.layout.spacing(0.5)};
   }
 `;
 
 const SkillsWrap = styled.div`
   width: 100%;
-  padding: ${(props) => props.theme.layout.spacing(1.8)};
+  padding: ${({ theme }) => theme.layout.spacing(1.8)};
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -182,9 +182,9 @@ const SkillsWrap = styled.div`
 const Button = styled.a`
   width: 6rem;
   height: 2rem;
-  margin: ${(props) => props.theme.layout.spacing(0, 0.4, 0, 0)};
+  margin: ${({ theme }) => theme.layout.spacing(0, 0.4, 0, 0)};
   border-radius: 3px;
-  background-color: ${(props) => props.theme.colors.logoGreen};
+  background-color: ${({ theme }) => theme.colors.logoGreen};
   color: white;
   align-self: flex-end;
   display: flex;

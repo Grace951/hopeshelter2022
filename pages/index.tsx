@@ -10,7 +10,7 @@ import data from '../data/recentWorks.json';
 const Container = styled.div`
   width: 100%;
   margin: 0 auto;
-  padding: ${(props) => props.theme.layout.spacing(0.5, 2, 1.5, 2)};
+  padding: ${({ theme }) => theme.layout.spacing(0.5, 2, 1.5, 2)};
 `;
 
 const Page: NextPageWithLayout = () => {

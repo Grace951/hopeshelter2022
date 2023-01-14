@@ -18,7 +18,7 @@ const Books = styled.div`
 
 const Book = styled.div`
   width: 49%;
-  padding: ${(props) => props.theme.layout.spacing(3)};
+  padding: ${({ theme }) => theme.layout.spacing(3)};
   background-color: #efefef;
   display: flex;
   flex-direction: column;
@@ -29,18 +29,18 @@ const Book = styled.div`
 `;
 
 const BookTitle = styled.div`
-  padding: ${(props) => props.theme.layout.spacing(0, 1, 1, 0)};
-  font-size: ${(props) => props.theme.font.size.large};
-  color: ${(props) => props.theme.colors.logoBrown};
+  padding: ${({ theme }) => theme.layout.spacing(0, 1, 1, 0)};
+  font-size: ${({ theme }) => theme.font.size.large};
+  color: ${({ theme }) => theme.colors.logoBrown};
   align-self: flex-start;
 `;
 
 const BookDesc = styled.div`
   width: 100%;
   min-height: 120px;
-  margin: ${(props) => props.theme.layout.spacing(0, 0, 3)};
-  font-size: ${(props) => props.theme.font.size.base};
-  color: ${(props) => props.theme.colors.darkGray};
+  margin: ${({ theme }) => theme.layout.spacing(0, 0, 3)};
+  font-size: ${({ theme }) => theme.font.size.base};
+  color: ${({ theme }) => theme.colors.darkGray};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -50,7 +50,7 @@ const Go = styled.a`
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 100%;
-  background-color: ${(props) => props.theme.colors.logoGreen};
+  background-color: ${({ theme }) => theme.colors.logoGreen};
   color: white;
   align-self: flex-end;
   display: flex;

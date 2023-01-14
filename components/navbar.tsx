@@ -30,7 +30,7 @@ const Navbar = styled.header`
 `;
 
 const Container = styled.div`
-  max-width: ${(props) => props.theme.layout.content.maxWidth};
+  max-width: ${({ theme }) => theme.layout.content.maxWidth};
   height: 100%;
   margin: 0 auto;
   display: flex;
@@ -53,40 +53,32 @@ const Logo = styled(Link)`
   }
 `;
 
-const HeaderLiStyles = css`
-  padding: ${(props) => props.theme.layout.spacing(3, 2)};
+const HeaderLiStyles = css<{ $active: boolean }>`
+  padding: ${({ theme }) => theme.layout.spacing(3, 2)};
   font-weight: 300;
   font-style: italic;
-  font-size: ${(props) => props.theme.font.size.large};
+  font-size: ${({ theme }) => theme.font.size.large};
   cursor: pointer;
-  color: ${(props) =>
-    props.active === 'true'
-      ? props.theme.colors.logoGreen
-      : props.theme.colors.primary};
+  color: ${({ theme, $active }) =>
+    $active ? theme.colors.logoGreen : theme.colors.primary};
   &:link {
-    color: ${(props) =>
-      props.active === 'true'
-        ? props.theme.colors.logoGreen
-        : props.theme.colors.primary};
+    color: ${({ theme, $active }) =>
+      $active ? theme.colors.logoGreen : theme.colors.primary};
   }
   &:visited {
-    color: ${(props) =>
-      props.active === 'true'
-        ? props.theme.colors.logoGreen
-        : props.theme.colors.primary};
+    color: ${({ theme, $active }) =>
+      $active ? theme.colors.logoGreen : theme.colors.primary};
   }
   &:hover {
-    color: ${(props) => props.theme.colors.logoGreen};
+    color: ${({ theme }) => theme.colors.logoGreen};
   }
   &:active {
-    color: ${(props) =>
-      props.active === 'true'
-        ? props.theme.colors.logoGreen
-        : props.theme.colors.primary};
+    color: ${({ $active, theme }) =>
+      $active ? theme.colors.logoGreen : theme.colors.primary};
   }
   @media all and (max-width: ${breakpoint.tablet}px) {
     height: 100%;
-    padding: ${(props) => props.theme.layout.spacing(0, 1)};
+    padding: ${({ theme }) => theme.layout.spacing(0, 1)};
     display: flex;
     align-items: center;
   }
@@ -94,7 +86,7 @@ const HeaderLiStyles = css`
     height: 100%;
     padding-top: 0;
     padding-bottom: 0;
-    font-size: ${(props) => props.theme.font.size.base};
+    font-size: ${({ theme }) => theme.font.size.base};
     font-style: normal;
     display: flex;
     align-items: center;
@@ -164,18 +156,15 @@ const NavComp = () => {
       <Container className={ubuntu.className}>
         <Logo href="/"></Logo>
         <HeaderLinks>
-          <HeaderLinkLi href="/" active={route === '/' ? 'true' : ''}>
+          <HeaderLinkLi href="/" $active={route === '/'}>
             Home
           </HeaderLinkLi>
-          <HeaderLinkLi
-            href="/aboutme"
-            active={route === '/aboutme' ? 'true' : ''}
-          >
+          <HeaderLinkLi href="/aboutme" $active={route === '/aboutme'}>
             About Me
           </HeaderLinkLi>
           <HeaderLi
             id="portfolioLink"
-            active={route.indexOf('/portfolio/') !== -1 ? 'true' : ''}
+            $active={route.indexOf('/portfolio/') !== -1}
           >
             Portfolio
             <Menu items={items} ItemCallback={go} activeKey={route}></Menu>

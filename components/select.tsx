@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { FC, MouseEvent, useState } from 'react';
 import styled from 'styled-components';
 import MenuComp from './menu';
+import { MenuItem } from '../typings';
 
 const Menu = styled(MenuComp)`
   position: absolute;
@@ -8,13 +9,13 @@ const Menu = styled(MenuComp)`
   top: 36px;
 `;
 
-const Container = styled.div`
+const Container = styled.div<{ showMenu: boolean }>`
   width: 108px;
   height: 36px;
-  padding: ${(props) => props.theme.layout.spacing(1, 2)};
-  background-color: ${(props) => props.theme.colors.mostGray};
+  padding: ${({ theme }) => theme.layout.spacing(1, 2)};
+  background-color: ${({ theme }) => theme.colors.mostGray};
   border-radius: 5px;
-  color: ${(props) => props.theme.colors.logoGreen};
+  color: ${({ theme }) => theme.colors.logoGreen};
   text-transform: capitalize;
   cursor: pointer;
   position: relative;
@@ -29,23 +30,31 @@ const Container = styled.div`
     position: absolute;
     right: 10px;
     top: 14px;
-    transform: scaleY(${(props) => (props.showMenu === 'true' ? -1 : 1)});
+    transform: scaleY(${({ showMenu }) => (showMenu ? -1 : 1)});
   }
 `;
 
-const Select = ({ items, className, callback, activeKey }) => {
+interface Props {
+  items: MenuItem[];
+  className?: string;
+  callback?: (e: MouseEvent<HTMLElement>, item: MenuItem) => void;
+  activeKey: string;
+}
+
+const Select: FC<Props> = ({
+  items = [],
+  className = '',
+  callback = (e: MouseEvent<HTMLElement>, item) => {},
+  activeKey,
+}) => {
   const [showMenu, setShowMenu] = useState(false);
-  const onClick = (e) => {
+  const onClick = (e: MouseEvent<HTMLElement>) => {
     e.preventDefault();
     setShowMenu(!showMenu);
   };
 
   return (
-    <Container
-      className={className}
-      onClick={onClick}
-      showMenu={String(showMenu)}
-    >
+    <Container className={className} onClick={onClick} showMenu={showMenu}>
       {activeKey}
       {showMenu && (
         <Menu items={items} ItemCallback={callback} activeKey={activeKey} />

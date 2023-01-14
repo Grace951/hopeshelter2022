@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import type { FC, ElementType, PropsWithChildren } from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 import debounce from 'lodash/debounce';
@@ -10,8 +11,8 @@ const getImgRatios = (urls: string[]) => {
   const promises = urls.map((url) => {
     return preLoadImg(url);
   });
-  return Promise.all(promises).then((imgs) =>
-    imgs.map((img) => img.height / img.width)
+  return Promise.all(promises).then((imgs: HTMLImageElement[]) =>
+    imgs.map((img: HTMLImageElement) => img.height / img.width)
   );
 };
 const Waterfall = styled.div`
@@ -45,7 +46,7 @@ const Waterfall = styled.div`
 const Container = styled.div`
   width: 100%;
   margin: 0 auto;
-  padding: ${(props) => props.theme.layout.spacing(0.5, 2, 1.5, 2)};
+  padding: ${({ theme }) => theme.layout.spacing(0.5, 2, 1.5, 2)};
 
   @media all and (max-width: ${breakpoint.desktop}px) {
     max-width: ${breakpoint.laptop}px;
@@ -61,26 +62,21 @@ const Container = styled.div`
   }
 `;
 
-const WaterfallItem = styled(Link)`
+const WaterfallItem = styled(Link)<{ imgratio: number }>`
   width: 100%;
-  grid-row: auto / span
-    ${(props) => parseInt(parseFloat(props.imgratio) * 26) + 14};
+  grid-row: auto / span ${({ imgratio }) => Math.round(imgratio * 26) + 14};
 
   @media all and (max-width: ${breakpoint.desktop}px) {
-    grid-row: auto / span
-      ${(props) => parseInt(parseFloat(props.imgratio) * 27) + 12};
+    grid-row: auto / span ${({ imgratio }) => Math.round(imgratio * 27) + 12};
   }
   @media all and (max-width: ${breakpoint.laptop}px) {
-    grid-row: auto / span
-      ${(props) => parseInt(parseFloat(props.imgratio) * 25) + 12};
+    grid-row: auto / span ${({ imgratio }) => Math.round(imgratio * 25) + 12};
   }
   @media all and (max-width: ${breakpoint.tablet}px) {
-    grid-row: auto / span
-      ${(props) => parseInt(parseFloat(props.imgratio) * 22) + 16};
+    grid-row: auto / span ${({ imgratio }) => Math.round(imgratio * 22) + 16};
   }
   @media all and (max-width: ${breakpoint.mobile}px) {
-    grid-row: auto / span
-      ${(props) => parseInt(parseFloat(props.imgratio) * 28) + 14};
+    grid-row: auto / span ${({ imgratio }) => Math.round(imgratio * 28) + 14};
   }
 
   color: #ddd;
@@ -96,7 +92,7 @@ const WaterfallItem = styled(Link)`
 `;
 
 const Info = styled.div`
-  padding: ${(props) => props.theme.layout.spacing(1.4)};
+  padding: ${({ theme }) => theme.layout.spacing(1.4)};
   color: #434343;
   line-height: 1.5;
   display: flex;
@@ -107,7 +103,7 @@ const Info = styled.div`
 const Title = styled.div`
   height: 20px;
   color: #000000;
-  font-size: ${(props) => props.theme.font.size.base};
+  font-size: ${({ theme }) => theme.font.size.base};
   display: block;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -117,10 +113,11 @@ const Title = styled.div`
 const Text = styled.div`
   flex: 1;
   color: #434343;
-  font-size: ${(props) => props.theme.font.size.small};
+  font-size: ${({ theme }) => theme.font.size.small};
 `;
 
-const Grid = ({ data, InfoComp = null }) => {
+const Grid = (props) => {
+  const { data, InfoComp } = props;
   const [imgRatios, setImgRatios] = useState<number[]>(prevImgRatios);
   const [dimesion, setDimesion] = useState<BreakpointKey>('desktop');
   const urls = data.map((item) => item.url);
@@ -166,7 +163,7 @@ const Grid = ({ data, InfoComp = null }) => {
   return (
     <Container>
       <Waterfall>
-        {data.map((item, i) => {
+        {data.map((item, i: number) => {
           const imgRatio = imgRatios[i];
           return (
             <WaterfallItem

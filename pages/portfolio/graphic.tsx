@@ -1,4 +1,4 @@
-import type { ReactElement } from 'react';
+import type { ReactElement, MouseEvent } from 'react';
 import { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -9,7 +9,7 @@ import SelectComp from '../../components/select';
 import PageTitle from '../../components/pageTitle';
 import { breakpoint } from '../../themes/index';
 import data from '../../data/graphicDesign.json';
-import { GrapgicDesignType } from '../../typings';
+import { GrapgicDesignType, MenuItem } from '../../typings';
 import { GRAPHY_DESIGN_TYPE } from '../../constants';
 import type { NextPageWithLayout } from '../_app';
 
@@ -30,10 +30,10 @@ const Select = styled(SelectComp)`
 const Box = styled.div`
   width: 100%;
   margin: 0 auto;
-  padding: ${(props) => props.theme.layout.spacing(0.5, 2, 1.5, 2)};
+  padding: ${({ theme }) => theme.layout.spacing(0.5, 2, 1.5, 2)};
   display: flex;
   @media all and (max-width: ${breakpoint.tablet}px) {
-    padding: ${(props) => props.theme.layout.spacing(0.5, 1, 1.5, 1)};
+    padding: ${({ theme }) => theme.layout.spacing(0.5, 1, 1.5, 1)};
   }
   @media all and (max-width: ${breakpoint.mobile}px) {
     max-width: 320px;
@@ -43,7 +43,7 @@ const Box = styled.div`
 
 const Left = styled.div`
   width: 200px;
-  padding: ${(props) => props.theme.layout.spacing(1)};
+  padding: ${({ theme }) => theme.layout.spacing(1)};
   color: #000;
   @media all and (max-width: ${breakpoint.tablet}px) {
     width: 140px;
@@ -51,7 +51,7 @@ const Left = styled.div`
 `;
 
 const Right = styled.div`
-  padding: ${(props) => props.theme.layout.spacing(1)};
+  padding: ${({ theme }) => theme.layout.spacing(1)};
   flex: 1;
 `;
 
@@ -64,10 +64,10 @@ const Grid = styled.div`
 const Item = styled(Link)`
   width: 240px;
   height: 380px;
-  margin: ${(props) => props.theme.layout.spacing(0, 0.4, 1)};
+  margin: ${({ theme }) => theme.layout.spacing(0, 0.4, 1)};
   display: flex;
   flex-direction: column;
-  color: ${(props) => props.theme.colors.primary};
+  color: ${({ theme }) => theme.colors.primary};
   border: 1px solid #eee;
   border-radius: 2px;
   box-shadow: 1px 1px 5px rgb(0 0 0 / 20%);
@@ -76,16 +76,16 @@ const Item = styled(Link)`
   }
 `;
 
-const Img = styled.div`
+const Img = styled.div<{ url: string }>`
   width: 100%;
   flex: 1;
-  background: url(${(props) => props.url}) no-repeat center;
+  background: url(${({ url }) => url}) no-repeat center;
   background-size: contain;
 `;
 
 const ImgTitle = styled.div`
-  font-size: ${(props) => props.theme.font.size.base};
-  padding: ${(props) => props.theme.layout.spacing(1.4, 1)};
+  font-size: ${({ theme }) => theme.font.size.base};
+  padding: ${({ theme }) => theme.layout.spacing(1.4, 1)};
   border-bottom: 1px solid #eee;
   display: block;
   text-overflow: ellipsis;
@@ -106,12 +106,12 @@ const Page: NextPageWithLayout = () => {
       index: item.index,
     }));
 
-  const items = Object.keys(GRAPHY_DESIGN_TYPE).map((item) => ({
+  const items: MenuItem[] = Object.keys(GRAPHY_DESIGN_TYPE).map((item) => ({
     text: item,
     key: item,
   }));
 
-  const filter = (e, data) => {
+  const filter = (e: MouseEvent, data: MenuItem) => {
     e.preventDefault();
     setType(data.key);
   };
