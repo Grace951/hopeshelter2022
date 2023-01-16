@@ -52,11 +52,6 @@
     "title": "Frontend App",
     "items": [
       {
-        "title": "React App - Hi-Tech Digital CCTV V2",
-        "visit": "https://react-redux-demo-chingching.herokuapp.com/",
-        "source": ""
-      },
-      {
         "title": "React App - Personal Home Page",
         "visit": "https://github.com/Grace951/hopeshelter2022",
         "source": "https://github.com/Grace951/hopeshelter2022"
@@ -65,6 +60,11 @@
         "title": "Angular App - Hi-Tech Digital CCTV",
         "visit": "http://www.hitechdigitalcctv.com.au/#/home",
         "source": "https://github.com/Grace951/angular1-demo"
+      },
+      {
+        "title": "jQuery App - 經典名畫",
+        "visit": "http://paints.byethost5.com",
+        "source": "https://github.com/Grace951/paints"
       }
     ]
   },

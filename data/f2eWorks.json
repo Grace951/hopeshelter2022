@@ -134,7 +134,7 @@
     "techs": "Compass / RWD / SASS / HTML5 / CSS3 / jQuery",
     "brief": "此網站為六年前我用 jQuery 與 CSS 練習動畫的作品，收集了我認為經典的名畫，並詳細介紹畫派與畫家的風格與特色。RWD，在行動裝置與平板上亦有良好的視覺呈現。全站由個人負責製作，包含所有美術、切圖、前端JS...。",
     "webLink": {
-      "src": "http://paints.byethost4.com",
+      "src": "http://paints.byethost5.com",
       "img": "/images/web/paints/logo-c.png",
       "title": "經典名畫",
       "font": "ubuntu"
