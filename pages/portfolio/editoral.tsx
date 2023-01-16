@@ -6,10 +6,6 @@ import PageTitle from '../../components/pageTitle';
 import { tablet } from '../../themes/index';
 import type { NextPageWithLayout } from '../_app';
 
-const Container = styled.div`
-  line-height: 1.8;
-`;
-
 const Books = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -69,7 +65,7 @@ const Picture = styled.a`
 
 const Page: NextPageWithLayout = () => {
   return (
-    <Container>
+    <div>
       <PageTitle>休閒時的排版作品</PageTitle>
       <Books>
         <Book>
@@ -121,7 +117,7 @@ const Page: NextPageWithLayout = () => {
           </Picture>
         </Book>
       </Books>
-    </Container>
+    </div>
   );
 };
 

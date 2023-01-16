@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import type { FC, ElementType, PropsWithChildren } from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 import debounce from 'lodash/debounce';

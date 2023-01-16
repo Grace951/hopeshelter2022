@@ -105,6 +105,12 @@
           "text": "ES6"
         },
         {
+          "img": "/images/skills/next-logo.png",
+          "width": 117,
+          "height": 40,
+          "text": "NextJS"
+        },
+        {
           "img": "/images/skills/reactjs.svg",
           "width": 40,
           "height": 40,

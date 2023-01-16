@@ -1,7 +1,8 @@
 import { FC, MouseEvent, useState } from 'react';
 import styled from 'styled-components';
-import MenuComp from './menu';
 import { MenuItem } from '../typings';
+import Button from './button';
+import MenuComp from './menu';
 
 const Menu = styled(MenuComp)`
   position: absolute;
@@ -9,17 +10,14 @@ const Menu = styled(MenuComp)`
   top: 36px;
 `;
 
-const Container = styled.div<{ showMenu: boolean }>`
+const Container = styled(Button)<{ showMenu: boolean }>`
   width: 108px;
   height: 36px;
   padding: ${({ theme }) => theme.layout.spacing(1, 2)};
   background-color: ${({ theme }) => theme.colors.mostGray};
   border-radius: 5px;
   color: ${({ theme }) => theme.colors.logoGreen};
-  text-transform: capitalize;
-  cursor: pointer;
   position: relative;
-  user-select: none;
   &:after {
     content: '';
     width: 0;

@@ -1,28 +1,9 @@
-import { Ubuntu } from '@next/font/google';
 import styled from 'styled-components';
 
+import fontClasses from '../styles/fonts';
 import { mobileMin } from '../themes/index';
 import Navbar from './navbar';
 import Footer from './footer';
-
-const opensans = Ubuntu({
-  weight: ['300', '400', '500'],
-  subsets: ['latin'],
-  fallback: [
-    '微軟正黑體',
-    '-apple-system',
-    'BlinkMacSystemFont',
-    'Segoe UI',
-    'Roboto',
-    'Oxygen',
-    'Ubuntu',
-    'Cantarell',
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    'sans-serif',
-  ],
-});
 
 const Main = styled.main`
   width: 100%;
@@ -46,7 +27,7 @@ export default function Layout({ children }) {
   return (
     <Container>
       <Navbar />
-      <Main className={opensans.className}>{children}</Main>
+      <Main className={fontClasses.ubuntu.className}>{children}</Main>
       <Footer />
     </Container>
   );
