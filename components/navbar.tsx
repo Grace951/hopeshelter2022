@@ -2,15 +2,10 @@ import { useCallback } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styled, { css } from 'styled-components';
-import { Ubuntu } from '@next/font/google';
+import fontClasses from '../styles/fonts';
 import { breakpoint } from '../themes/index';
+import { MAX_Z_INDEX_VALUE } from '../styles/variables';
 import MenuComp from './menu';
-
-const ubuntu = Ubuntu({
-  weight: ['300', '400', '500'],
-  style: ['normal', 'italic'],
-  subsets: ['latin'],
-});
 
 const Navbar = styled.header`
   width: 100%;
@@ -19,6 +14,7 @@ const Navbar = styled.header`
   position: sticky;
   top: 0;
   background-color: #fff;
+  z-index: ${MAX_Z_INDEX_VALUE};
 
   @media all and (max-width: ${breakpoint.tablet}px) {
     height: 4rem;
@@ -56,7 +52,6 @@ const Logo = styled(Link)`
 const HeaderLiStyles = css<{ $active: boolean }>`
   padding: ${({ theme }) => theme.layout.spacing(3, 2)};
   font-weight: 300;
-  font-style: italic;
   font-size: ${({ theme }) => theme.font.size.large};
   cursor: pointer;
   color: ${({ theme, $active }) =>
@@ -153,7 +148,7 @@ const NavComp = () => {
 
   return (
     <Navbar>
-      <Container className={ubuntu.className}>
+      <Container className={fontClasses.ubuntu.className}>
         <Logo href="/"></Logo>
         <HeaderLinks>
           <HeaderLinkLi href="/" $active={route === '/'}>

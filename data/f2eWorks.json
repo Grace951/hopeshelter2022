@@ -51,7 +51,7 @@
     ]
   },
   {
-    "techs": "Typescript / React / NextJS / Styled-components / Webpack / Docker ",
+    "techs": "Typescript / React / NextJS / Styled-components / Webpack ",
     "brief": "這是我的個人網站， Pinterest-style 瀑布流 Layout 設計。",
     "sourceCode": "https://github.com/Grace951/hopeshelter2022",
     "webLink": {
@@ -84,10 +84,6 @@
       {
         "link": "",
         "img": "/images/web/au/html5css3badges.png"
-      },
-      {
-        "link": "https://www.docker.com/",
-        "img": "/images/skills/docker.png"
       }
     ]
   },
