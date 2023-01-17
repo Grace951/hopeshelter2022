@@ -1,13 +1,13 @@
 import type { FC } from 'react';
 import { useState, useEffect } from 'react';
+
 import styled from 'styled-components';
+
 import { preLoadImg } from '../tools';
 
 const Img = styled.img`
   transition: opacity 0.3s linear;
 `;
-
-const Item = styled.div<{ $active: boolean }>``;
 
 interface Props {
   src: string;

@@ -1,14 +1,18 @@
+import Link from 'next/link';
+
+import { useRouter } from 'next/router';
+
 import type { FC, MouseEvent } from 'react';
 import { useCallback, useState } from 'react';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
+
 import styled, { css } from 'styled-components';
-import fontClasses from '../styles/fonts';
-import { breakpoint } from '../themes/index';
-import { CloseButton } from '../components/buttons';
-import { MenuItem } from '../typings';
-import { MAX_Z_INDEX_VALUE } from '../styles/variables';
+
 import MenuComp from './menu';
+import { CloseButton } from '../components/buttons';
+import fontClasses from '../styles/fonts';
+import { MAX_Z_INDEX_VALUE } from '../styles/variables';
+import { breakpoint } from '../themes/index';
+import { MenuItem } from '../typings';
 
 const Navbar = styled.header`
   width: 100%;

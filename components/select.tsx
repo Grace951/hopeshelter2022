@@ -1,9 +1,11 @@
 import type { FC, MouseEvent } from 'react';
 import { useState } from 'react';
+
 import styled from 'styled-components';
-import { MenuItem } from '../typings';
+
 import { Button } from './buttons';
 import MenuComp from './menu';
+import { MenuItem } from '../typings';
 
 const Menu = styled(MenuComp)`
   position: absolute;
@@ -43,7 +45,7 @@ interface Props {
 const Select: FC<Props> = ({
   items = [],
   className = '',
-  callback = (e: MouseEvent<HTMLElement>, item) => {},
+  callback,
   activeKey,
 }) => {
   const [showMenu, setShowMenu] = useState(false);

@@ -1,8 +1,11 @@
-import type { ReactElement } from 'react';
 import Head from 'next/head';
+
+import type { ReactElement } from 'react';
+
 import styled from 'styled-components';
-import LoadImg from '../../components/loadImg';
+
 import Layout from '../../components/layout';
+import LoadImg from '../../components/loadImg';
 import PageTitle from '../../components/pageTitle';
 import { tablet } from '../../themes/index';
 import type { NextPageWithLayout } from '../_app';

@@ -1,10 +1,13 @@
-import type { ReactElement } from 'react';
 import Head from 'next/head';
+
+import type { ReactElement } from 'react';
+
 import styled from 'styled-components';
+
+import type { NextPageWithLayout } from './_app';
 import Layout from '../components/layout';
 import PageTitle from '../components/pageTitle';
 import PinterestGrid from '../components/pinterestGrid';
-import type { NextPageWithLayout } from './_app';
 import data from '../data/recentWorks.json';
 
 const Container = styled.div`

@@ -1,10 +1,12 @@
 import type { FC, MouseEvent } from 'react';
-import styled from 'styled-components';
 import { useState } from 'react';
-import { breakpoint } from '../themes/index';
-import fontClasses from '../styles/fonts';
+
+import styled from 'styled-components';
+
 import { Button } from './buttons';
 import LoadImg from './loadImg';
+import fontClasses from '../styles/fonts';
+import { breakpoint } from '../themes/index';
 
 const Container = styled.div`
   padding: ${({ theme }) => theme.layout.spacing(1, 2, 2)};

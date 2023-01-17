@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import { breakpoint } from '../themes/index';
 
 const Title = styled.div`

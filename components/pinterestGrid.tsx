@@ -1,12 +1,17 @@
-import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import styled from 'styled-components';
+
+import { useState, useEffect } from 'react';
+
 import debounce from 'lodash/debounce';
-import { breakpoint, BreakpointKey } from '../themes/index';
+import styled from 'styled-components';
+
 import LoadImg from '../components/loadImg';
+import { breakpoint, BreakpointKey } from '../themes/index';
 import { preLoadImg } from '../tools';
 
+// eslint-disable-next-line fp/no-let
 let prevImgRatios = [];
+
 const getImgRatios = (urls: string[]) => {
   const promises = urls.map((url) => {
     return preLoadImg(url);

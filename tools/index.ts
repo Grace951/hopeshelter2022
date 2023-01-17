@@ -5,12 +5,12 @@ export const preLoadImg = (url: string) => {
   }
   return new Promise((resolve, reject) => {
     const img = new Image();
-    let onload = function () {
+    const onload = function () {
       resolve(img);
     };
     img.onload = onload;
     img.onerror = function (e) {
-      console.log(url, e);
+      console.error(url, e);
       reject(e);
     };
     img.src = url;

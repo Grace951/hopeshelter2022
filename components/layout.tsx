@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
+import Footer from './footer';
+import Navbar from './navbar';
 import fontClasses from '../styles/fonts';
 import { mobileMin } from '../themes/index';
-import Navbar from './navbar';
-import Footer from './footer';
 
 const Main = styled.main`
   width: 100%;

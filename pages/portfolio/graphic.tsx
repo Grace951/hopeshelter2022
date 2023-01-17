@@ -1,16 +1,21 @@
-import type { ReactElement, MouseEvent } from 'react';
-import { useState } from 'react';
 import Head from 'next/head';
+
 import Link from 'next/link';
+
+import type { ReactElement, MouseEvent } from 'react';
+
+import { useState } from 'react';
+
 import styled from 'styled-components';
+
 import Layout from '../../components/layout';
 import MenuComp from '../../components/menu';
-import SelectComp from '../../components/select';
 import PageTitle from '../../components/pageTitle';
-import { breakpoint } from '../../themes/index';
-import data from '../../data/graphicDesign.json';
-import { GrapgicDesignType, MenuItem } from '../../typings';
+import SelectComp from '../../components/select';
 import { GRAPHY_DESIGN_TYPE } from '../../constants';
+import data from '../../data/graphicDesign.json';
+import { breakpoint } from '../../themes/index';
+import { GrapgicDesignType, MenuItem } from '../../typings';
 import type { NextPageWithLayout } from '../_app';
 
 const Menu = styled(MenuComp)`

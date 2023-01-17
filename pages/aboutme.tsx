@@ -1,11 +1,15 @@
-import type { ReactElement } from 'react';
 import Head from 'next/head';
+
 import Image from 'next/image';
+
+import type { ReactElement } from 'react';
+
 import styled from 'styled-components';
-import Layout from '../components/layout';
-import { breakpoint } from '../themes/index';
-import data from '../data/abouts.json';
+
 import type { NextPageWithLayout } from './_app';
+import Layout from '../components/layout';
+import data from '../data/abouts.json';
+import { breakpoint } from '../themes/index';
 
 const Container = styled.div`
   line-height: 1.6;

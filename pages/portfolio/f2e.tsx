@@ -1,6 +1,9 @@
-import type { ReactElement } from 'react';
 import Head from 'next/head';
+
+import type { ReactElement } from 'react';
+
 import styled from 'styled-components';
+
 import Layout from '../../components/layout';
 import PageTitle from '../../components/pageTitle';
 import SiteShelf from '../../components/siteShelf';
