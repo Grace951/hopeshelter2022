@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { breakpoint } from '../themes/index';
 import fontClasses from '../styles/fonts';
 import Button from './button';
+import LoadImg from './loadImg';
 
 const Container = styled.div`
   padding: ${({ theme }) => theme.layout.spacing(1, 2, 2)};
@@ -180,7 +181,7 @@ const SiteShlef: FC<Props> = ({
       <Brief>
         <WebLink>
           <WebLogo href={webLink.src} target="_blank" rel="noreferrer">
-            {webLink.img && <img src={webLink.img} />}
+            {webLink.img && <LoadImg src={webLink.img} />}
           </WebLogo>
           <WebTitle
             className={`${fontClasses[webLink.font].className}`}
@@ -222,7 +223,7 @@ const SiteShlef: FC<Props> = ({
                 target="_blank"
                 rel="noreferrer"
               >
-                <img src={item.img} />
+                <LoadImg src={item.img} />
               </TechLogo>
             ))}
           </TechLogos>

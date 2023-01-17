@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import styled, { css } from 'styled-components';
 import Layout from '../../components/layout';
+import LoadImg from '../../components/loadImg';
 import type { NextPageWithLayout } from '../_app';
 import data from '../../data/works.json';
 import { breakpoint } from '../../themes/index';
@@ -125,20 +126,16 @@ const Page: NextPageWithLayout = () => {
               <RelativeImgs>
                 {details.relative.img.map((img, i: number) => {
                   const relativeDetails = data[img.index];
+                  const alt =
+                    (relativeDetails?.title || '') +
+                    '\n' +
+                    (relativeDetails?.desc || '');
+                  const title =
+                    (relativeDetails?.title || '') +
+                    '\n' +
+                    (relativeDetails?.desc || '');
                   const ImgComp = (
-                    <img
-                      src={img.src}
-                      alt={
-                        (relativeDetails?.title || '') +
-                        '\n' +
-                        (relativeDetails?.desc || '')
-                      }
-                      title={
-                        (relativeDetails?.title || '') +
-                        '\n' +
-                        (relativeDetails?.desc || '')
-                      }
-                    />
+                    <LoadImg src={img.src} alt={alt} title={title} />
                   );
                   return (
                     !!img?.src &&
@@ -160,7 +157,10 @@ const Page: NextPageWithLayout = () => {
           )}
         </Info>
         <Picture>
-          <img src={details.img} alt={details.title + '\n' + details.desc} />
+          <LoadImg
+            src={details.img}
+            alt={details.title + '\n' + details.desc}
+          />
         </Picture>
       </Container>
     </>

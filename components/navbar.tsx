@@ -1,9 +1,11 @@
-import { useCallback } from 'react';
+import type { FC, MouseEvent } from 'react';
+import { useCallback, useRef } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styled, { css } from 'styled-components';
 import fontClasses from '../styles/fonts';
 import { breakpoint } from '../themes/index';
+import { MenuItem } from '../typings';
 import { MAX_Z_INDEX_VALUE } from '../styles/variables';
 import MenuComp from './menu';
 
@@ -37,9 +39,6 @@ const Logo = styled(Link)`
   height: 100%;
   background: url('/images/logo.png') no-repeat right center;
   background-size: contain;
-  img {
-    max-height: 100%;
-  }
   @media all and (max-width: ${breakpoint.tablet}px) {
     width: 10rem;
   }
@@ -118,30 +117,33 @@ const HeaderLinks = styled.ul`
   align-items: flex-end;
 `;
 
-const NavComp = () => {
+const NavComp: FC = () => {
   const router = useRouter();
   const go = useCallback(
-    (e, data) => {
+    (e: MouseEvent, data: MenuItem) => {
       e.preventDefault();
-      router.push(data.link);
+      e.stopPropagation();
+      e.nativeEvent.stopImmediatePropagation();
+      if (e.currentTarget instanceof HTMLElement) {
+        e.currentTarget.blur();
+      }
+
+      router.push(data.key);
     },
     [router]
   );
   const route = router.route;
-  const items = [
+  const items: MenuItem[] = [
     {
       text: 'Frontend App',
-      link: '/portfolio/f2e',
       key: '/portfolio/f2e',
     },
     {
       text: 'Graphic Design',
-      link: '/portfolio/graphic',
       key: '/portfolio/graphic',
     },
     {
       text: 'Editorial',
-      link: '/portfolio/editoral',
       key: '/portfolio/editoral',
     },
   ];
@@ -157,10 +159,7 @@ const NavComp = () => {
           <HeaderLinkLi href="/aboutme" $active={route === '/aboutme'}>
             About Me
           </HeaderLinkLi>
-          <HeaderLi
-            id="portfolioLink"
-            $active={route.indexOf('/portfolio/') !== -1}
-          >
+          <HeaderLi $active={route.indexOf('/portfolio/') !== -1}>
             Portfolio
             <Menu items={items} ItemCallback={go} activeKey={route}></Menu>
           </HeaderLi>

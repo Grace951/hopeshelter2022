@@ -3,6 +3,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import debounce from 'lodash/debounce';
 import { breakpoint, BreakpointKey } from '../themes/index';
+import LoadImg from '../components/loadImg';
 import { preLoadImg } from '../tools';
 
 let prevImgRatios = [];
@@ -163,7 +164,7 @@ const Grid = (props) => {
     <Container>
       <Waterfall>
         {data.map((item, i: number) => {
-          const imgRatio = imgRatios[i];
+          const imgRatio = imgRatios[i] || 1.6;
           return (
             <WaterfallItem
               key={i}
@@ -171,7 +172,7 @@ const Grid = (props) => {
               href={`/portfolio/${item.index}`}
               rel="noreferrer"
             >
-              {<img width="100%" src={item.url} alt={item.text} />}
+              {<LoadImg width="100%" src={item.url} alt={item.text} />}
               {InfoComp && <InfoComp data={item} />}
               {!InfoComp && (item.title || item.text) && (
                 <Info>

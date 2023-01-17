@@ -1,6 +1,7 @@
 import type { ReactElement } from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
+import LoadImg from '../../components/loadImg';
 import Layout from '../../components/layout';
 import PageTitle from '../../components/pageTitle';
 import { tablet } from '../../themes/index';
@@ -85,7 +86,7 @@ const Page: NextPageWithLayout = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <img
+            <LoadImg
               src="/images/portfolio/full/portfolio01.jpg"
               alt="作品集 - 這是我的書面作品集，簡單的自我介紹加上單純大方的作品編排。"
               title="作品集 - 這是我的書面作品集，簡單的自我介紹加上單純大方的作品編排。"
@@ -109,7 +110,7 @@ const Page: NextPageWithLayout = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <img
+            <LoadImg
               src="/images/book1/front.jpg"
               alt="公司產品型錄 - 這是一本產品型錄的排版練習，以高對比大標題吸引讀者的目光，並以留白使版面舒適大方。"
               title="公司產品型錄 - 這是一本產品型錄的排版練習，以高對比大標題吸引讀者的目光，並以留白使版面舒適大方。"
