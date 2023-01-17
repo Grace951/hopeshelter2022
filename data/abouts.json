@@ -52,6 +52,12 @@
     "title": "Frontend App",
     "items": [
       {
+        "title": "Ad Generating Template System @Appier"
+      },
+      {
+        "title": "Ad Configuration and Management Systems @Appier"
+      },
+      {
         "title": "React App - Personal Home Page",
         "visit": "https://hopeshelter2022.vercel.app/",
         "source": "https://github.com/Grace951/hopeshelter2022"

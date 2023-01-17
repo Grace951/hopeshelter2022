@@ -1,11 +1,9 @@
-import Link from 'next/link';
-
 import type { FC, MouseEvent } from 'react';
 import { useState } from 'react';
 
 import styled from 'styled-components';
 
-import { Button, GoButton } from './buttons';
+import { Button, GoButton, LinkButton } from './buttons';
 import LoadImg from './loadImg';
 import fontClasses from '../styles/fonts';
 import { breakpoint } from '../themes/index';
@@ -53,6 +51,9 @@ const WebLogo = styled.a`
   @media all and (max-width: ${breakpoint.tablet}px) {
     max-width: 120px;
   }
+  @media all and (max-width: ${breakpoint.mobile}px) {
+    max-width: 100px;
+  }
 `;
 
 const WebTitle = styled.a`
@@ -64,6 +65,12 @@ const WebTitle = styled.a`
   font-weight: 300;
   font-size: ${({ theme }) => theme.font.size.xlarge};
   line-height: 1;
+  @media all and (max-width: ${breakpoint.mobile}px) {
+    font-weight: bold;
+    font-size: ${({ theme }) => theme.font.size.large};
+    padding: ${({ theme }) => theme.layout.spacing(0)};
+    margin: ${({ theme }) => theme.layout.spacing(0, 1, 0, 0.4)};
+  }
 `;
 
 const Details = styled.div`
@@ -116,8 +123,25 @@ const ViewVideo = styled(Button)`
   text-align: center;
   font-size: ${({ theme }) => theme.font.size.base};
   line-height: 2.4;
-  border-radius: 18px;
+  border-radius: 20px;
   cursor: pointer;
+`;
+
+const SourceCode = styled(LinkButton)`
+  width: 160px;
+  padding: ${({ theme }) => theme.layout.spacing(0, 2)};
+  margin: ${({ theme }) => theme.layout.spacing(1, 0, 2)};
+  background-color: ${({ theme }) => theme.colors.logoGreen};
+  color: #fff;
+  text-align: center;
+  font-size: ${({ theme }) => theme.font.size.base};
+  line-height: 2.4;
+  border-radius: 20px;
+  cursor: pointer;
+`;
+
+const BriefDesc = styled.div`
+  margin: ${({ theme }) => theme.layout.spacing(1, 0)};
 `;
 
 const GoWrap = styled.div`
@@ -130,13 +154,9 @@ const GoWrap = styled.div`
   cursor: pointer;
 `;
 
-const SourceCode = styled.div`
-  word-break: break-all;
-`;
-
 interface Props {
   webLink: {
-    src: string;
+    src?: string;
     img?: string;
     title: string;
     font?: string;
@@ -146,7 +166,7 @@ interface Props {
     link: string;
     img: string;
   }[];
-  brief: string;
+  brief: string[];
   techs: string;
   sourceCode?: string;
   video?: string;
@@ -155,7 +175,7 @@ interface Props {
 const SiteShlef: FC<Props> = ({
   webLink,
   webTeches = [],
-  brief = '',
+  brief = [],
   techs = '',
   sourceCode = '',
   video = '',
@@ -185,22 +205,23 @@ const SiteShlef: FC<Props> = ({
           >
             {webLink.title}
           </WebTitle>
-          <GoWrap>
-            <GoButton href={webLink.src} target="_blank" rel="noreferrer">
-              Go
-            </GoButton>
-          </GoWrap>
+          {!!webLink.src && (
+            <GoWrap>
+              <GoButton href={webLink.src} target="_blank" rel="noreferrer">
+                Go
+              </GoButton>
+            </GoWrap>
+          )}
         </WebLink>
       </Brief>
       <Details>
         <Block>
-          {brief}
+          {brief.map((item: string, i: number) => (
+            <BriefDesc key={i}>{item}</BriefDesc>
+          ))}
           {sourceCode && (
-            <SourceCode>
-              Source code:{' '}
-              <Link target="_blank" href={sourceCode} rel="noreferrer">
-                {sourceCode}
-              </Link>
+            <SourceCode target="_blank" href={sourceCode} rel="noreferrer">
+              Source code
             </SourceCode>
           )}
           {video && (
