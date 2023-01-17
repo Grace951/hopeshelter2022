@@ -1,7 +1,8 @@
-import { FC, MouseEvent, useState } from 'react';
+import type { FC, MouseEvent } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import { MenuItem } from '../typings';
-import Button from './button';
+import { Button } from './buttons';
 import MenuComp from './menu';
 
 const Menu = styled(MenuComp)`

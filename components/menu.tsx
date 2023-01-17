@@ -16,7 +16,8 @@ const Item = styled.div<{ $active: boolean }>`
   padding: ${({ theme }) => theme.layout.spacing(1.4, 3)};
   text-transform: capitalize;
   border-bottom: 1px solid #000;
-  color: ${({ $active, theme }) => ($active ? theme.colors.logoGreen : '#aaa')};
+  color: ${({ $active, theme }) =>
+    $active ? theme.colors.logoGreen : theme.colors.lightGray};
   &:hover {
     color: ${({ theme }) => theme.colors.logoGreen};
   }

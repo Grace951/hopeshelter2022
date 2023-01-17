@@ -20,6 +20,7 @@ const Book = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  line-height: 1.6;
   ${tablet(`{
     width: 100%;
   }`)}

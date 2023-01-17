@@ -164,7 +164,7 @@ const Grid = (props) => {
     <Container>
       <Waterfall>
         {data.map((item, i: number) => {
-          const imgRatio = imgRatios[i] || 1.6;
+          const imgRatio = imgRatios[i] || 1.4;
           return (
             <WaterfallItem
               key={i}
@@ -172,7 +172,14 @@ const Grid = (props) => {
               href={`/portfolio/${item.index}`}
               rel="noreferrer"
             >
-              {<LoadImg width="100%" src={item.url} alt={item.text} />}
+              {
+                <LoadImg
+                  width="100%"
+                  height={imgRatios[i] ? '' : '100%'}
+                  src={item.url}
+                  alt={item.text}
+                />
+              }
               {InfoComp && <InfoComp data={item} />}
               {!InfoComp && (item.title || item.text) && (
                 <Info>

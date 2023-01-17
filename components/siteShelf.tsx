@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useState } from 'react';
 import { breakpoint } from '../themes/index';
 import fontClasses from '../styles/fonts';
-import Button from './button';
+import { Button } from './buttons';
 import LoadImg from './loadImg';
 
 const Container = styled.div`

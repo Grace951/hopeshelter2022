@@ -1,10 +1,11 @@
 import type { FC, MouseEvent } from 'react';
-import { useCallback, useRef } from 'react';
+import { useCallback, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styled, { css } from 'styled-components';
 import fontClasses from '../styles/fonts';
 import { breakpoint } from '../themes/index';
+import { CloseButton } from '../components/buttons';
 import { MenuItem } from '../typings';
 import { MAX_Z_INDEX_VALUE } from '../styles/variables';
 import MenuComp from './menu';
@@ -97,17 +98,32 @@ const HeaderLi = styled.div`
   position: relative;
 `;
 
-const Menu = styled(MenuComp)`
-  display: none;
+const MenuWrap = styled.div`
+  width: 100%;
+  padding: ${({ theme }) => theme.layout.spacing(2, 0, 1)};
+  background-color: ${({ theme }) => theme.colors.mostGray};
   position: absolute;
   left: 100%;
   top: 20px;
   @media all and (max-width: ${breakpoint.mobile}px) {
-    top: 30px;
+    position: fixed;
     left: 0;
+    top: 30px;
   }
-  ${HeaderLi}:hover & {
-    display: block;
+`;
+
+const Close = styled(CloseButton)`
+  display: none;
+  @media all and (max-width: ${breakpoint.mobile}px) {
+    display: flex;
+  }
+`;
+
+const Menu = styled(MenuComp)`
+  @media all and (max-width: ${breakpoint.mobile}px) {
+    width: 100%;
+    border-radius: 0;
+    box-shadow: none;
   }
 `;
 
@@ -119,19 +135,24 @@ const HeaderLinks = styled.ul`
 
 const NavComp: FC = () => {
   const router = useRouter();
+
+  const [isShowMenu, setIsShowMenu] = useState(false);
+  const showMenu = useCallback(() => {
+    setIsShowMenu(true);
+  }, []);
+
+  const hideMenu = useCallback(() => {
+    setIsShowMenu(false);
+  }, []);
+
   const go = useCallback(
     (e: MouseEvent, data: MenuItem) => {
-      e.preventDefault();
-      e.stopPropagation();
-      e.nativeEvent.stopImmediatePropagation();
-      if (e.currentTarget instanceof HTMLElement) {
-        e.currentTarget.blur();
-      }
-
+      setIsShowMenu(false);
       router.push(data.key);
     },
     [router]
   );
+
   const route = router.route;
   const items: MenuItem[] = [
     {
@@ -159,9 +180,18 @@ const NavComp: FC = () => {
           <HeaderLinkLi href="/aboutme" $active={route === '/aboutme'}>
             About Me
           </HeaderLinkLi>
-          <HeaderLi $active={route.indexOf('/portfolio/') !== -1}>
+          <HeaderLi
+            $active={route.indexOf('/portfolio/') !== -1}
+            onMouseEnter={showMenu}
+            onMouseLeave={hideMenu}
+          >
             Portfolio
-            <Menu items={items} ItemCallback={go} activeKey={route}></Menu>
+            {isShowMenu && (
+              <MenuWrap>
+                <Close onClick={hideMenu} />
+                <Menu items={items} ItemCallback={go} activeKey={route}></Menu>
+              </MenuWrap>
+            )}
           </HeaderLi>
         </HeaderLinks>
       </Container>

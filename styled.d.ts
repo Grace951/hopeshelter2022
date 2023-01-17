@@ -37,6 +37,7 @@ declare module 'styled-components' {
       logoGreen: string;
       logoBrown: string;
       mostGray: string;
+      lightGray: string;
       darkGray: string;
       light: string;
       primaryLink: {
