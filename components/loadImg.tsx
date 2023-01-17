@@ -1,7 +1,14 @@
 import type { FC } from 'react';
 import { useState, useEffect } from 'react';
 
+import styled from 'styled-components';
+
 import { preLoadImg } from '../tools';
+
+const Img = styled.img`
+  transition: opacity 0.1s linear;
+`;
+
 interface Props {
   src: string;
   className?: string;
@@ -25,7 +32,7 @@ const LoadImg: FC<Props> = (props) => {
     });
   }, [src]);
 
-  return <img {...props} style={{ opacity }} />;
+  return <Img {...props} style={{ opacity }} />;
 };
 
 export default LoadImg;
