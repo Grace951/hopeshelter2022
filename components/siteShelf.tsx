@@ -1,9 +1,11 @@
+import Link from 'next/link';
+
 import type { FC, MouseEvent } from 'react';
 import { useState } from 'react';
 
 import styled from 'styled-components';
 
-import { Button } from './buttons';
+import { Button, GoButton } from './buttons';
 import LoadImg from './loadImg';
 import fontClasses from '../styles/fonts';
 import { breakpoint } from '../themes/index';
@@ -122,18 +124,10 @@ const GoWrap = styled.div`
   width: 3.5rem;
   height: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   cursor: pointer;
-`;
-
-const Go = styled.a`
-  width: 3.5rem;
-  height: 3.5rem;
-  border-radius: 100%;
-  background-color: ${({ theme }) => theme.colors.logoGreen};
-  color: white;
-  line-height: 3.5rem;
-  text-align: center;
 `;
 
 const SourceCode = styled.div`
@@ -192,9 +186,9 @@ const SiteShlef: FC<Props> = ({
             {webLink.title}
           </WebTitle>
           <GoWrap>
-            <Go href={webLink.src} target="_blank" rel="noreferrer">
+            <GoButton href={webLink.src} target="_blank" rel="noreferrer">
               Go
-            </Go>
+            </GoButton>
           </GoWrap>
         </WebLink>
       </Brief>
@@ -204,9 +198,9 @@ const SiteShlef: FC<Props> = ({
           {sourceCode && (
             <SourceCode>
               Source code:{' '}
-              <a target="_blank" href={sourceCode} rel="noreferrer">
+              <Link target="_blank" href={sourceCode} rel="noreferrer">
                 {sourceCode}
-              </a>
+              </Link>
             </SourceCode>
           )}
           {video && (

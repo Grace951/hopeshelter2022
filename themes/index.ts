@@ -3,9 +3,9 @@ import { DefaultTheme, ThemeLayout, Breakpoint, Font } from 'styled-components';
 export const breakpoint: Breakpoint = {
   bigDesktop: 1800,
   desktop: 1440,
-  laptop: 1200,
+  laptop: 1280,
   tablet: 800,
-  mobile: 540,
+  mobile: 640,
 };
 
 export type BreakpointKey = keyof Breakpoint;

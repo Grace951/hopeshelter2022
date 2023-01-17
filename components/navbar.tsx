@@ -103,13 +103,14 @@ const HeaderLi = styled.div`
 `;
 
 const MenuWrap = styled.div`
-  width: 100%;
-  padding: ${({ theme }) => theme.layout.spacing(2, 0, 1)};
   background-color: ${({ theme }) => theme.colors.mostGray};
+  border-radius: 5px;
   position: absolute;
   left: 100%;
   top: 20px;
   @media all and (max-width: ${breakpoint.mobile}px) {
+    width: 100%;
+    padding: ${({ theme }) => theme.layout.spacing(2, 0, 1)};
     position: fixed;
     left: 0;
     top: 30px;

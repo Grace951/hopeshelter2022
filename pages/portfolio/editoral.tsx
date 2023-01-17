@@ -4,6 +4,7 @@ import type { ReactElement } from 'react';
 
 import styled from 'styled-components';
 
+import { GoButton } from '../../components/buttons';
 import Layout from '../../components/layout';
 import LoadImg from '../../components/loadImg';
 import PageTitle from '../../components/pageTitle';
@@ -47,19 +48,6 @@ const BookDesc = styled.div`
   justify-content: space-between;
 `;
 
-const Go = styled.a`
-  width: 3.5rem;
-  height: 3.5rem;
-  border-radius: 100%;
-  background-color: ${({ theme }) => theme.colors.logoGreen};
-  color: white;
-  align-self: flex-end;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-`;
-
 const Picture = styled.a`
   display: flex;
   justify-content: center;
@@ -77,13 +65,13 @@ const Page: NextPageWithLayout = () => {
           <BookTitle>業餘作品集</BookTitle>
           <BookDesc>
             這是我的業餘作品集，簡單的自我介紹加上單純大方的作品編排。
-            <Go
+            <GoButton
               href="https://issuu.com/grace_yeh/docs/portfilio_issuu"
               target="_blank"
               rel="noreferrer"
             >
               Go
-            </Go>
+            </GoButton>
           </BookDesc>
           <Picture
             href="https://issuu.com/grace_yeh/docs/portfilio_issuu"
@@ -101,13 +89,13 @@ const Page: NextPageWithLayout = () => {
           <BookTitle>公司產品型錄</BookTitle>
           <BookDesc>
             這是一本產品型錄的排版練習，以高對比大標題吸引讀者的目光，並以留白使版面舒適大方。
-            <Go
+            <GoButton
               href="https://issuu.com/grace_yeh/docs/______?e=11793034/12474947"
               target="_blank"
               rel="noreferrer"
             >
               Go
-            </Go>
+            </GoButton>
           </BookDesc>
           <Picture
             href="https://issuu.com/grace_yeh/docs/______?e=11793034/12474947"

@@ -7,6 +7,7 @@ import type { ReactElement } from 'react';
 import styled from 'styled-components';
 
 import type { NextPageWithLayout } from './_app';
+import { LinkButton } from '../components/buttons';
 import Layout from '../components/layout';
 import data from '../data/abouts.json';
 import { breakpoint } from '../themes/index';
@@ -183,20 +184,6 @@ const SkillsWrap = styled.div`
   border-radius: 5px;
 `;
 
-const Button = styled.a`
-  width: 6rem;
-  height: 2rem;
-  margin: ${({ theme }) => theme.layout.spacing(0, 0.4, 0, 0)};
-  border-radius: 3px;
-  background-color: ${({ theme }) => theme.colors.logoGreen};
-  color: white;
-  align-self: flex-end;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-`;
-
 const Page: NextPageWithLayout = () => {
   return (
     <Container>
@@ -244,14 +231,22 @@ const Page: NextPageWithLayout = () => {
                 <InnerText>{item.title}</InnerText>
                 <Buttons>
                   {item.source && (
-                    <Button href={item.source} target="_blank" rel="noreferrer">
+                    <LinkButton
+                      href={item.source}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       Source
-                    </Button>
+                    </LinkButton>
                   )}
                   {item.visit && (
-                    <Button href={item.visit} target="_blank" rel="noreferrer">
+                    <LinkButton
+                      href={item.visit}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       Visit
-                    </Button>
+                    </LinkButton>
                   )}
                 </Buttons>
               </InnerBox>
@@ -266,14 +261,22 @@ const Page: NextPageWithLayout = () => {
                 <InnerText>{item.title}</InnerText>
                 <Buttons>
                   {item.source && (
-                    <Button href={item.source} target="_blank" rel="noreferrer">
+                    <LinkButton
+                      href={item.source}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       Source
-                    </Button>
+                    </LinkButton>
                   )}
                   {item.demo && (
-                    <Button href={item.demo} target="_blank" rel="noreferrer">
+                    <LinkButton
+                      href={item.demo}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       Demo
-                    </Button>
+                    </LinkButton>
                   )}
                 </Buttons>
               </InnerBox>

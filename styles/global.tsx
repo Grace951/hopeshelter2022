@@ -64,6 +64,10 @@ const GlobalStyle = createGlobalStyle`
   a{
     text-decoration: none;
   }
+  a, a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: ${({ theme }) => theme.colors.primary};
+  }
 
   #__next{
     width: 100%;

@@ -8,6 +8,28 @@ export const Button = styled.div`
   text-transform: capitalize;
 `;
 
+export const LinkButton = styled.a`
+  margin: ${({ theme }) => theme.layout.spacing(0, 0.4, 0, 0)};
+  padding: ${({ theme }) => theme.layout.spacing(0.3, 2)};
+  user-select: none;
+  cursor: pointer;
+  text-transform: capitalize;
+  color: ${({ theme }) => theme.colors.light};
+  border-radius: 3px;
+  background-color: ${({ theme }) => theme.colors.logoGreen};
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    color: ${({ theme }) => theme.colors.light};
+  }
+`;
+
 export const Close = styled(Button)`
   width: 40px;
   height: 40px;
@@ -30,3 +52,11 @@ export const CloseButton = (props) => (
     &times;
   </Close>
 );
+
+export const GoButton = styled(LinkButton)`
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 100%;
+  background-color: ${({ theme }) => theme.colors.logoGreen};
+  line-height: 3.5rem;
+`;
