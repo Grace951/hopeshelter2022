@@ -107,7 +107,12 @@ const Page: NextPageWithLayout = () => {
   const back = () => {
     router.back();
   };
-  const { wid = '0' } = router.query;
+  const { wid } = router.query;
+
+  if (!wid) {
+    return null;
+  }
+
   const id = parseInt(Array.isArray(wid) ? wid[0] : wid);
   const details = data[id];
   return (
