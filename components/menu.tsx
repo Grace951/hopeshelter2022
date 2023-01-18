@@ -11,7 +11,7 @@ const Container = styled.div`
   box-shadow: 0px 0px 5px rgb(0 0 0 / 50%);
   font-size: ${({ theme }) => theme.font.size.base};
   font-style: normal;
-  background-color: ${({ theme }) => theme.colors.mostGray};
+  background-color: ${({ theme }) => theme.colors.mostDark};
 `;
 
 const Item = styled.div<{ $active: boolean }>`
@@ -19,7 +19,7 @@ const Item = styled.div<{ $active: boolean }>`
   text-transform: capitalize;
   border-bottom: 1px solid #000;
   color: ${({ $active, theme }) =>
-    $active ? theme.colors.logoGreen : theme.colors.lightGray};
+    $active ? theme.colors.logoGreen : '#aaaaaa'};
   &:hover {
     color: ${({ theme }) => theme.colors.logoGreen};
   }

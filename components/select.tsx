@@ -17,7 +17,7 @@ const Container = styled(Button)<{ showMenu: boolean }>`
   width: 108px;
   height: 36px;
   padding: ${({ theme }) => theme.layout.spacing(1, 2)};
-  background-color: ${({ theme }) => theme.colors.mostGray};
+  background-color: ${({ theme }) => theme.colors.mostDark};
   border-radius: 5px;
   color: ${({ theme }) => theme.colors.logoGreen};
   position: relative;

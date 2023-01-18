@@ -19,14 +19,16 @@ const Container = styled.div`
 `;
 
 const WorkItemElement = styled(Link)`
+  background-color: white;
   img {
-    border-bottom: 1px solid #d1d1d1;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.light};
   }
 `;
 
 const Info = styled.div<{ height: number }>`
   max-height: ${({ height }) => height};
   padding: ${({ theme }) => theme.layout.spacing(1.4)};
+  background-color: white;
   color: #434343;
   line-height: 1.5;
   display: flex;

@@ -10,6 +10,7 @@
       "img": "/images/skills/github.png",
       "imgWidth": 40,
       "imgHeight": 40,
+      "className": "fill",
       "href": "https://github.com/Grace951"
     },
     {
@@ -163,7 +164,7 @@
         },
         {
           "img": "/images/skills/html5.png",
-          "width": 36,
+          "width": 35,
           "height": 50,
           "text": "HTML5"
         },
@@ -192,9 +193,9 @@
           "text": "BootStrap"
         },
         {
-          "img": "/images/skills/jquerylogo.png",
-          "width": 50,
-          "height": 50,
+          "img": "/images/skills/jquery.png",
+          "width": 158,
+          "height": 40,
           "text": "jQuery"
         }
       ]
@@ -204,7 +205,7 @@
       "skills": [
         {
           "img": "/images/skills/git.png",
-          "width": 90,
+          "width": 40,
           "height": 40,
           "text": "Git"
         },

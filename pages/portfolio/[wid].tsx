@@ -39,7 +39,7 @@ const Title = styled.div`
 const Desc = styled.div`
   padding: ${({ theme }) => theme.layout.spacing(3)};
   margin: ${({ theme }) => theme.layout.spacing(0, 0, 1.5)};
-  background-color: #efefef;
+  background-color: ${({ theme }) => theme.bgColors.secondary};
   font-size: ${({ theme }) => theme.font.size.base};
 `;
 
@@ -47,7 +47,7 @@ const Back = styled.div`
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 100%;
-  background-color: #efefef;
+  background-color: ${({ theme }) => theme.bgColors.light};
   align-self: flex-end;
   display: flex;
   align-items: center;
@@ -74,7 +74,7 @@ const RelativeImgStyles = css`
   img {
     width: 100%;
     max-height: 100%;
-    border: 1px solid #eeee;
+    border: 1px solid ${({ theme }) => theme.colors.light};
   }
 `;
 
@@ -127,7 +127,9 @@ const Page: NextPageWithLayout = () => {
         <Info>
           <Title>{details.title}</Title>
           <Desc>{details.desc}</Desc>
-          <Back onClick={back}>Back</Back>
+          <Back onClick={back} aria-label="Back to previous page">
+            Back
+          </Back>
           {details?.relative?.img?.length > 0 && (
             <Relative>
               <RelativeTitle>相關作品</RelativeTitle>

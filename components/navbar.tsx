@@ -17,10 +17,10 @@ import { MenuItem } from '../typings';
 const Navbar = styled.header`
   width: 100%;
   height: 5.5rem;
-  border-bottom: 1px solid #dadada;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.lightGray};
   position: sticky;
   top: 0;
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.bgColors.secondary};
   z-index: ${MAX_Z_INDEX_VALUE};
 
   @media all and (max-width: ${breakpoint.tablet}px) {
@@ -42,7 +42,7 @@ const Container = styled.div`
 const Logo = styled(Link)`
   width: 180px;
   height: 100%;
-  background: url('/images/logo.png') no-repeat right center;
+  background: url('/images/logoPure.png') no-repeat right center;
   background-size: contain;
   @media all and (max-width: ${breakpoint.tablet}px) {
     width: 10rem;
@@ -103,7 +103,7 @@ const HeaderLi = styled.div`
 `;
 
 const MenuWrap = styled.div`
-  background-color: ${({ theme }) => theme.colors.mostGray};
+  background-color: ${({ theme }) => theme.colors.mostDark};
   border-radius: 5px;
   position: absolute;
   left: 100%;

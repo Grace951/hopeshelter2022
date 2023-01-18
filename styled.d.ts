@@ -36,21 +36,14 @@ declare module 'styled-components' {
       secondary: string;
       logoGreen: string;
       logoBrown: string;
-      mostGray: string;
+      mostDark: string;
       lightGray: string;
-      darkGray: string;
+      dark: string;
       light: string;
-      primaryLink: {
-        main: string;
-        hover: string;
-      };
-      secondaryLink: {
-        main: string;
-        hover: string;
-      };
     };
     bgColors: {
       primary: string;
+      secondary: string;
       dark: string;
       light: string;
     };

@@ -20,7 +20,7 @@ const Books = styled.div`
 const Book = styled.div`
   width: 49%;
   padding: ${({ theme }) => theme.layout.spacing(3)};
-  background-color: #efefef;
+  background-color: ${({ theme }) => theme.bgColors.light};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,7 +33,7 @@ const Book = styled.div`
 const BookTitle = styled.div`
   padding: ${({ theme }) => theme.layout.spacing(0, 1, 1, 0)};
   font-size: ${({ theme }) => theme.font.size.large};
-  color: ${({ theme }) => theme.colors.logoBrown};
+  color: ${({ theme }) => theme.colors.primary};
   align-self: flex-start;
 `;
 
@@ -42,7 +42,7 @@ const BookDesc = styled.div`
   min-height: 120px;
   margin: ${({ theme }) => theme.layout.spacing(0, 0, 3)};
   font-size: ${({ theme }) => theme.font.size.base};
-  color: ${({ theme }) => theme.colors.darkGray};
+  color: ${({ theme }) => theme.colors.primary};
   display: flex;
   flex-direction: column;
   justify-content: space-between;

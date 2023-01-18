@@ -73,7 +73,7 @@ const Item = styled(Link)`
   display: flex;
   flex-direction: column;
   color: ${({ theme }) => theme.colors.primary};
-  border: 1px solid #eee;
+  border: 1px solid ${({ theme }) => theme.colors.light};
   border-radius: 2px;
   box-shadow: 1px 1px 5px rgb(0 0 0 / 20%);
   &:hover {
@@ -91,7 +91,7 @@ const Img = styled.div<{ url: string }>`
 const ImgTitle = styled.div`
   font-size: ${({ theme }) => theme.font.size.base};
   padding: ${({ theme }) => theme.layout.spacing(1.4, 1)};
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.light};
   display: block;
   text-overflow: ellipsis;
   white-space: nowrap;

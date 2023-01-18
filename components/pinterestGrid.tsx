@@ -74,6 +74,7 @@ const WaterfallItem = styled.div<{
   box-shadow: 1px 1px 8px rgb(0 0 0 / 20%);
   border-radius: 5px;
   overflow: hidden;
+  background-color: white;
   &:hover {
     box-shadow: 3px 3px 15px rgb(0 0 0 / 80%);
   }

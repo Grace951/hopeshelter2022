@@ -12,7 +12,9 @@ const Container = styled.div`
   padding: ${({ theme }) => theme.layout.spacing(1, 2, 2)};
   margin: ${({ theme }) => theme.layout.spacing(0, 0, 4)};
   line-height: 1.7;
-  border-bottom: 1px solid #eaeaea;
+  border-radius: 5px;
+  background-color: ${({ theme }) => theme.bgColors.secondary};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.light};
   @media all and (max-width: ${breakpoint.tablet}px) {
     padding: ${({ theme }) => theme.layout.spacing(0, 0, 1)};
   }
@@ -24,7 +26,7 @@ const Brief = styled.div`
   display: flex;
   font-size: ${({ theme }) => theme.font.size.base};
   font-weight: 300;
-  color: #000;
+  color: ${({ theme }) => theme.colors.primary};
 `;
 
 const Block = styled.div`
@@ -78,6 +80,7 @@ const Details = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  color: ${({ theme }) => theme.colors.secondary};
   @media all and (max-width: ${breakpoint.tablet}px) {
     padding: ${({ theme }) => theme.layout.spacing(0)};
   }
@@ -101,7 +104,7 @@ const Tech = styled.div`
   }
 `;
 
-const TechLogo = styled.a`
+const TechLogo = styled.div`
   margin: ${({ theme }) => theme.layout.spacing(0.2, 0.4)};
   min-width: 40px;
   height: 40px;
@@ -119,7 +122,7 @@ const ViewVideo = styled(Button)`
   padding: ${({ theme }) => theme.layout.spacing(0, 2)};
   margin: ${({ theme }) => theme.layout.spacing(1, 0, 2)};
   background-color: ${({ theme }) => theme.colors.logoGreen};
-  color: #fff;
+  color: ${({ theme }) => theme.colors.light};
   text-align: center;
   font-size: ${({ theme }) => theme.font.size.base};
   line-height: 2.4;
@@ -132,7 +135,7 @@ const SourceCode = styled(LinkButton)`
   padding: ${({ theme }) => theme.layout.spacing(0, 2)};
   margin: ${({ theme }) => theme.layout.spacing(1, 0, 2)};
   background-color: ${({ theme }) => theme.colors.logoGreen};
-  color: #fff;
+  color: ${({ theme }) => theme.colors.light};
   text-align: center;
   font-size: ${({ theme }) => theme.font.size.base};
   line-height: 2.4;
@@ -234,12 +237,7 @@ const SiteShlef: FC<Props> = ({
           <Tech>{techs}</Tech>
           <TechLogos>
             {webTeches.map((item, id) => (
-              <TechLogo
-                key={id}
-                href={item.link}
-                target="_blank"
-                rel="noreferrer"
-              >
+              <TechLogo key={id}>
                 <LoadImg src={item.img} />
               </TechLogo>
             ))}

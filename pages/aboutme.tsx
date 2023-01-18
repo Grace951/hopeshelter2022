@@ -19,7 +19,7 @@ const Container = styled.div`
 const Block = styled.div`
   padding: ${({ theme }) => theme.layout.spacing(2, 4)};
   margin: ${({ theme }) => theme.layout.spacing(4)};
-  border: 1px solid #ddd;
+  border: 1px solid ${({ theme }) => theme.colors.light};
   border-radius: 5px;
   @media all and (max-width: ${breakpoint.laptop}px) {
     padding: ${({ theme }) => theme.layout.spacing(2)};
@@ -37,7 +37,7 @@ const TopBlock = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  border: 1px solid #ddd;
+  border: 1px solid ${({ theme }) => theme.colors.light};
   border-radius: 5px;
   @media all and (max-width: ${breakpoint.laptop}px) {
     padding: ${({ theme }) => theme.layout.spacing(2)};
@@ -66,7 +66,7 @@ const Box = styled.div`
 
 const BoxWraps = styled.div`
   padding: ${({ theme }) => theme.layout.spacing(1.8, 2.4)};
-  background-color: #f4f4f4;
+  background-color: ${({ theme }) => theme.bgColors.light};
   border-radius: 5px;
   flex: 1;
   @media all and (max-width: ${breakpoint.laptop}px) {
@@ -92,7 +92,7 @@ const Brief = styled.div`
     content: '';
     width: 10px;
     height: 10px;
-    background-color: #bfbfbf;
+    background-color: ${({ theme }) => theme.bgColors.light};
     border-radius: 100%;
     position: absolute;
     left: 0;
@@ -101,7 +101,7 @@ const Brief = styled.div`
 
 const SocailsWrap = styled.div`
   padding: ${({ theme }) => theme.layout.spacing(0, 2.4, 2)};
-  background-color: #f4f4f4;
+  background-color: ${({ theme }) => theme.bgColors.light};
   border-radius: 5px;
   display: flex;
   flex-wrap: wrap;
@@ -113,6 +113,10 @@ const Socail = styled.div`
   align-items: center;
   img {
     margin: ${({ theme }) => theme.layout.spacing(0, 1, 0, 0)};
+    &.fill {
+      background-color: white;
+      border-radius: 3px;
+    }
   }
   a {
     word-break: break-all;
@@ -122,30 +126,30 @@ const Socail = styled.div`
 
 const BriefsWrap = styled.div`
   padding: ${({ theme }) => theme.layout.spacing(1.8, 2.4)};
-  background-color: #f4f4f4;
+  background-color: ${({ theme }) => theme.bgColors.light};
   border-radius: 5px;
 `;
 
 const InnerBox = styled.div`
   padding: ${({ theme }) => theme.layout.spacing(1)};
   font-size: ${({ theme }) => theme.font.size.base};
+  color: ${({ theme }) => theme.colors.secondary};
 `;
 
 const InnerNote = styled.div`
   font-size: ${({ theme }) => theme.font.size.small};
   font-weight: 300;
-  color: #888;
 `;
 
 const InnerText = styled.div`
   font-size: ${({ theme }) => theme.font.size.base};
-  color: black;
+  color: ${({ theme }) => theme.colors.primary};
   position: relative;
   &:before {
     content: '';
     width: 10px;
     height: 10px;
-    background-color: #bfbfbf;
+    background-color: ${({ theme }) => theme.bgColors.light};
     border-radius: 100%;
     position: absolute;
     left: -16px;
@@ -165,7 +169,7 @@ const SkillsTitle = styled.div`
 const Skill = styled.div`
   min-width: 60px;
   padding: ${({ theme }) => theme.layout.spacing(0.5, 1)};
-  color: #888;
+  color: ${({ theme }) => theme.colors.secondary};
   font-weight: 300;
   display: flex;
   align-items: center;
@@ -180,7 +184,7 @@ const SkillsWrap = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  background-color: #f4f4f4;
+  background-color: ${({ theme }) => theme.bgColors.light};
   border-radius: 5px;
 `;
 
@@ -202,6 +206,7 @@ const Page: NextPageWithLayout = () => {
                 width={brief.imgWidth}
                 height={brief.imgHeight}
                 alt={brief.text}
+                className={brief.className}
               />
               <a href={brief.href} target="_blank" rel="noreferrer">
                 {brief.href}

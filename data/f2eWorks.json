@@ -130,7 +130,7 @@
         "img": "/images/skills/redux.png"
       },
       {
-        "link": "/images/web/au/html5css3badges.png",
+        "link": "",
         "img": "/images/skills/es6.png"
       },
       {
@@ -139,7 +139,7 @@
       },
       {
         "link": "",
-        "img": "/images/web/au/html5css3badges.png"
+        "img": "/images/skills/html5css3badges.png"
       },
       {
         "link": "https://nodejs.org/en/",
@@ -159,7 +159,7 @@
     "sourceCode": "https://github.com/Grace951/hopeshelter2022",
     "webLink": {
       "src": "https://hopeshelter2022.vercel.app/",
-      "img": "/images/logo.png",
+      "img": "/images/logoPure.png",
       "title": "我的個人網站",
       "font": "ubuntu"
     },
@@ -182,7 +182,7 @@
       },
       {
         "link": "",
-        "img": "/images/web/au/html5css3badges.png"
+        "img": "/images/skills/html5css3badges.png"
       }
     ]
   },
@@ -206,7 +206,7 @@
       },
       {
         "link": "http://getbootstrap.com/",
-        "img": "/images/web/au/Boostrap_logo.png"
+        "img": "/images/skills/bootstrap.png"
       },
       {
         "link": "http://compass-style.org/",
@@ -219,7 +219,7 @@
       },
       {
         "link": "",
-        "img": "/images/web/au/html5css3badges.png"
+        "img": "/images/skills/html5css3badges.png"
       }
     ]
   },
@@ -247,11 +247,11 @@
       },
       {
         "link": "",
-        "img": "/images/web/au/html5css3badges.png"
+        "img": "/images/skills/html5css3badges.png"
       },
       {
         "link": "https://jquery.com/",
-        "img": "/images/web/au/jquerylogo.png"
+        "img": "/images/skills/jquery.png"
       }
     ]
   }

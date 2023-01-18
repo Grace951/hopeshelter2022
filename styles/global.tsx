@@ -54,6 +54,7 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     height: 100%;
     color: ${({ theme }) => theme.colors.primary};
+    background-color: ${({ theme }) => theme.bgColors.primary};
     padding: 0;
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
