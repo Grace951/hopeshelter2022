@@ -67,6 +67,7 @@ const Page: NextPageWithLayout = () => {
             這是我的業餘作品集，簡單的自我介紹加上單純大方的作品編排。
             <GoButton
               href="https://issuu.com/grace_yeh/docs/portfilio_issuu"
+              aria-label="Visit full vision"
               target="_blank"
               rel="noreferrer"
             >
@@ -75,6 +76,7 @@ const Page: NextPageWithLayout = () => {
           </BookDesc>
           <Picture
             href="https://issuu.com/grace_yeh/docs/portfilio_issuu"
+            aria-label="Visit full vision"
             target="_blank"
             rel="noreferrer"
           >
@@ -91,6 +93,7 @@ const Page: NextPageWithLayout = () => {
             這是一本產品型錄的排版練習，以高對比大標題吸引讀者的目光，並以留白使版面舒適大方。
             <GoButton
               href="https://issuu.com/grace_yeh/docs/______?e=11793034/12474947"
+              aria-label="Visit full vision"
               target="_blank"
               rel="noreferrer"
             >
@@ -99,6 +102,7 @@ const Page: NextPageWithLayout = () => {
           </BookDesc>
           <Picture
             href="https://issuu.com/grace_yeh/docs/______?e=11793034/12474947"
+            aria-label="Visit full vision"
             target="_blank"
             rel="noreferrer"
           >
@@ -118,8 +122,8 @@ Page.getLayout = function getLayout(page: ReactElement) {
   return (
     <>
       <Head>
-        <title>Hope Shelter - Amateur Editoral</title>
-        <meta name="description" content="Amateur editoral works" />
+        <title>Hope Shelter - Portfolio Editoral</title>
+        <meta name="description" content="Portfolio editoral works" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

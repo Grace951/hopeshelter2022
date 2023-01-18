@@ -132,7 +132,7 @@ const Menu = styled(MenuComp)`
   }
 `;
 
-const HeaderLinks = styled.ul`
+const HeaderLinks = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
@@ -177,12 +177,20 @@ const NavComp: FC = () => {
   return (
     <Navbar>
       <Container className={fontClasses.ubuntu.className}>
-        <Logo href="/"></Logo>
+        <Logo href="/" aria-label="Back to Hope Shelter index page"></Logo>
         <HeaderLinks>
-          <HeaderLinkLi href="/" $active={route === '/'}>
+          <HeaderLinkLi
+            href="/"
+            $active={route === '/'}
+            aria-label="Back to Hope Shelter index page"
+          >
             Home
           </HeaderLinkLi>
-          <HeaderLinkLi href="/aboutme" $active={route === '/aboutme'}>
+          <HeaderLinkLi
+            href="/aboutme"
+            $active={route === '/aboutme'}
+            aria-label="My brief indroduction"
+          >
             About Me
           </HeaderLinkLi>
           <HeaderLi

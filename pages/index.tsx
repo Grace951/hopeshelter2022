@@ -61,7 +61,11 @@ const Page: NextPageWithLayout = () => {
   const ratios: number[] = data.map((item) => item.imgRatio);
 
   const ContentComp = ({ item }: { item: WorkItem }) => (
-    <WorkItemElement href={item.link} rel="noreferrer">
+    <WorkItemElement
+      href={item.link}
+      rel="noreferrer"
+      aria-label="Visit to get detail information"
+    >
       <LoadImg width="100%" src={item.url} alt={item.text} />
       <Info height={infoHeight}>
         <Text>{item.text}</Text>

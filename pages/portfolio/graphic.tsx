@@ -133,7 +133,11 @@ const Page: NextPageWithLayout = () => {
           <Grid>
             {images.map((item, idx) => {
               return (
-                <Item key={idx} href={`/portfolio/${item.index}`}>
+                <Item
+                  key={idx}
+                  href={`/portfolio/${item.index}`}
+                  aria-label="Visit to get detail information"
+                >
                   <ImgTitle>{item?.title || ''}</ImgTitle>
                   <Img url={item.url} />
                 </Item>
@@ -150,8 +154,8 @@ Page.getLayout = function getLayout(page: ReactElement) {
   return (
     <>
       <Head>
-        <title>Hope Shelter - Amateur Grapgic Design</title>
-        <meta name="description" content="Amateur grapgic design works" />
+        <title>Hope Shelter - Portfolio Grapgic Design</title>
+        <meta name="description" content="Portfolio grapgic design works" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

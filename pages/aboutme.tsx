@@ -235,6 +235,7 @@ const Page: NextPageWithLayout = () => {
                       href={item.source}
                       target="_blank"
                       rel="noreferrer"
+                      aria-label={`Source code of "${item.title}"`}
                     >
                       Source
                     </LinkButton>
@@ -244,6 +245,7 @@ const Page: NextPageWithLayout = () => {
                       href={item.visit}
                       target="_blank"
                       rel="noreferrer"
+                      aria-label={`Visit "${item.title}"`}
                     >
                       Visit
                     </LinkButton>
@@ -265,6 +267,7 @@ const Page: NextPageWithLayout = () => {
                       href={item.source}
                       target="_blank"
                       rel="noreferrer"
+                      aria-label={`Source code of "${item.title}"`}
                     >
                       Source
                     </LinkButton>
@@ -274,6 +277,7 @@ const Page: NextPageWithLayout = () => {
                       href={item.demo}
                       target="_blank"
                       rel="noreferrer"
+                      aria-label={`Demo of "${item.title}"`}
                     >
                       Demo
                     </LinkButton>

@@ -31,8 +31,8 @@ Page.getLayout = function getLayout(page: ReactElement) {
   return (
     <>
       <Head>
-        <title>Hope Shelter - Amateur Frontend App</title>
-        <meta name="description" content="Amateur frontend app" />
+        <title>Hope Shelter - Portfolio Frontend App</title>
+        <meta name="description" content="Portfolio frontend app" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

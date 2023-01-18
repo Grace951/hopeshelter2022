@@ -152,6 +152,7 @@ const Page: NextPageWithLayout = () => {
                         key={i}
                         href={`/portfolio/${img.index}`}
                         rel="noreferrer"
+                        aria-label="Please refer to my relative work"
                       >
                         {ImgComp}
                       </RelativeLink>
