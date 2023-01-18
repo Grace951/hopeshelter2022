@@ -5,8 +5,11 @@ import styled from 'styled-components';
 
 import { preLoadImg } from '../tools';
 
-const Img = styled.img`
+const Img = styled.img<{ $fillBg: boolean }>`
   transition: opacity 0.1s linear;
+  background-color: ${({ $fillBg }) => ($fillBg ? 'white' : 'transparent')};
+  border-radius: ${({ $fillBg }) => ($fillBg ? '3px' : '0')};
+  padding: ${({ $fillBg }) => ($fillBg ? '2px' : '0')};
 `;
 
 interface Props {
@@ -16,10 +19,10 @@ interface Props {
   title?: string;
   width?: string;
   height?: string;
+  fillBg?: boolean;
 }
 
-const LoadImg: FC<Props> = (props) => {
-  const { src } = props;
+const LoadImg: FC<Props> = ({ fillBg, src, ...props }) => {
   const [opacity, setOpacity] = useState<number>(0);
 
   useEffect(() => {
@@ -32,7 +35,7 @@ const LoadImg: FC<Props> = (props) => {
     });
   }, [src]);
 
-  return <Img {...props} style={{ opacity }} />;
+  return <Img {...props} $fillBg={fillBg} src={src} style={{ opacity }} />;
 };
 
 export default LoadImg;

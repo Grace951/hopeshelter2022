@@ -168,6 +168,7 @@ interface Props {
   webTeches: {
     link: string;
     img: string;
+    fill?: boolean;
   }[];
   brief: string[];
   techs: string;
@@ -238,7 +239,7 @@ const SiteShlef: FC<Props> = ({
           <TechLogos>
             {webTeches.map((item, id) => (
               <TechLogo key={id}>
-                <LoadImg src={item.img} />
+                <LoadImg fillBg={item.fill} src={item.img} />
               </TechLogo>
             ))}
           </TechLogos>

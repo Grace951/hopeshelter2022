@@ -10,7 +10,7 @@
       "img": "/images/skills/github.png",
       "imgWidth": 40,
       "imgHeight": 40,
-      "className": "fill",
+      "fill": true,
       "href": "https://github.com/Grace951"
     },
     {
@@ -119,7 +119,8 @@
           "img": "/images/skills/next-logo.png",
           "width": 117,
           "height": 40,
-          "text": "NextJS"
+          "text": "NextJS",
+          "fill": true
         },
         {
           "img": "/images/skills/reactjs.svg",
@@ -149,7 +150,8 @@
           "img": "/images/skills/node.png",
           "width": 142,
           "height": 40,
-          "text": "NodeJs"
+          "text": "NodeJs",
+          "fill": true
         }
       ]
     },
@@ -160,7 +162,8 @@
           "img": "/images/skills/rwd.png",
           "width": 50,
           "height": 50,
-          "text": "RWD"
+          "text": "RWD",
+          "fill": true
         },
         {
           "img": "/images/skills/html5.png",
@@ -196,7 +199,8 @@
           "img": "/images/skills/jquery.png",
           "width": 158,
           "height": 40,
-          "text": "jQuery"
+          "text": "jQuery",
+          "fill": true
         }
       ]
     },

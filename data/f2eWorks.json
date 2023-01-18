@@ -25,15 +25,18 @@
       },
       {
         "link": "https://graphql.org/brand/",
-        "img": "/images/skills/graphQL.png"
+        "img": "/images/skills/graphQL.png",
+        "fill": true
       },
       {
         "link": "https://ramdajs.com/",
-        "img": "/images/skills/ramda.png"
+        "img": "/images/skills/ramda.png",
+        "fill": true
       },
       {
         "link": "https://json-schema.org/",
-        "img": "/images/skills/jsonSchema.png"
+        "img": "/images/skills/jsonSchema.png",
+        "fill": true
       },
       {
         "link": "https://jestjs.io/",
@@ -41,11 +44,13 @@
       },
       {
         "link": "https://www.cypress.io/",
-        "img": "/images/skills/cypress.png"
+        "img": "/images/skills/cypress.png",
+        "fill": true
       },
       {
         "link": "https://nodejs.org/en/",
-        "img": "/images/skills/node.png"
+        "img": "/images/skills/node.png",
+        "fill": true
       }
     ],
     "webSnaps": [
@@ -82,15 +87,18 @@
       },
       {
         "link": "https://graphql.org/brand/",
-        "img": "/images/skills/graphQL.png"
+        "img": "/images/skills/graphQL.png",
+        "fill": true
       },
       {
         "link": "https://ramdajs.com/",
-        "img": "/images/skills/ramda.png"
+        "img": "/images/skills/ramda.png",
+        "fill": true
       },
       {
         "link": "https://mui.com/",
-        "img": "/images/skills/mui.png"
+        "img": "/images/skills/mui.png",
+        "fill": true
       },
       {
         "link": "https://jestjs.io/",
@@ -143,7 +151,8 @@
       },
       {
         "link": "https://nodejs.org/en/",
-        "img": "/images/skills/node.png"
+        "img": "/images/skills/node.png",
+        "fill": true
       },
       {
         "link": "https://webpack.js.org/",
@@ -170,7 +179,8 @@
       },
       {
         "link": "https://nextjs.org/",
-        "img": "/images/skills/next-logo.png"
+        "img": "/images/skills/next-logo.png",
+        "fill": true
       },
       {
         "link": "https://facebook.github.io/react/",
@@ -251,7 +261,8 @@
       },
       {
         "link": "https://jquery.com/",
-        "img": "/images/skills/jquery.png"
+        "img": "/images/skills/jquery.png",
+        "fill": true
       }
     ]
   }

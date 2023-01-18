@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import Image from 'next/image';
+import ImageComp from 'next/image';
 
 import type { ReactElement } from 'react';
 
@@ -29,6 +29,12 @@ const Block = styled.div`
 
 const Buttons = styled.div`
   display: flex;
+`;
+
+const Image = styled(ImageComp)<{ fillBg?: boolean }>`
+  background-color: ${({ fillBg }) => (fillBg ? 'white' : 'transparent')};
+  border-radius: ${({ fillBg }) => (fillBg ? '3px' : '0')};
+  padding: ${({ fillBg }) => (fillBg ? '2px' : '0')};
 `;
 
 const TopBlock = styled.div`
@@ -113,10 +119,6 @@ const Socail = styled.div`
   align-items: center;
   img {
     margin: ${({ theme }) => theme.layout.spacing(0, 1, 0, 0)};
-    &.fill {
-      background-color: white;
-      border-radius: 3px;
-    }
   }
   a {
     word-break: break-all;
@@ -206,9 +208,15 @@ const Page: NextPageWithLayout = () => {
                 width={brief.imgWidth}
                 height={brief.imgHeight}
                 alt={brief.text}
-                className={brief.className}
+                title={brief.text}
+                fillBg={brief.fill}
               />
-              <a href={brief.href} target="_blank" rel="noreferrer">
+              <a
+                href={brief.href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`Go to my ${brief.text} page`}
+              >
                 {brief.href}
               </a>
             </Socail>
@@ -307,6 +315,7 @@ const Page: NextPageWithLayout = () => {
                     src={skill.img}
                     alt={skill.text}
                     title={skill.text}
+                    fillBg={skill.fill}
                   />
                 </Skill>
               ))}
