@@ -34,7 +34,7 @@ const layout: ThemeLayout = {
   },
 };
 
-export const light: DefaultTheme = {
+const light: DefaultTheme = {
   layout,
   breakpoint,
   font,
@@ -56,7 +56,7 @@ export const light: DefaultTheme = {
   },
 };
 
-export const dark: DefaultTheme = {
+const dark: DefaultTheme = {
   layout,
   breakpoint,
   font,
@@ -77,5 +77,7 @@ export const dark: DefaultTheme = {
     light: '#222',
   },
 };
+
+export const themes = { dark, light };
 
 export * from './functions';

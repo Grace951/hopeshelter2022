@@ -21,7 +21,7 @@ const Navbar = styled.header`
   position: sticky;
   top: 0;
   background-color: ${({ theme }) => theme.bgColors.secondary};
-  z-index: ${MAX_Z_INDEX_VALUE};
+  z-index: ${MAX_Z_INDEX_VALUE - 1};
 
   @media all and (max-width: ${breakpoint.tablet}px) {
     height: 4rem;
@@ -105,7 +105,7 @@ const HeaderLi = styled.div`
 const MenuWrap = styled.div`
   background-color: ${({ theme }) => theme.colors.mostDark};
   border-radius: 5px;
-  position: absolute;
+  position: fixed;
   left: 100%;
   top: 20px;
   @media all and (max-width: ${breakpoint.mobile}px) {
