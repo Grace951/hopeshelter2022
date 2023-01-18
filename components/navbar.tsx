@@ -105,7 +105,7 @@ const HeaderLi = styled.div`
 const MenuWrap = styled.div`
   background-color: ${({ theme }) => theme.colors.mostDark};
   border-radius: 5px;
-  position: fixed;
+  position: absolute;
   left: 100%;
   top: 20px;
   @media all and (max-width: ${breakpoint.mobile}px) {
@@ -118,6 +118,7 @@ const MenuWrap = styled.div`
 `;
 
 const Close = styled(CloseButton)`
+  color: #aaaaaa;
   display: none;
   @media all and (max-width: ${breakpoint.mobile}px) {
     display: flex;

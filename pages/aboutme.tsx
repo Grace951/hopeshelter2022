@@ -19,7 +19,7 @@ const Container = styled.div`
 const Block = styled.div`
   padding: ${({ theme }) => theme.layout.spacing(2, 4)};
   margin: ${({ theme }) => theme.layout.spacing(4)};
-  border: 1px solid ${({ theme }) => theme.colors.light};
+  border: 1px solid ${({ theme }) => theme.colors.lightGray};
   border-radius: 5px;
   @media all and (max-width: ${breakpoint.laptop}px) {
     padding: ${({ theme }) => theme.layout.spacing(2)};
@@ -37,7 +37,7 @@ const TopBlock = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  border: 1px solid ${({ theme }) => theme.colors.light};
+  border: 1px solid ${({ theme }) => theme.colors.lightGray};
   border-radius: 5px;
   @media all and (max-width: ${breakpoint.laptop}px) {
     padding: ${({ theme }) => theme.layout.spacing(2)};

@@ -21,7 +21,7 @@ const Container = styled.div`
 const WorkItemElement = styled(Link)`
   background-color: white;
   img {
-    border-bottom: 1px solid ${({ theme }) => theme.colors.light};
+    border-bottom: 1px solid #ddd;
   }
 `;
 
