@@ -86,6 +86,7 @@ interface Props<DataType> {
   gap: number;
   infoHeight: number;
   ContentComp: ElementType<{ item: DataType }>;
+  ratios?: number[];
 }
 
 const Grid = <DataType extends unknown>({
@@ -95,6 +96,7 @@ const Grid = <DataType extends unknown>({
   itemWidth,
   gap,
   infoHeight,
+  ratios,
 }: Props<DataType>) => {
   const minItemWidthOnMobile = Math.min(itemWidth, 320);
   const gridUnit = gap;
@@ -120,7 +122,7 @@ const Grid = <DataType extends unknown>({
     [itemCountsPerBreakPoint, itemWidth, gridUnit]
   );
 
-  const [imgRatios, setImgRatios] = useState<number[]>(prevImgRatios);
+  const [imgRatios, setImgRatios] = useState<number[]>(ratios || prevImgRatios);
   const [dimesion, setDimesion] = useState<BreakpointKey>('desktop');
   const getDimension = () => {
     if (window.innerWidth >= breakpoint.bigDesktop) {
@@ -152,14 +154,14 @@ const Grid = <DataType extends unknown>({
   }, [dimesion]);
 
   useEffect(() => {
-    if (prevImgRatios.length === imgUrls.length) {
+    if (!ratios || prevImgRatios.length === imgUrls.length) {
       return;
     }
     getImgRatios(imgUrls).then((newImgRatios: number[]) => {
       prevImgRatios = [...newImgRatios];
       setImgRatios(prevImgRatios);
     });
-  }, [imgUrls]);
+  }, [ratios, imgUrls]);
 
   return (
     <Container

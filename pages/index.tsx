@@ -58,6 +58,7 @@ const Page: NextPageWithLayout = () => {
   const imgUrls: string[] = data.map(
     (item) => item.images?.[0] || item.fullsrc
   );
+  const ratios: number[] = data.map((item) => item.imgRatio);
 
   const ContentComp = ({ item }: { item: WorkItem }) => (
     <WorkItemElement href={item.link} rel="noreferrer">
@@ -77,6 +78,7 @@ const Page: NextPageWithLayout = () => {
         imgUrls={imgUrls}
         ContentComp={ContentComp}
         infoHeight={infoHeight}
+        ratios={ratios}
       />
     </Container>
   );

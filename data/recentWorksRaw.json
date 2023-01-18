@@ -1,6 +1,5 @@
 [
   {
-    "imgRatio": 1.3727272727272728,
     "images": ["/images/portfolio/small/poster1.jpg"],
     "img_height": 516,
     "fullsrc": "/images/portfolio/full/poster1.jpg",
@@ -10,7 +9,6 @@
     "index": "0"
   },
   {
-    "imgRatio": 1.3727272727272728,
     "images": [
       "/images/portfolio/small/poster2.jpg",
       "/images/portfolio/small/poster6.jpg"
@@ -23,7 +21,6 @@
     "index": "1"
   },
   {
-    "imgRatio": 1.412121212121212,
     "images": ["/images/portfolio/small/poster3.jpg"],
     "img_height": 527,
     "fullsrc": "/images/portfolio/full/poster3.jpg",
@@ -33,7 +30,6 @@
     "index": "2"
   },
   {
-    "imgRatio": 0.7272727272727273,
     "images": ["/images/portfolio/small/photo1.jpg"],
     "img_height": 336,
     "fullsrc": "/images/portfolio/full/photo1.jpg",
@@ -43,7 +39,6 @@
     "index": "3"
   },
   {
-    "imgRatio": 1.412121212121212,
     "images": ["/images/portfolio/small/poster7.jpg"],
     "img_height": 503,
     "fullsrc": "/images/portfolio/full/poster7.jpg",
@@ -52,8 +47,8 @@
     "hlink": "portfolio/five.html",
     "index": "8"
   },
+
   {
-    "imgRatio": 0.7272727272727273,
     "images": ["/images/portfolio/small/poster4.jpg"],
     "img_height": 336,
     "fullsrc": "/images/portfolio/full/poster4.jpg",
@@ -63,7 +58,6 @@
     "index": "10"
   },
   {
-    "imgRatio": 1.4090909090909092,
     "images": ["/images/portfolio/small/poster5.jpg"],
     "img_height": 503,
     "fullsrc": "/images/portfolio/full/poster5.jpg",
@@ -73,7 +67,6 @@
     "index": "6"
   },
   {
-    "imgRatio": 1.412121212121212,
     "images": ["/images/portfolio/small/poster8.jpg"],
     "img_height": 503,
     "fullsrc": "/images/portfolio/full/poster8.jpg",
@@ -83,7 +76,6 @@
     "index": "25"
   },
   {
-    "imgRatio": 0.7121212121212122,
     "images": [
       "/images/portfolio/small/branding2.jpg",
       "/images/portfolio/small/branding3.jpg",
@@ -97,7 +89,6 @@
     "index": "12"
   },
   {
-    "imgRatio": 0.706060606060606,
     "images": ["/images/portfolio/small/DM1.jpg"],
     "img_height": 330,
     "fullsrc": "/images/portfolio/full/DM1.jpg",
@@ -107,7 +98,6 @@
     "index": "18"
   },
   {
-    "imgRatio": 0.7121212121212122,
     "images": ["/images/portfolio/small/DM2.jpg"],
     "img_height": 307,
     "fullsrc": "/images/portfolio/full/DM2.jpg",
@@ -117,7 +107,6 @@
     "index": "21"
   },
   {
-    "imgRatio": 0.6636363636363637,
     "images": ["/images/portfolio/small/branding5.jpg"],
     "img_height": 318,
     "fullsrc": "/images/portfolio/full/branding5.jpg",
@@ -127,7 +116,6 @@
     "index": "26"
   },
   {
-    "imgRatio": 0.6666666666666666,
     "images": [
       "/images/portfolio/small/DM3.jpg",
       "/images/portfolio/small/DM4.jpg"
@@ -140,7 +128,6 @@
     "index": "20"
   },
   {
-    "imgRatio": 0.6545454545454545,
     "images": [
       "/images/portfolio/small/photo2.jpg",
       "/images/portfolio/small/photo3.jpg"
@@ -153,7 +140,6 @@
     "index": "4"
   },
   {
-    "imgRatio": 0.3939393939393939,
     "images": [
       "/images/portfolio/small/web1.jpg",
       "/images/portfolio/small/web2.jpg",
@@ -169,7 +155,6 @@
     "index": "41"
   },
   {
-    "imgRatio": 1.412121212121212,
     "images": [
       "/images/portfolio/small/branding12.jpg",
       "/images/portfolio/small/branding13.jpg"
@@ -182,7 +167,6 @@
     "index": "28"
   },
   {
-    "imgRatio": 1.412121212121212,
     "images": ["/images/portfolio/small/branding14.jpg"],
     "img_height": 527,
     "fullsrc": "/images/portfolio/full/branding14.jpg",
@@ -192,7 +176,6 @@
     "index": "30"
   },
   {
-    "imgRatio": 1.4696969696969697,
     "images": ["/images/portfolio/small/illustration11.png"],
     "img_height": 520,
     "fullsrc": "/images/portfolio/full/illustration11.png",
@@ -202,7 +185,6 @@
     "index": "43"
   },
   {
-    "imgRatio": 1.4696969696969697,
     "images": ["/images/portfolio/small/illustration12.png"],
     "img_height": 520,
     "fullsrc": "/images/portfolio/full/illustration12.png",
@@ -212,7 +194,6 @@
     "index": "44"
   },
   {
-    "imgRatio": 1.4696969696969697,
     "images": ["/images/portfolio/small/illustration13.png"],
     "img_height": 520,
     "fullsrc": "/images/portfolio/full/illustration13.png",
@@ -222,7 +203,6 @@
     "index": "45"
   },
   {
-    "imgRatio": 1.4742014742014742,
     "images": ["/images/portfolio/small/illustration14.png"],
     "img_height": 521,
     "fullsrc": "/images/portfolio/full/illustration14.png",
@@ -232,7 +212,6 @@
     "index": "46"
   },
   {
-    "imgRatio": 1.4696969696969697,
     "images": ["/images/portfolio/small/illustration15.png"],
     "img_height": 520,
     "fullsrc": "/images/portfolio/full/illustration15.png",
@@ -242,7 +221,6 @@
     "index": "47"
   },
   {
-    "imgRatio": 0.6787878787878788,
     "images": ["/images/portfolio/small/illustration16.png"],
     "img_height": 298,
     "fullsrc": "/images/portfolio/full/illustration16.png",
@@ -252,7 +230,6 @@
     "index": "48"
   },
   {
-    "imgRatio": 1.4689655172413794,
     "images": [
       "/images/portfolio/small/name1.jpg",
       "/images/portfolio/small/name7.jpg"
@@ -264,7 +241,6 @@
     "index": "53"
   },
   {
-    "imgRatio": 0.6454545454545455,
     "images": ["/images/portfolio/small/illustration2.jpg"],
     "img_height": 265,
     "fullsrc": "/images/portfolio/full/illustration2.jpg",
@@ -274,7 +250,6 @@
     "index": "32"
   },
   {
-    "imgRatio": 0.6545454545454545,
     "images": ["/images/portfolio/small/illustration3.jpg"],
     "img_height": 291,
     "fullsrc": "/images/portfolio/full/illustration3.jpg",
@@ -284,7 +259,6 @@
     "index": "33"
   },
   {
-    "imgRatio": 0.6545454545454545,
     "images": ["/images/portfolio/small/illustration4.jpg"],
     "img_height": 291,
     "fullsrc": "/images/portfolio/full/illustration4.jpg",
@@ -294,7 +268,6 @@
     "index": "34"
   },
   {
-    "imgRatio": 1.412121212121212,
     "images": ["/images/portfolio/small/illustration5.jpg"],
     "img_height": 503,
     "fullsrc": "/images/portfolio/full/illustration5.jpg",
@@ -304,7 +277,6 @@
     "index": "35"
   },
   {
-    "imgRatio": 1.4212121212121211,
     "images": ["/images/portfolio/small/illustration6.jpg"],
     "img_height": 527,
     "fullsrc": "/images/portfolio/full/illustration6.jpg",
@@ -314,7 +286,6 @@
     "index": "36"
   },
   {
-    "imgRatio": 1.412121212121212,
     "images": ["/images/portfolio/small/illustration8.jpg"],
     "img_height": 506,
     "fullsrc": "/images/portfolio/full/illustration8.jpg",
@@ -324,7 +295,6 @@
     "index": "38"
   },
   {
-    "imgRatio": 1.412121212121212,
     "images": ["/images/portfolio/small/illustration9.jpg"],
     "img_height": 503,
     "fullsrc": "/images/portfolio/full/illustration9.jpg",
@@ -334,7 +304,6 @@
     "index": "40"
   },
   {
-    "imgRatio": 1.4,
     "images": ["/images/portfolio/small/book1.jpg"],
     "img_height": 572,
     "fullsrc": "/images/portfolio/full/book1.jpg",
@@ -343,7 +312,6 @@
     "index": "49"
   },
   {
-    "imgRatio": 1.410344827586207,
     "images": ["/images/portfolio/small/book2.jpg"],
     "img_height": 551,
     "fullsrc": "/images/portfolio/full/book2.jpg",
@@ -352,7 +320,6 @@
     "index": "50"
   },
   {
-    "imgRatio": 1.410344827586207,
     "images": ["/images/portfolio/small/book3.jpg"],
     "img_height": 551,
     "fullsrc": "/images/portfolio/full/book3.jpg",
@@ -361,7 +328,6 @@
     "index": "51"
   },
   {
-    "imgRatio": 1.410344827586207,
     "images": ["/images/portfolio/small/book4.jpg"],
     "img_height": 551,
     "fullsrc": "/images/portfolio/full/book4.jpg",
@@ -370,7 +336,6 @@
     "index": "52"
   },
   {
-    "imgRatio": 1.410344827586207,
     "images": ["/images/portfolio/small/illustration17.jpg"],
     "img_height": 527,
     "fullsrc": "/images/portfolio/full/illustration17.jpg",
@@ -379,7 +344,6 @@
     "index": "54"
   },
   {
-    "imgRatio": 0.7090464547677262,
     "images": ["/images/portfolio/small/illustration18.jpg"],
     "img_height": 331,
     "fullsrc": "/images/portfolio/full/illustration18.jpg",
@@ -388,7 +352,6 @@
     "index": "55"
   },
   {
-    "imgRatio": 0.7073170731707317,
     "images": ["/images/portfolio/small/illustration19.jpg"],
     "img_height": 331,
     "fullsrc": "/images/portfolio/full/illustration19.jpg",
@@ -397,7 +360,6 @@
     "index": "56"
   },
   {
-    "imgRatio": 1.410344827586207,
     "images": ["/images/portfolio/small/illustration20.jpg"],
     "img_height": 527,
     "fullsrc": "/images/portfolio/full/illustration20.jpg",
@@ -406,7 +368,6 @@
     "index": "57"
   },
   {
-    "imgRatio": 1.410344827586207,
     "images": ["/images/portfolio/small/illustration21.jpg"],
     "img_height": 527,
     "fullsrc": "/images/portfolio/full/illustration21.jpg",
