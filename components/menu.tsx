@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { breakpoint } from '../themes/index';
 import { MenuItem } from '../typings';
 
-const Container = styled.div`
+const Container = styled.ul`
   border-radius: 5px;
   white-space: nowrap;
   box-shadow: 0px 0px 5px rgb(0 0 0 / 50%);
@@ -14,7 +14,7 @@ const Container = styled.div`
   background-color: ${({ theme }) => theme.colors.mostDark};
 `;
 
-const Item = styled.div<{ $active: boolean }>`
+const Item = styled.li<{ $active: boolean }>`
   padding: ${({ theme }) => theme.layout.spacing(1.4, 3)};
   text-transform: capitalize;
   border-bottom: 1px solid #000;

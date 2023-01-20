@@ -54,9 +54,13 @@ const Select: FC<Props> = ({
     setShowMenu(!showMenu);
   };
 
+  const selectedItem: MenuItem = items.filter(
+    (item) => item.key === activeKey
+  )[0];
+
   return (
     <Container className={className} onClick={onClick} showMenu={showMenu}>
-      {activeKey}
+      {selectedItem?.text || ''}
       {showMenu && (
         <Menu items={items} ItemCallback={callback} activeKey={activeKey} />
       )}
