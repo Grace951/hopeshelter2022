@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 import Footer from './footer';
 import Navbar from './navbar';
+import { navItems } from '../constants';
 import fontClasses from '../styles/fonts';
 import { mobileMin } from '../themes/index';
 
@@ -26,7 +27,7 @@ const Container = styled.div`
 export default function Layout({ children }) {
   return (
     <Container>
-      <Navbar />
+      <Navbar navItems={navItems} />
       <Main className={fontClasses.ubuntu.className}>{children}</Main>
       <Footer />
     </Container>

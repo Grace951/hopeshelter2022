@@ -14,7 +14,7 @@ import { MAX_Z_INDEX_VALUE } from '../styles/variables';
 import { breakpoint } from '../themes/index';
 import { MenuItem } from '../typings';
 
-const Navbar = styled.header`
+const Wraper = styled.header`
   width: 100%;
   height: 5.5rem;
   border-bottom: 1px solid ${({ theme }) => theme.colors.lightGray};
@@ -32,7 +32,7 @@ const Navbar = styled.header`
   }
 `;
 
-const Container = styled.div`
+const NavContainer = styled.div`
   max-width: ${({ theme }) => theme.layout.content.maxWidth};
   height: 100%;
   margin: 0 auto;
@@ -133,14 +133,15 @@ const Menu = styled(MenuComp)`
   }
 `;
 
-const HeaderLinks = styled.div`
+const HeaderLinksContainer = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
 `;
 
-const NavComp: FC = () => {
+const HeaderLink: FC<{ data: MenuItem }> = ({ data }) => {
   const router = useRouter();
+  const route = router.route;
 
   const [isShowMenu, setIsShowMenu] = useState(false);
   const showMenu = useCallback(() => {
@@ -159,58 +160,58 @@ const NavComp: FC = () => {
     [router]
   );
 
-  const route = router.route;
-  const items: MenuItem[] = [
-    {
-      text: 'Frontend App',
-      key: '/portfolio/f2e',
-    },
-    {
-      text: 'Graphic Design',
-      key: '/portfolio/graphic',
-    },
-    {
-      text: 'Editorial',
-      key: '/portfolio/editoral',
-    },
-  ];
-
+  if (!data.subItems) {
+    return (
+      <HeaderLinkLi
+        href={data.key}
+        $active={route === data.key}
+        aria-label={data.note || ''}
+      >
+        {data.text}
+      </HeaderLinkLi>
+    );
+  }
   return (
-    <Navbar>
-      <Container className={fontClasses.ubuntu.className}>
-        <Logo href="/" aria-label="Back to Hope Shelter index page"></Logo>
-        <HeaderLinks>
-          <HeaderLinkLi
-            href="/"
-            $active={route === '/'}
-            aria-label="Back to Hope Shelter index page"
-          >
-            Home
-          </HeaderLinkLi>
-          <HeaderLinkLi
-            href="/aboutme"
-            $active={route === '/aboutme'}
-            aria-label="My brief indroduction"
-          >
-            About Me
-          </HeaderLinkLi>
-          <HeaderLi
-            $active={route.indexOf('/portfolio/') !== -1}
-            onMouseEnter={showMenu}
-            onMouseLeave={hideMenu}
-          >
-            Portfolio
-            {isShowMenu && (
-              <MenuWrap>
-                <Close onClick={hideMenu} />
-                <Menu items={items} ItemCallback={go} activeKey={route}></Menu>
-              </MenuWrap>
-            )}
-          </HeaderLi>
-        </HeaderLinks>
-      </Container>
-    </Navbar>
+    <HeaderLi
+      $active={route.indexOf(data.key) !== -1}
+      aria-label={data.note || ''}
+      onMouseEnter={showMenu}
+      onMouseLeave={hideMenu}
+    >
+      {data.text}
+      {isShowMenu && (
+        <MenuWrap>
+          <Close onClick={hideMenu} />
+          <Menu
+            items={data.subItems}
+            ItemCallback={go}
+            activeKey={route}
+          ></Menu>
+        </MenuWrap>
+      )}
+    </HeaderLi>
   );
 };
 
-export default NavComp;
+const HeaderLinks: FC<{ navItems: MenuItem[] }> = ({ navItems }) => {
+  return (
+    <HeaderLinksContainer>
+      {navItems.map((navItem: MenuItem) => (
+        <HeaderLink key={navItem.key} data={navItem}></HeaderLink>
+      ))}
+    </HeaderLinksContainer>
+  );
+};
+
+const Nav: FC<{ navItems: MenuItem[] }> = ({ navItems }) => {
+  return (
+    <Wraper>
+      <NavContainer className={fontClasses.ubuntu.className}>
+        <Logo href="/" aria-label="Back to Hope Shelter index page"></Logo>
+        <HeaderLinks navItems={navItems} />
+      </NavContainer>
+    </Wraper>
+  );
+};
+
+export default Nav;

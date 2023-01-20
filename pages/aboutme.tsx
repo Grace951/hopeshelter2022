@@ -31,10 +31,10 @@ const Buttons = styled.div`
   display: flex;
 `;
 
-const Image = styled(ImageComp)<{ fillBg?: boolean }>`
-  background-color: ${({ fillBg }) => (fillBg ? 'white' : 'transparent')};
-  border-radius: ${({ fillBg }) => (fillBg ? '3px' : '0')};
-  padding: ${({ fillBg }) => (fillBg ? '2px' : '0')};
+const Image = styled(ImageComp)<{ $fillBg?: boolean }>`
+  background-color: ${({ $fillBg }) => ($fillBg ? 'white' : 'transparent')};
+  border-radius: ${({ $fillBg }) => ($fillBg ? '3px' : '0')};
+  padding: ${({ $fillBg }) => ($fillBg ? '2px' : '0')};
 `;
 
 const TopBlock = styled.div`
@@ -209,7 +209,7 @@ const Page: NextPageWithLayout = () => {
                 height={brief.imgHeight}
                 alt={brief.text}
                 title={brief.text}
-                fillBg={brief.fill}
+                $fillBg={brief.fill}
               />
               <a
                 href={brief.href}
@@ -315,7 +315,7 @@ const Page: NextPageWithLayout = () => {
                     src={skill.img}
                     alt={skill.text}
                     title={skill.text}
-                    fillBg={skill.fill}
+                    $fillBg={skill.fill}
                   />
                 </Skill>
               ))}

@@ -8,4 +8,6 @@ export type ThemeType = keyof typeof themes;
 export interface MenuItem {
   key: string;
   text: string;
+  note?: string;
+  subItems?: MenuItem[];
 }

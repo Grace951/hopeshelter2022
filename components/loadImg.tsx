@@ -19,10 +19,10 @@ interface Props {
   title?: string;
   width?: string;
   height?: string;
-  fillBg?: boolean;
+  fillbg?: boolean;
 }
 
-const LoadImg: FC<Props> = ({ fillBg, src, ...props }) => {
+const LoadImg: FC<Props> = ({ fillbg, src, ...props }) => {
   const [opacity, setOpacity] = useState<number>(0);
 
   useEffect(() => {
@@ -35,7 +35,7 @@ const LoadImg: FC<Props> = ({ fillBg, src, ...props }) => {
     });
   }, [src]);
 
-  return <Img {...props} $fillBg={fillBg} src={src} style={{ opacity }} />;
+  return <Img {...props} $fillBg={fillbg} src={src} style={{ opacity }} />;
 };
 
 export default LoadImg;

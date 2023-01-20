@@ -239,7 +239,7 @@ const SiteShlef: FC<Props> = ({
           <TechLogos>
             {webTeches.map((item, id) => (
               <TechLogo key={id}>
-                <LoadImg fillBg={item.fill} src={item.img} />
+                <LoadImg fillbg={item.fill} src={item.img} />
               </TechLogo>
             ))}
           </TechLogos>
