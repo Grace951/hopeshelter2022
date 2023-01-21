@@ -66,11 +66,10 @@ const WebTitle = styled.a`
   top: 0px;
   font-weight: 300;
   font-size: ${({ theme }) => theme.font.size.xlarge};
-  line-height: 1;
+  line-height: 1.5;
   @media all and (max-width: ${breakpoint.mobile}px) {
     font-weight: bold;
     font-size: ${({ theme }) => theme.font.size.large};
-    padding: ${({ theme }) => theme.layout.spacing(0)};
     margin: ${({ theme }) => theme.layout.spacing(0, 1, 0, 0.4)};
   }
 `;
