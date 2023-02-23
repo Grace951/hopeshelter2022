@@ -81,7 +81,7 @@ const Page: NextPageWithLayout = () => {
             rel="noreferrer"
           >
             <LoadImg
-              src="/images/portfolio/full/portfolio01.jpg"
+              src="images/portfolio/full/portfolio01.jpg"
               alt="作品集 - 這是我的書面作品集，簡單的自我介紹加上單純大方的作品編排。"
               title="作品集 - 這是我的書面作品集，簡單的自我介紹加上單純大方的作品編排。"
             />
@@ -107,7 +107,7 @@ const Page: NextPageWithLayout = () => {
             rel="noreferrer"
           >
             <LoadImg
-              src="/images/book1/front.jpg"
+              src="images/book1/front.jpg"
               alt="公司產品型錄 - 這是一本產品型錄的排版練習，以高對比大標題吸引讀者的目光，並以留白使版面舒適大方。"
               title="公司產品型錄 - 這是一本產品型錄的排版練習，以高對比大標題吸引讀者的目光，並以留白使版面舒適大方。"
             />

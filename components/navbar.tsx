@@ -38,14 +38,14 @@ const NavContainer = styled.div`
 const Logo = styled(Link)`
   width: 180px;
   height: 100%;
-  background: url('/images/logoPure.png') no-repeat right center;
+  background: url('images/logoPure.png') no-repeat right center;
   background-size: contain;
   @media all and (max-width: ${breakpoint.tablet}px) {
     width: 10rem;
   }
   @media all and (max-width: ${breakpoint.mobile}px) {
     width: 2.4rem;
-    background: url('/images/ico.png') no-repeat;
+    background: url('images/ico.png') no-repeat;
   }
 `;
 
