@@ -10,7 +10,6 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next export -o docs",
     "test": "jest --watch",
     "genratio": "node scripts/calcImgRatio.js",
     "prepare": "husky install",
