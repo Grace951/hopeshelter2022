@@ -8,7 +8,7 @@
   "socails": [
     {
       "text": "github",
-      "img": "images/skills/github.png",
+      "img": "/images/skills/github.png",
       "imgWidth": 40,
       "imgHeight": 40,
       "fill": true,
@@ -16,7 +16,7 @@
     },
     {
       "text": "Linkedin",
-      "img": "images/skills/linkedin.png",
+      "img": "/images/skills/linkedin.png",
       "imgWidth": 40,
       "imgHeight": 40,
       "href": "https://www.linkedin.com/in/grace-yeh-b802b012a/"
@@ -104,50 +104,50 @@
       "title": "Modern Javascript",
       "skills": [
         {
-          "img": "images/skills/typescript.png",
+          "img": "/images/skills/typescript.png",
           "width": 40,
           "height": 40,
           "text": "TypeScript"
         },
         {
-          "img": "images/skills/es6.png",
+          "img": "/images/skills/es6.png",
           "width": 40,
           "height": 40,
           "text": "ES6"
         },
         {
-          "img": "images/skills/next-logo.png",
+          "img": "/images/skills/next-logo.png",
           "width": 117,
           "height": 40,
           "text": "NextJS",
           "fill": true
         },
         {
-          "img": "images/skills/reactjs.svg",
+          "img": "/images/skills/reactjs.svg",
           "width": 40,
           "height": 40,
           "text": "React with Hooks"
         },
         {
-          "img": "images/skills/redux.png",
+          "img": "/images/skills/redux.png",
           "width": 40,
           "height": 40,
           "text": "Redux"
         },
         {
-          "img": "images/skills/webpack.svg",
+          "img": "/images/skills/webpack.svg",
           "width": 40,
           "height": 40,
           "text": "Webpack"
         },
         {
-          "img": "images/skills/styledComponent.png",
+          "img": "/images/skills/styledComponent.png",
           "width": 40,
           "height": 40,
           "text": "styled-components"
         },
         {
-          "img": "images/skills/node.png",
+          "img": "/images/skills/node.png",
           "width": 142,
           "height": 40,
           "text": "NodeJs",
@@ -159,44 +159,44 @@
       "title": "Front-end Development",
       "skills": [
         {
-          "img": "images/skills/rwd.png",
+          "img": "/images/skills/rwd.png",
           "width": 50,
           "height": 50,
           "text": "RWD",
           "fill": true
         },
         {
-          "img": "images/skills/html5.png",
+          "img": "/images/skills/html5.png",
           "width": 35,
           "height": 50,
           "text": "HTML5"
         },
         {
-          "img": "images/skills/css3.png",
+          "img": "/images/skills/css3.png",
           "width": 36,
           "height": 50,
           "text": "CSS3"
         },
         {
-          "img": "images/skills/sass.png",
+          "img": "/images/skills/sass.png",
           "width": 53,
           "height": 40,
           "text": "SASS"
         },
         {
-          "img": "images/skills/webpack.svg",
+          "img": "/images/skills/webpack.svg",
           "width": 40,
           "height": 40,
           "text": "Webpack"
         },
         {
-          "img": "images/skills/bootstrap.png",
+          "img": "/images/skills/bootstrap.png",
           "width": 40,
           "height": 40,
           "text": "BootStrap"
         },
         {
-          "img": "images/skills/jquery.png",
+          "img": "/images/skills/jquery.png",
           "width": 158,
           "height": 40,
           "text": "jQuery",
@@ -208,31 +208,31 @@
       "title": "General Skills",
       "skills": [
         {
-          "img": "images/skills/git.png",
+          "img": "/images/skills/git.png",
           "width": 40,
           "height": 40,
           "text": "Git"
         },
         {
-          "img": "images/skills/docker.png",
+          "img": "/images/skills/docker.png",
           "width": 156,
           "height": 40,
           "text": "Docker"
         },
         {
-          "img": "images/skills/npm.png",
+          "img": "/images/skills/npm.png",
           "width": 87,
           "height": 50,
           "text": "NPM"
         },
         {
-          "img": "images/skills/photoshop.png",
+          "img": "/images/skills/photoshop.png",
           "width": 40,
           "height": 39,
           "text": "PhotoShop"
         },
         {
-          "img": "images/skills/illustrator.png",
+          "img": "/images/skills/illustrator.png",
           "width": 40,
           "height": 39,
           "text": "Illustrator"

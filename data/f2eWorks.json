@@ -13,52 +13,52 @@
     "webTeches": [
       {
         "link": "https://facebook.github.io/react/",
-        "img": "images/skills/reactjs.svg"
+        "img": "/images/skills/reactjs.svg"
       },
       {
         "link": "https://webpack.js.org/",
-        "img": "images/skills/webpack.svg"
+        "img": "/images/skills/webpack.svg"
       },
       {
         "link": "",
-        "img": "images/skills/es6.png"
+        "img": "/images/skills/es6.png"
       },
       {
         "link": "https://graphql.org/brand/",
-        "img": "images/skills/graphQL.png",
+        "img": "/images/skills/graphQL.png",
         "fill": true
       },
       {
         "link": "https://ramdajs.com/",
-        "img": "images/skills/ramda.png",
+        "img": "/images/skills/ramda.png",
         "fill": true
       },
       {
         "link": "https://json-schema.org/",
-        "img": "images/skills/jsonSchema.png",
+        "img": "/images/skills/jsonSchema.png",
         "fill": true
       },
       {
         "link": "https://jestjs.io/",
-        "img": "images/skills/jest.png"
+        "img": "/images/skills/jest.png"
       },
       {
         "link": "https://www.cypress.io/",
-        "img": "images/skills/cypress.png",
+        "img": "/images/skills/cypress.png",
         "fill": true
       },
       {
         "link": "https://nodejs.org/en/",
-        "img": "images/skills/node.png",
+        "img": "/images/skills/node.png",
         "fill": true
       }
     ],
     "webSnaps": [
-      { "img": "images/web/auv2/au_list1.png" },
-      { "img": "images/web/auv2/au_list2.png" },
-      { "img": "images/web/auv2/au_list3.png" },
-      { "img": "images/web/auv2/au_list4.png" },
-      { "img": "images/web/auv2/au_list5.png" }
+      { "img": "/images/web/auv2/au_list1.png" },
+      { "img": "/images/web/auv2/au_list2.png" },
+      { "img": "/images/web/auv2/au_list3.png" },
+      { "img": "/images/web/auv2/au_list4.png" },
+      { "img": "/images/web/auv2/au_list5.png" }
     ]
   },
   {
@@ -75,46 +75,46 @@
     "webTeches": [
       {
         "link": "https://facebook.github.io/react/",
-        "img": "images/skills/reactjs.svg"
+        "img": "/images/skills/reactjs.svg"
       },
       {
         "link": "https://www.typescriptlang.org/",
-        "img": "images/skills/typescript.png"
+        "img": "/images/skills/typescript.png"
       },
       {
         "link": "",
-        "img": "images/skills/es6.png"
+        "img": "/images/skills/es6.png"
       },
       {
         "link": "https://graphql.org/brand/",
-        "img": "images/skills/graphQL.png",
+        "img": "/images/skills/graphQL.png",
         "fill": true
       },
       {
         "link": "https://ramdajs.com/",
-        "img": "images/skills/ramda.png",
+        "img": "/images/skills/ramda.png",
         "fill": true
       },
       {
         "link": "https://mui.com/",
-        "img": "images/skills/mui.png",
+        "img": "/images/skills/mui.png",
         "fill": true
       },
       {
         "link": "https://jestjs.io/",
-        "img": "images/skills/jest.png"
+        "img": "/images/skills/jest.png"
       },
       {
         "link": "https://webpack.js.org/",
-        "img": "images/skills/webpack.svg"
+        "img": "/images/skills/webpack.svg"
       }
     ],
     "webSnaps": [
-      { "img": "images/web/auv2/au_list1.png" },
-      { "img": "images/web/auv2/au_list2.png" },
-      { "img": "images/web/auv2/au_list3.png" },
-      { "img": "images/web/auv2/au_list4.png" },
-      { "img": "images/web/auv2/au_list5.png" }
+      { "img": "/images/web/auv2/au_list1.png" },
+      { "img": "/images/web/auv2/au_list2.png" },
+      { "img": "/images/web/auv2/au_list3.png" },
+      { "img": "/images/web/auv2/au_list4.png" },
+      { "img": "/images/web/auv2/au_list5.png" }
     ]
   },
   {
@@ -131,32 +131,32 @@
     "webTeches": [
       {
         "link": "https://facebook.github.io/react/",
-        "img": "images/skills/reactjs.svg"
+        "img": "/images/skills/reactjs.svg"
       },
       {
         "link": "https://github.com/reactjs/redux",
-        "img": "images/skills/redux.png"
+        "img": "/images/skills/redux.png"
       },
       {
         "link": "",
-        "img": "images/skills/es6.png"
+        "img": "/images/skills/es6.png"
       },
       {
         "link": "https://styled-components.com/",
-        "img": "images/skills/styledComponent.png"
+        "img": "/images/skills/styledComponent.png"
       },
       {
         "link": "",
-        "img": "images/skills/html5css3badges.png"
+        "img": "/images/skills/html5css3badges.png"
       },
       {
         "link": "https://nodejs.org/en/",
-        "img": "images/skills/node.png",
+        "img": "/images/skills/node.png",
         "fill": true
       },
       {
         "link": "https://webpack.js.org/",
-        "img": "images/skills/webpack.svg"
+        "img": "/images/skills/webpack.svg"
       }
     ]
   },
@@ -168,31 +168,31 @@
     "sourceCode": "https://github.com/Grace951/hopeshelter2022",
     "webLink": {
       "src": "https://hopeshelter2022.vercel.app/",
-      "img": "images/logoPure.png",
+      "img": "/images/logoPure.png",
       "title": "我的個人網站",
       "font": "ubuntu"
     },
     "webTeches": [
       {
         "link": "https://www.typescriptlang.org/",
-        "img": "images/skills/typescript.png"
+        "img": "/images/skills/typescript.png"
       },
       {
         "link": "https://nextjs.org/",
-        "img": "images/skills/next-logo.png",
+        "img": "/images/skills/next-logo.png",
         "fill": true
       },
       {
         "link": "https://facebook.github.io/react/",
-        "img": "images/skills/reactjs.svg"
+        "img": "/images/skills/reactjs.svg"
       },
       {
         "link": "https://styled-components.com/",
-        "img": "images/skills/styledComponent.png"
+        "img": "/images/skills/styledComponent.png"
       },
       {
         "link": "",
-        "img": "images/skills/html5css3badges.png"
+        "img": "/images/skills/html5css3badges.png"
       }
     ]
   },
@@ -203,7 +203,7 @@
     ],
     "webLink": {
       "src": "http://www.hitechdigitalcctv.com.au/#/home",
-      "img": "images/web/au/logo.png",
+      "img": "/images/web/au/logo.png",
       "title": "Hi-Tech Digital CCTV",
       "font": "rajdhani",
       "fontWeight": 400
@@ -212,24 +212,24 @@
     "webTeches": [
       {
         "link": "http://angularjs.org/",
-        "img": "images/web/au/AngularJS-large.png"
+        "img": "/images/web/au/AngularJS-large.png"
       },
       {
         "link": "http://getbootstrap.com/",
-        "img": "images/skills/bootstrap.png"
+        "img": "/images/skills/bootstrap.png"
       },
       {
         "link": "http://compass-style.org/",
-        "img": "images/web/au/compass.png"
+        "img": "/images/web/au/compass.png"
       },
       {
         "link": "http://sass-lang.com/",
-        "img": "images/web/au/logo-sass.svg",
+        "img": "/images/web/au/logo-sass.svg",
         "style": { "width": "auto", "height": "50px" }
       },
       {
         "link": "",
-        "img": "images/skills/html5css3badges.png"
+        "img": "/images/skills/html5css3badges.png"
       }
     ]
   },
@@ -240,7 +240,7 @@
     ],
     "webLink": {
       "src": "http://paints.byethost5.com",
-      "img": "images/web/paints/logo-c.png",
+      "img": "/images/web/paints/logo-c.png",
       "title": "經典名畫",
       "font": "ubuntu"
     },
@@ -248,20 +248,20 @@
     "webTeches": [
       {
         "link": "http://compass-style.org/",
-        "img": "images/web/au/compass.png"
+        "img": "/images/web/au/compass.png"
       },
       {
         "link": "http://sass-lang.com/",
-        "img": "images/web/au/logo-sass.svg",
+        "img": "/images/web/au/logo-sass.svg",
         "style": { "width": "auto", "height": "50px" }
       },
       {
         "link": "",
-        "img": "images/skills/html5css3badges.png"
+        "img": "/images/skills/html5css3badges.png"
       },
       {
         "link": "https://jquery.com/",
-        "img": "images/skills/jquery.png",
+        "img": "/images/skills/jquery.png",
         "fill": true
       }
     ]
