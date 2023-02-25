@@ -9,6 +9,7 @@ import styled, { css } from 'styled-components';
 import Layout from '../../components/layout';
 import LoadImg from '../../components/loadImg';
 import data from '../../data/works.json';
+import { WorkDetails } from '../../typings';
 import { breakpoint } from '../../themes/index';
 import type { NextPageWithLayout } from '../_app';
 
@@ -102,19 +103,31 @@ const Picture = styled.div`
   }
 `;
 
-const Page: NextPageWithLayout = () => {
+export async function getStaticPaths() {
+  return {
+    paths: data.map((item) => ({ params: { wid: item.index } })),
+    fallback: false, // can also be true or 'blocking'
+  };
+}
+
+export async function getStaticProps({ params }) {
+  const id = params.wid;
+  const details = data[id];
+  return {
+    props: { details },
+  };
+}
+
+const Page: NextPageWithLayout = ({ details }: { details: WorkDetails }) => {
   const router = useRouter();
   const back = () => {
     router.back();
   };
-  const { wid } = router.query;
 
-  if (!wid) {
+  if (!details) {
     return null;
   }
 
-  const id = parseInt(Array.isArray(wid) ? wid[0] : wid);
-  const details = data[id];
   return (
     <>
       <Head>

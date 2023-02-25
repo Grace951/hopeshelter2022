@@ -11,3 +11,11 @@ export interface MenuItem {
   note?: string;
   subItems?: MenuItem[];
 }
+
+export interface WorkDetails {
+  index: string;
+  title: string;
+  desc: string;
+  img: string;
+  relative?: { img: { src: string; index: string }[] };
+}
