@@ -106,7 +106,7 @@ const Picture = styled.div`
 export async function getStaticPaths() {
   return {
     paths: data.map((item) => ({ params: { wid: item.index } })),
-    fallback: false, // can also be true or 'blocking'
+    fallback: true,
   };
 }
 
@@ -125,7 +125,7 @@ const Page: NextPageWithLayout = ({ details }: { details: WorkDetails }) => {
   };
 
   if (!details) {
-    return null;
+    return <p>Loading</p>;
   }
 
   return (
