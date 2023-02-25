@@ -113,6 +113,11 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const id = params.wid;
   const details = data[id];
+  if (!details) {
+    return {
+      notFound: true,
+    };
+  }
   return {
     props: { details },
   };
